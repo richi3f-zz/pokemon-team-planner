@@ -550,10 +550,10 @@ function filterPkmn(option, checked) {
        if ($(this).is(gens.join(',')) &&
            $(this).is(islands.join(',')) && 
            (($(this).is(types.join(',')) &&
-             ($(this).is(resistances.join(',')) || types.indexOf(".unknown1") > -1)) ||
+             ($(this).is(resistances.join(',')) || (types.length == 2 && types.indexOf(".unknown1") > -1)) ||
                 (types.length > 0 &&
                  resistances.length > 0 &&
-                 $(this).children(":first").hasClass("silvally")))) {
+                 $(this).children(":first").hasClass("silvally"))))) {
             $(this).removeClass("filtered");
        }
     });
@@ -736,25 +736,32 @@ $(document).ready(function(){
     });
     $("select").multiselect("selectAll", false);
     $("select").multiselect('updateButtonText');
-    $("#filters .button").click(function(e) {
-        $("#filters .more .filter").toggleClass("hidden");
-        $("#filters .button").toggleClass("hidden");
-        e.preventDefault();
-    });
+    // show/hide team's weaknesses
     $("#team .button:not(#randomize)").click(function(e) {
         $("#team .more").toggleClass("hidden");
         $("#team .button:not(#randomize)").toggleClass("hidden");
         e.preventDefault();
     });
+    // show/hide extra filter
+    $("#filters .button").click(function(e) {
+        $("#filters .more .filter").toggleClass("hidden");
+        $("#filters .button").toggleClass("hidden");
+        e.preventDefault();
+    });
     $("#randomize").click(function() {
+        // get total of fully-evolved Pokémon
         pkmnCount = $("ol.picker li:not(.nfe)").length;
         for (i = 0; i < 6; i++) {
+            // pick a random Pokémon
             randomPkmn = getRandomNumber(pkmnCount);
+            // clear i-th team slot
             updateTeam($("ul.picked li .art").eq(i), true);
+            // add random Pokémon to that slot
             updateTeam($("ol.picker li:not(.nfe)").eq(randomPkmn).find(".menu-sprite"));
         }
         e.preventDefault();
     });
+    // make Pokémon go up and down on mouse over
     var handle = 0;
     $("ol.picker li").hover(function() {
         var $pkmn = $(this);
