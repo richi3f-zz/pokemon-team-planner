@@ -126,8 +126,8 @@
                 <select id="island-filter" multiple>
                     <option value="island1">Melemele</option>
                     <option value="island2">Akala</option>
-                    <option value="island3">3</option>
-                    <option value="island4">4</option>
+                    <option value="island3">Ula'ula</option>
+                    <option value="island4">Poni</option>
                     <option value="island0">Other</option>
                 </select>
             </div><!--
@@ -534,9 +534,6 @@ function filterPkmn(option, checked) {
         types[i++] = "." + $(this).val() + "1";
         types[i++] = "." + $(this).val() + "2";
     });
-    /*if (types.length > 34) {
-        types[i++] = ".unknown1";
-    }*/
     // get selected islands
     var islands = []; i = 0;
     $("#island-filter option:selected").each(function() {
