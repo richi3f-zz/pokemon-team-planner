@@ -27,6 +27,7 @@
     </Type>
     <Type>
         <Name>Flying</Name>
+        <UnaffectedBy>Ground</UnaffectedBy>
         <Resists>Bug,Fighting,Grass</Resists>
         <WeakTo>Electric,Ice,Rock</WeakTo>
     </Type>
