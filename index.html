@@ -7,6 +7,62 @@
     <meta charset="utf-8">
     <link href="static/bootstrap.min.css" rel="stylesheet">
     <link href="static/style.css" rel="stylesheet">
+    <style>
+#team #randomize {
+    left: 1em;
+    top: 9.875em;
+}
+#team .button {
+    top: 9.875em;
+    right: 1em;
+}
+span.type{
+    display: inline-block
+}
+ul.picked{
+    width:51.75em
+}
+ul.picked li {
+    border: none;
+    height: 10.25em;
+    vertical-align: top
+}
+ul.picked li:not(.free){
+    cursor: no-drop;    
+}
+
+ul.picked li figure{
+    border-width:0.125em;
+    border-style:solid;
+    border-radius:3.5625em;
+    width: 6em;
+    margin: 0 auto;
+}
+ul.picked li .info{
+    border-radius:0.625em;
+    width: 8em;
+    margin-top: 0.5em;
+    padding: 0.25em;
+    text-align: center
+}
+ul.picked li .info.unknown,
+ul.picked li .info.unknown1{
+    line-height: 4;
+}
+ul.picked li .info.unknown .name,
+ul.picked li .info.unknown1 .name{
+    margin: 0
+}
+ul.picked li .info .name{
+    display: block;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin: 0 0 0.5em
+}
+ul.picked li .info .type{
+    line-height:1.125
+}
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
         $(window).on('load', function () {
@@ -27,12 +83,54 @@
     <section id="team">
         <h2>Your Team</h2>
         <ul class="picked">
-            <li class="unknown"><a href="#" class="art">???</a>
-            <li class="unknown"><a href="#" class="art">???</a>
-            <li class="unknown"><a href="#" class="art">???</a>
-            <li class="unknown"><a href="#" class="art">???</a>
-            <li class="unknown"><a href="#" class="art">???</a>
-            <li class="unknown"><a href="#" class="art">???</a>
+            <li class="free">
+                <figure class="unknown">
+                    <img src="static/blank.gif" class="art">
+                </figure>
+                <div class="info unknown">
+                    <span class="name">???</span>
+                    <span class="type unknown">???</span><span class="type unknown">???</span>
+                </div>
+            <li class="free">
+                <figure class="unknown">
+                    <img src="static/blank.gif" class="art">
+                </figure>
+                <div class="info unknown">
+                    <span class="name">???</span>
+                    <span class="type unknown">???</span><span class="type unknown">???</span>
+                </div>
+            <li class="free">
+                <figure class="unknown">
+                    <img src="static/blank.gif" class="art">
+                </figure>
+                <div class="info unknown">
+                    <span class="name">???</span>
+                    <span class="type unknown">???</span><span class="type unknown">???</span>
+                </div>
+            <li class="free">
+                <figure class="unknown">
+                    <img src="static/blank.gif" class="art">
+                </figure>
+                <div class="info unknown">
+                    <span class="name">???</span>
+                    <span class="type unknown">???</span><span class="type unknown">???</span>
+                </div>
+            <li class="free">
+                <figure class="unknown">
+                    <img src="static/blank.gif" class="art">
+                </figure>
+                <div class="info unknown">
+                    <span class="name">???</span>
+                    <span class="type unknown">???</span><span class="type unknown">???</span>
+                </div>
+            <li class="free">
+                <figure class="unknown">
+                    <img src="static/blank.gif" class="art">
+                </figure>
+                <div class="info unknown">
+                    <span class="name">???</span>
+                    <span class="type unknown">???</span><span class="type unknown">???</span>
+                </div>
         </ul>
         <a href="#" id="randomize" class="button" title="Randomize">?</a>
         <a href="#" class="button" title="Show more info">+</a>
@@ -164,7 +262,6 @@
                     <option value="dark">Dark</option>
                     <option value="steel">Steel</option>
                     <option value="fairy">Fairy</option>
-                    <option value="unknown">Unknown</option>
                 </select>
             </div><!--
             --><a href="#" class="button" title="Show more filters">+</a><!--
@@ -192,6 +289,14 @@
                         <option value="steel">Steel</option>
                         <option value="fairy">Fairy</option>
                     </select>                    
+                </div><!--
+                --><div class="filter hidden">
+                    <label for="evolution-filter">Evolution</label>
+                    <select id="evolution-filter" multiple>
+                        <option value="nfe">Not Fully Evolved</option>
+                        <option value="fe">Fully Evolved</option>
+                        <option value="mega">Mega Evolved</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -206,8 +311,8 @@
             <li class="gen7 island1 nfe water1"><a href="#" class="menu-sprite brionne">Brionne</a>
             <li class="gen7 island1 water1 fairy2"><a href="#" class="menu-sprite primarina">Primarina</a>
             <li class="gen7 island1 island2 island3 island4 nfe normal1 flying2"><a href="#" class="menu-sprite pikipek">Pikipek</a>
-            <li class="gen7 island1 island2 island3 island4 nfe unknown1"><a href="#" class="menu-sprite pikipek2">Pikipek2</a>
-            <li class="gen7 island1 island2 island3 island4 unknown1"><a href="#" class="menu-sprite pikipek3">Pikipek3</a>
+            <li class="gen7 island1 island2 island3 island4 nfe normal1 flying2"><a href="#" class="menu-sprite trumbeak">Trumbeak</a>
+            <li class="gen7 island1 island2 island3 island4 normal1 flying2"><a href="#" class="menu-sprite toucannon">Toucannon</a>
             <li class="gen7 island1 island2 island3 island4 nfe normal1"><a href="#" class="menu-sprite yungoos">Yungoos</a>
             <li class="gen7 island1 island2 island3 island4 normal1"><a href="#" class="menu-sprite gumshoos">Gumshoos</a>
             <li class="gen1 island1 island2 island3 island4 nfe dark1 normal2"><a href="#" class="menu-sprite rattata-alola">Rattata</a>
@@ -233,13 +338,15 @@
             <li class="gen4 island1 nfe normal1"><a href="#" class="menu-sprite munchlax">Munchlax</a>
             <li class="gen1 island1 normal1"><a href="#" class="menu-sprite snorlax">Snorlax</a>
             <li class="gen1 island1 island3 nfe water1 psychic2"><a href="#" class="menu-sprite slowpoke">Slowpoke</a>
-            <li class="gen1 island1 island3 nfe water1 psychic2"><a href="#" class="menu-sprite slowbro">Slowbro</a>
+            <li class="gen1 island1 island3 water1 psychic2"><a href="#" class="menu-sprite slowbro">Slowbro</a>
+            <li class="gen1 island1 island3 water1 psychic2 filtered"><a href="#" class="menu-sprite slowbro-mega">Mega Slowbro</a>
             <li class="gen2 island1 island3 water1 psychic2"><a href="#" class="menu-sprite slowking">Slowking</a>
             <li class="gen3 island1 island3 island4 nfe water1 flying2"><a href="#" class="menu-sprite wingull">Wingull</a>
             <li class="gen3 island1 island3 island4 water1 flying2"><a href="#" class="menu-sprite pelipper">Pelipper</a>
             <li class="gen1 island1 nfe psychic1"><a href="#" class="menu-sprite abra">Abra</a>
             <li class="gen1 island1 nfe psychic1"><a href="#" class="menu-sprite kadabra">Kadabra</a>
             <li class="gen1 island1 psychic1"><a href="#" class="menu-sprite alakazam">Alakazam</a>
+            <li class="gen1 island1 psychic1 filtered"><a href="#" class="menu-sprite alakazam-mega">Mega Alakazam</a>
             <li class="gen1 island1 island3 nfe dark1"><a href="#" class="menu-sprite meowth-alola">Meowth</a>
             <li class="gen1 island1 island3 dark1"><a href="#" class="menu-sprite persian-alola">Persian</a>
             <li class="gen1 island1 island3 nfe electric1 steel2"><a href="#" class="menu-sprite magnemite">Magnemite</a>
@@ -255,10 +362,11 @@
             <li class="gen3 island1 island4 fighting1"><a href="#" class="menu-sprite hariyama">Hariyama</a>
             <li class="gen2 island1 normal1"><a href="#" class="menu-sprite smeargle">Smeargle</a>
             <li class="gen7 island1 island2 island3 island4 nfe fighting1"><a href="#" class="menu-sprite crabrawler">Crabrawler</a>
-            <li class="gen7 island1 island2 island3 island4 unknown1"><a href="#" class="menu-sprite crabrawler2">Crabrawler 2</a>
+            <li class="gen7 island1 island2 island3 island4 fighting1 ice2"><a href="#" class="menu-sprite crabominable">Crabominable</a>
             <li class="gen1 island1 island2 island3 nfe ghost1 poison2"><a href="#" class="menu-sprite gastly">Gastly</a>
             <li class="gen1 island1 island2 island3 nfe ghost1 poison2"><a href="#" class="menu-sprite haunter">Haunter</a>
             <li class="gen1 island1 island2 island3 ghost1 poison2"><a href="#" class="menu-sprite gengar">Gengar</a>
+            <li class="gen1 island1 island2 island3 ghost1 poison2 filtered"><a href="#" class="menu-sprite gengar-mega">Mega Gengar</a>
             <li class="gen4 island1 nfe ghost1 flying2"><a href="#" class="menu-sprite drifloon">Drifloon</a>
             <li class="gen4 island1 ghost1 flying2"><a href="#" class="menu-sprite drifblim">Drifblim</a>
             <li class="gen2 island1 nfe ghost1"><a href="#" class="menu-sprite misdreavus">Misdreavus</a>
@@ -266,8 +374,8 @@
             <li class="gen1 island1 island2 island3 island4 nfe poison1 flying2"><a href="#" class="menu-sprite zubat">Zubat</a>
             <li class="gen1 island1 island2 island3 island4 nfe poison1 flying2"><a href="#" class="menu-sprite golbat">Golbat</a>
             <li class="gen2 island1 island2 island3 island4 poison1 flying2"><a href="#" class="menu-sprite crobat">Crobat</a>
-            <li class="gen1 island1 island2 island3 island4 nfe unknown1"><a href="#" class="menu-sprite diglett-alola">Diglett</a>
-            <li class="gen1 island1 island2 island3 island4 unknown1"><a href="#" class="menu-sprite dugtrio-alola">Dugtrio</a>
+            <li class="gen1 island1 island2 island3 island4 nfe ground1 steel2"><a href="#" class="menu-sprite diglett-alola">Diglett</a>
+            <li class="gen1 island1 island2 island3 island4 ground1 steel2"><a href="#" class="menu-sprite dugtrio-alola">Dugtrio</a>
             <li class="gen1 island1 nfe normal1 island3 flying2"><a href="#" class="menu-sprite spearow">Spearow</a>
             <li class="gen1 island1 normal1 island3 flying2"><a href="#" class="menu-sprite fearow">Fearow</a>
             <li class="gen5 island1 island4 nfe normal1 flying2"><a href="#" class="menu-sprite rufflet">Rufflet</a>
@@ -277,10 +385,10 @@
             <li class="gen1 island1 island4 nfe fighting1"><a href="#" class="menu-sprite mankey">Mankey</a>
             <li class="gen1 island1 island4 fighting1"><a href="#" class="menu-sprite primeape">Primeape</a>
             <li class="gen2 island1 ice1 flying2"><a href="#" class="menu-sprite delibird">Delibird</a>
-            <li class="gen7 island1 island2 island3 fire1 flying2"><a href="#" class="menu-sprite oricorio-baile">Oricorio <span class="form">(Baile Style)</span></a>
-            <li class="gen7 island1 island2 island3 electric1 flying2"><a href="#" class="menu-sprite oricorio-pom-pom">Oricorio <span class="form">(Pom Pom Style)</span></a>
-            <li class="gen7 island1 island2 island3 psychic1 flying2"><a href="#" class="menu-sprite oricorio-pa-u">Oricorio <span class="form">(Pa'u Style)</span></a>
-            <li class="gen7 island1 island2 island3 ghost1 flying2"><a href="#" class="menu-sprite oricorio-sensu">Oricorio <span class="form">(Sensu Style)</span></a>
+            <li class="gen7 island1 island2 island3 electric1 flying2"><a href="#" class="menu-sprite oricorio-pom-pom">Oricorio</a>
+            <li class="gen7 island1 island2 island3 psychic1 flying2"><a href="#" class="menu-sprite oricorio-pa-u">Oricorio</a>
+            <li class="gen7 island1 island2 island3 fire1 flying2"><a href="#" class="menu-sprite oricorio-baile">Oricorio </a>
+            <li class="gen7 island1 island2 island3 ghost1 flying2"><a href="#" class="menu-sprite oricorio-sensu">Oricorio</a>
             <li class="gen7 island1 island3 island4 nfe bug1 fairy2"><a href="#" class="menu-sprite cutiefly">Cutiefly</a>
             <li class="gen7 island1 island3 island4 bug1 fairy2"><a href="#" class="menu-sprite ribombee">Ribombee</a>
             <li class="gen5 island1 island3 island4 nfe grass1"><a href="#" class="menu-sprite petilil">Petilil</a>
@@ -291,6 +399,7 @@
             <li class="gen1 island1 island2 island3 island4 water1"><a href="#" class="menu-sprite golduck">Golduck</a>
             <li class="gen1 island1 island2 island3 island4 nfe water1"><a href="#" class="menu-sprite magikarp">Magikarp</a>
             <li class="gen1 island1 island2 island3 island4 water1 flying2"><a href="#" class="menu-sprite gyarados">Gyarados</a>
+            <li class="gen1 island1 island2 island3 island4 water1 dark2 filtered"><a href="#" class="menu-sprite gyarados-mega">Mega Gyarados</a>
             <li class="gen3 island1 island2 island4 nfe water1 ground2"><a href="#" class="menu-sprite barboach">Barboach</a>
             <li class="gen3 island1 island2 island4 water1 ground2"><a href="#" class="menu-sprite whiscash">Whiscash</a>
             <li class="gen1 island1 island4 nfe fighting1"><a href="#" class="menu-sprite machop">Machop</a>
@@ -301,9 +410,10 @@
             <li class="gen5 island1 island4 rock1"><a href="#" class="menu-sprite gigalith">Gigalith</a>
             <li class="gen6 island1 island4 rock1 fairy2"><a href="#" class="menu-sprite carbink">Carbink</a>
             <li class="gen3 island1 island4 dark1 ghost2"><a href="#" class="menu-sprite sableye">Sableye</a>
+            <li class="gen3 island1 island4 dark1 ghost2 filtered"><a href="#" class="menu-sprite sableye-mega">Mega Sableye</a>
             <li class="gen7 island1 island4 nfe rock1"><a href="#" class="menu-sprite rockruff">Rockruff</a>
-            <li class="gen7 island1 island4 rock1"><a href="#" class="menu-sprite lycanroc">Lycanroc <span class="form">Midday Form</span></a>
-            <li class="gen7 island1 island4 rock1"><a href="#" class="menu-sprite lycanroc-midnight">Lycanroc <span class="form">Midnight Form</span></a>
+            <li class="gen7 island1 island4 rock1"><a href="#" class="menu-sprite lycanroc">Lycanroc</a>
+            <li class="gen7 island1 island4 rock1"><a href="#" class="menu-sprite lycanroc-midnight">Lycanroc</a>
             <li class="gen3 island1 normal1"><a href="#" class="menu-sprite spinda">Spinda</a>
             <li class="gen1 island1 island2 island3 island4 nfe water1 poison2"><a href="#" class="menu-sprite tentacool">Tentacool</a>
             <li class="gen1 island1 island2 island3 island4 water1 poison2"><a href="#" class="menu-sprite tentacruel">Tentacruel</a>
@@ -312,13 +422,14 @@
             <li class="gen7 island1 island2 island3 water1"><a href="#" class="menu-sprite wishiwashi">Wishiwashi</a>
             <li class="gen3 island1 island2 water1"><a href="#" class="menu-sprite luvdisc">Luvdisc</a>
             <li class="gen2 island1 island2 water1 rock2"><a href="#" class="menu-sprite corsola">Corsola</a>
-            <li class="gen7 island1 island2 nfe unknown1"><a href="#" class="menu-sprite tgc-starfish1">TGC Starfish 1</a>
-            <li class="gen7 island1 island2 unknown1"><a href="#" class="menu-sprite tgc-starfish2">TGC Starfish 2</a>
+            <li class="gen7 island1 island2 nfe poison1 water2"><a href="#" class="menu-sprite mareanie">Mareanie</a>
+            <li class="gen7 island1 island2 poison1 water2"><a href="#" class="menu-sprite toxapex">Toxapex</a>
             <li class="gen1 island1 nfe water1"><a href="#" class="menu-sprite shellder">Shellder</a>
             <li class="gen1 island1 water1 ice2"><a href="#" class="menu-sprite cloyster">Cloyster</a>
             <li class="gen3 island1 nfe dragon1"><a href="#" class="menu-sprite bagon">Bagon</a>
             <li class="gen3 island1 nfe dragon1"><a href="#" class="menu-sprite shelgon">Shelgon</a>
             <li class="gen3 island1 dragon1 flying2"><a href="#" class="menu-sprite salamence">Salamence</a>
+            <li class="gen3 island1 dragon1 flying2 filtered"><a href="#" class="menu-sprite salamence-mega">Mega Salamence</a>
             <li class="gen5 island2 nfe normal1"><a href="#" class="menu-sprite lillipup">Lillipup</a>
             <li class="gen5 island2 nfe normal1"><a href="#" class="menu-sprite herdier">Herdier</a>
             <li class="gen5 island2 normal1"><a href="#" class="menu-sprite stoutland">Stoutland</a>
@@ -340,12 +451,12 @@
             <li class="gen2 island2 island4 normal1"><a href="#" class="menu-sprite miltank">Miltank</a>
             <li class="gen3 island2 island3 nfe bug1 water2"><a href="#" class="menu-sprite surskit">Surskit</a>
             <li class="gen3 island2 island3 bug1 flying2"><a href="#" class="menu-sprite masquerain">Masquerain</a>
-            <li class="gen7 island2 island3 nfe unknown1"><a href="#" class="menu-sprite water-spider1">Water Spider 1</a>
-            <li class="gen7 island2 island3 unknown1"><a href="#" class="menu-sprite water-spider2">Water Spider 2</a>
+            <li class="gen7 island2 island3 nfe water1 bug2"><a href="#" class="menu-sprite dewpider">Dewpider</a>
+            <li class="gen7 island2 island3 water1 bug2"><a href="#" class="menu-sprite araquanid">Araquanid</a>
             <li class="gen7 island2 nfe grass1"><a href="#" class="menu-sprite fomantis">Fomantis</a>
             <li class="gen7 island2 grass1"><a href="#" class="menu-sprite lurantis">Lurantis</a>
             <li class="gen7 island2 island3 nfe grass1 fairy2"><a href="#" class="menu-sprite morelull">Morelull</a>
-            <li class="gen7 island2 island3 unknown1"><a href="#" class="menu-sprite morelull2">Morelull 2</a>
+            <li class="gen7 island2 island3 grass1 fairy2"><a href="#" class="menu-sprite shiinotic">Shiinotic</a>
             <li class="gen1 island2 island3 nfe bug1 grass2"><a href="#" class="menu-sprite paras">Paras</a>
             <li class="gen1 island2 island3 bug1 grass2"><a href="#" class="menu-sprite parasect">Parasect</a>
             <li class="gen1 island2 island3 nfe water1"><a href="#" class="menu-sprite poliwag">Poliwag</a>
@@ -361,7 +472,7 @@
             <li class="gen6 island2 nfe fire1 flying2"><a href="#" class="menu-sprite fletchinder">Fletchinder</a>
             <li class="gen6 island2 fire1 flying2"><a href="#" class="menu-sprite talonflame">Talonflame</a>
             <li class="gen7 island2 nfe poison1 fire2"><a href="#" class="menu-sprite salandit">Salandit</a>
-            <li class="gen7 island2 unknown1"><a href="#" class="menu-sprite salandit2">Salandit 2</a>
+            <li class="gen7 island2 poison1 fire2w"><a href="#" class="menu-sprite salazzle">Salazzle</a>
             <li class="gen1 island2 nfe ground1"><a href="#" class="menu-sprite cubone">Cubone</a>
             <li class="gen1 island2 fire1 ghost2"><a href="#" class="menu-sprite marowak-alola">Marowak</a>
             <li class="gen1 island2 normal1"><a href="#" class="menu-sprite kangaskhan">Kangaskhan</a>
@@ -375,6 +486,7 @@
             <li class="gen7 island2 grass1"><a href="#" class="menu-sprite tsareena">Tsareena</a>
             <li class="gen7 island2 fairy1"><a href="#" class="menu-sprite comfey">Comfey</a>
             <li class="gen1 island2 island4 bug1"><a href="#" class="menu-sprite pinsir">Pinsir</a>
+            <li class="gen1 island2 island4 bug1 flying2 filtered"><a href="#" class="menu-sprite pinsir-mega">Mega Pinsir</a>
             <li class="gen7 island2 normal1 psychic2"><a href="#" class="menu-sprite oranguru">Oranguru</a>
             <li class="gen7 island2 fighting1"><a href="#" class="menu-sprite passimian">Passimian</a>
             <li class="gen6 island2 island3 island4 nfe dragon1"><a href="#" class="menu-sprite goomy">Goomy</a>
@@ -382,7 +494,7 @@
             <li class="gen6 island2 island3 island4 dragon1"><a href="#" class="menu-sprite goodra">Goodra</a>
             <li class="gen3 island2 island3 island4 normal1"><a href="#" class="menu-sprite castform">Castform</a>
             <li class="gen7 island2 island4 nfe bug1 water2"><a href="#" class="menu-sprite wimpod">Wimpod</a>
-            <li class="gen7 island2 island4 unknown1"><a href="#" class="menu-sprite wimpod2">Wimpod 2</a>
+            <li class="gen7 island2 island4 bug1 water2"><a href="#" class="menu-sprite golisopod">Golisopod</a>
             <li class="gen1 island2 nfe water1 psychic2"><a href="#" class="menu-sprite staryu">Staryu</a>
             <li class="gen1 island2 water1 psychic2"><a href="#" class="menu-sprite starmie">Starmie</a>
             <li class="gen7 island2 nfe ghost1 ground2"><a href="#" class="menu-sprite sandygast">Sandygast</a>
@@ -404,6 +516,7 @@
             <li class="gen2 island2 water1 electric2"><a href="#" class="menu-sprite lanturn">Lanturn</a>
             <li class="gen7 island0 nfe normal1"><a href="#" class="menu-sprite type-null">Type: Null</a>
             <li class="gen7 island0 normal1"><a href="#" class="menu-sprite silvally">Silvally</a>
+            <li class="gen6 island0 dragon1 ground2"><a href="#" class="menu-sprite zygarde-10">Zygarde</a>
             <li class="gen6 island0 dragon1 ground2"><a href="#" class="menu-sprite zygarde">Zygarde</a>
             <li class="gen5 island3 nfe poison1"><a href="#" class="menu-sprite trubbish">Trubbish</a>
             <li class="gen5 island3 poison1"><a href="#" class="menu-sprite garbodor">Garbodor</a>
@@ -416,6 +529,7 @@
             <li class="gen3 island3 nfe steel1 psychic2"><a href="#" class="menu-sprite beldum">Beldum</a>
             <li class="gen3 island3 nfe steel1 psychic2"><a href="#" class="menu-sprite metang">Metang</a>
             <li class="gen3 island3 steel1 psychic2"><a href="#" class="menu-sprite metagross">Metagross</a>
+            <li class="gen3 island3 steel1 psychic2 filtered"><a href="#" class="menu-sprite metagross-mega">Mega Metagross</a>
             <li class="gen1 island3 nfe normal1"><a href="#" class="menu-sprite porygon">Porygon</a>
             <li class="gen2 island3 nfe normal1"><a href="#" class="menu-sprite porygon2">Porygon2</a>
             <li class="gen4 island3 normal1"><a href="#" class="menu-sprite porygon-z">Porygon-Z</a>
@@ -428,9 +542,9 @@
             <li class="gen2 island3 nfe electric1"><a href="#" class="menu-sprite elekid">Elekid</a>
             <li class="gen1 island3 nfe electric1"><a href="#" class="menu-sprite electabuzz">Electabuzz</a>
             <li class="gen4 island3 electric1"><a href="#" class="menu-sprite electivire">Electivire</a>
-            <li class="gen1 island3 nfe unknown1"><a href="#" class="menu-sprite geodude-alola">Geodude</a>
-            <li class="gen1 island3 nfe unknown1"><a href="#" class="menu-sprite graveler-alola">Graveler</a>
-            <li class="gen1 island3 unknown1"><a href="#" class="menu-sprite golem-alola">Golem</a>
+            <li class="gen1 island3 nfe rock1 electric2"><a href="#" class="menu-sprite geodude-alola">Geodude</a>
+            <li class="gen1 island3 nfe rock1 electric2"><a href="#" class="menu-sprite graveler-alola">Graveler</a>
+            <li class="gen1 island3 rock1 electric2"><a href="#" class="menu-sprite golem-alola">Golem</a>
             <li class="gen5 island3 nfe ground1 dark2"><a href="#" class="menu-sprite sandile">Sandile</a>
             <li class="gen5 island3 nfe ground1 dark2"><a href="#" class="menu-sprite krokorok">Krokorok</a>
             <li class="gen5 island3 ground1 dark2"><a href="#" class="menu-sprite krookodile">Krookodile</a>
@@ -440,13 +554,16 @@
             <li class="gen4 island3 nfe dragon1 ground2"><a href="#" class="menu-sprite gible">Gible</a>
             <li class="gen4 island3 nfe dragon1 ground2"><a href="#" class="menu-sprite gabite">Gabite</a>
             <li class="gen4 island3 dragon1 ground2"><a href="#" class="menu-sprite garchomp">Garchomp</a>
+            <li class="gen4 island3 dragon1 ground2 filtered"><a href="#" class="menu-sprite garchomp-mega">Mega Garchomp</a>
             <li class="gen6 island3 steel1 fairy2"><a href="#" class="menu-sprite klefki">Klefki</a>
             <li class="gen7 island3 ghost1 fairy2"><a href="#" class="menu-sprite mimikyu">Mimikyu</a>
             <li class="gen7 island3 water1 psychic2"><a href="#" class="menu-sprite bruxish">Bruxish</a>
             <li class="gen7 island3 normal1 dragon2"><a href="#" class="menu-sprite drampa">Drampa</a>
             <li class="gen3 island3 dark1"><a href="#" class="menu-sprite absol">Absol</a>
+            <li class="gen3 island3 dark1 filtered"><a href="#" class="menu-sprite absol-mega">Mega Absol</a>
             <li class="gen3 island3 nfe ice1"><a href="#" class="menu-sprite snorunt">Snorunt</a>
             <li class="gen3 island3 ice1"><a href="#" class="menu-sprite glalie">Glalie</a>
+            <li class="gen3 island3 ice1 filtered"><a href="#" class="menu-sprite glalie-mega">Mega Glalie</a>
             <li class="gen4 island3 ice1 ghost2"><a href="#" class="menu-sprite froslass">Froslass</a>
             <li class="gen2 island3 nfe dark1 ice2"><a href="#" class="menu-sprite sneasel">Sneasel</a>
             <li class="gen4 island3 dark1 ice2"><a href="#" class="menu-sprite weavile">Weavile</a>
@@ -464,54 +581,58 @@
             <li class="gen4 island4 water1 ground2"><a href="#" class="menu-sprite gastrodon">Gastrodon</a>
             <li class="gen4 island4 water1 ground2"><a href="#" class="menu-sprite gastrodon-east">Gastrodon</a>
             <li class="gen3 island4 water1 rock2"><a href="#" class="menu-sprite relicanth">Relicanth</a>
-            <li class="gen7 island4 unknown1"><a href="#" class="menu-sprite anchor">Anchor</a>
+            <li class="gen7 island4 ghost1 grass2"><a href="#" class="menu-sprite dhelmise">Dhelmise</a>
             <li class="gen3 island4 nfe water1 dark2"><a href="#" class="menu-sprite carvanha">Carvanha</a>
             <li class="gen3 island4 water1 dark2"><a href="#" class="menu-sprite sharpedo">Sharpedo</a>
+            <li class="gen3 island4 water1 dark2 filtered"><a href="#" class="menu-sprite sharpedo-mega">Mega Sharpedo</a>
             <li class="gen3 island4 nfe water1"><a href="#" class="menu-sprite wailmer">Wailmer</a>
             <li class="gen3 island4 water1"><a href="#" class="menu-sprite wailord">Wailord</a>
             <li class="gen1 island4 water1 ice2"><a href="#" class="menu-sprite lapras">Lapras</a>
             <li class="gen1 island4 nfe grass1 psychic2"><a href="#" class="menu-sprite exeggcute">Exeggcute</a>
             <li class="gen1 island4 grass1 dragon2"><a href="#" class="menu-sprite exeggutor-alola">Exeggutor</a>
             <li class="gen7 island4 nfe dragon1"><a href="#" class="menu-sprite jangmo-o">Jangmo-o</a>
-            <li class="gen7 island4 nfe dragon1 fighting2"><a href="#" class="menu-sprite hakammo-o">Hakammo-o</a>
+            <li class="gen7 island4 nfe dragon1 fighting2"><a href="#" class="menu-sprite hakamo-o">Hakamo-o</a>
             <li class="gen7 island4 dragon1 fighting2"><a href="#" class="menu-sprite kommo-o">Kommo-o</a>
             <li class="gen5 island4 electric1 flying2"><a href="#" class="menu-sprite emolga">Emolga</a>
             <li class="gen1 island4 nfe bug1 flying2"><a href="#" class="menu-sprite scyther">Scyther</a>
             <li class="gen2 island4 bug1 steel2"><a href="#" class="menu-sprite scizor">Scizor</a>
+            <li class="gen2 island4 bug1 steel2 filtered"><a href="#" class="menu-sprite scizor-mega">Mega Scizor</a>
             <li class="gen2 island4 nfe dark1 flying2"><a href="#" class="menu-sprite murkrow">Murkrow</a>
             <li class="gen4 island4 dark1 flying2"><a href="#" class="menu-sprite honchkrow">Honchkrow</a>
             <li class="gen4 island4 nfe fighting1"><a href="#" class="menu-sprite riolu">Riolu</a>
             <li class="gen4 island4 fighting1 steel2"><a href="#" class="menu-sprite lucario">Lucario</a>
+            <li class="gen4 island4 fighting1 steel2 filtered"><a href="#" class="menu-sprite lucario-mega">Mega Lucario</a>
             <li class="gen1 island4 nfe dragon1"><a href="#" class="menu-sprite dratini">Dratini</a>
             <li class="gen1 island4 nfe dragon1"><a href="#" class="menu-sprite dragonair">Dragonair</a>
             <li class="gen1 island4 dragon1 flying2"><a href="#" class="menu-sprite dragonite">Dragonite</a>
             <li class="gen1 island4 rock1 flying2"><a href="#" class="menu-sprite aerodactyl">Aerodactyl</a>
+            <li class="gen1 island4 rock1 flying2 filtered"><a href="#" class="menu-sprite aerodactyl-mega">Mega Aerodactyl</a>
             <li class="gen7 island1 electric1 fairy2"><a href="#" class="menu-sprite tapu-koko">Tapu Koko</a>
             <li class="gen7 island2 psychic1 fairy2"><a href="#" class="menu-sprite tapu-lele">Tapu Lele</a>
             <li class="gen7 island3 grass1 fairy2"><a href="#" class="menu-sprite tapu-bulu">Tapu Bulu</a>
             <li class="gen7 island4 water1 fairy2"><a href="#" class="menu-sprite tapu-fini">Tapu Fini</a>
             <li class="gen7 island3 nfe psychic1"><a href="#" class="menu-sprite cosmog">Cosmog</a>
-            <li class="gen7 island4 nfe unknown1"><a href="#" class="menu-sprite star">Star</a>
+            <li class="gen7 island4 nfe psychic1"><a href="#" class="menu-sprite cosmoem">Cosmoem</a>
             <li class="gen7 island0 psychic1 steel2"><a href="#" class="menu-sprite solgaleo">Solgaleo</a>
             <li class="gen7 island0 psychic1 ghost2"><a href="#" class="menu-sprite lunala">Lunala</a>
-            <!--<li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub01">UB-01</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub02-absorption">UB-02 Absorption</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub02-beauty">UB-02 Beauty</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub04">UB-04</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub05">UB-05</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub06">UB-06</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub07">UB-07</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite ub08">UB-08</a>-->
+            <li class="gen7 island0 rock1 poison2"><a href="#" class="menu-sprite nihilego">Nihilego</a>
+            <li class="gen7 island0 bug1 fighting2"><a href="#" class="menu-sprite buzzwole">Buzzwole</a>
+            <li class="gen7 island0 bug1 fighting2"><a href="#" class="menu-sprite pheromosa">Pheromosa</a>
+            <li class="gen7 island0 electric1"><a href="#" class="menu-sprite xurkitree">Xurkitree</a>
+            <li class="gen7 island0 steel1 flying2"><a href="#" class="menu-sprite celesteela">Celesteela</a>
+            <li class="gen7 island0 grass1 steel2"><a href="#" class="menu-sprite kartana">Kartana</a>
+            <li class="gen7 island0 dark1 dragon2"><a href="#" class="menu-sprite guzzlord">Guzzlord</a>
+            <li class="gen7 island0 psychic1"><a href="#" class="menu-sprite necrozma">Necrozma</a>
             <li class="gen7 island0 steel1 fairy2"><a href="#" class="menu-sprite magearna">Magearna</a>
-            <li class="gen7 island0 unknown1"><a href="#" class="menu-sprite marshadow">Marshadow</a>
-            <li class="gen6 island0 water1 dark2"><a href="#" class="menu-sprite greninja">Greninja</a>
+            <li class="gen7 island0 fighting1 ghost2"><a href="#" class="menu-sprite marshadow">Marshadow</a>
         </ol>
     </section>
     <footer>
         <p>
             © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2016">2016</time><br>
-            Bootstrap is © of Twitter, 2016<br>
+            Bootstrap is © of Twitter, <time datetime="2016">2016</time><br>
             <a href="http://davidstutz.github.io/bootstrap-multiselect/">Bootstrap Multiselect</a> is © of <a href="http://davidstutz.de/">David Stutz</a>, <time datetime="2012">2012</time>-<time datetime="2014">2014</time><br>
+            Pokémon icons and typings leaked by Kaphotics, SciresM, Marty, smealum, Bond697, Slashmolder, Normmatt<br>
             Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2016">2016</time>
         </p>
     </footer>
@@ -528,86 +649,149 @@ function filterPkmn(option, checked) {
     $("#gen-filter option:selected").each(function() {
         gens[i++] = "." + $(this).val();
     });
-    // get selected types
-    var types = []; i = 0;
-    $("#type-filter option:selected").each(function() {
-        types[i++] = "." + $(this).val() + "1";
-        types[i++] = "." + $(this).val() + "2";
-    });
     // get selected islands
     var islands = []; i = 0;
     $("#island-filter option:selected").each(function() {
         islands[i++] = "." + $(this).val();
+    });
+    // get selected types
+    var types = []; i = 0;
+    $("#type-filter option:selected").each(function() {
+        var type = $(this).val();
+        types[i++] = "." + type + "1";
+        types[i++] = "." + type + "2";
     });
     // get selected resistances
     var resistances = []; i = 0;
     $("#resistance-filter option:selected").each(function() {
         resistances[i++] = ".resists-" + $(this).val();
     });
-    // show Pokémon that have at least one class of each array (generations, types, islands, resistances)
-    // Silvally is a special case and will appear regardless of selected type(s)/resistance(s)
+    // get evolution filters
+    var includeNotFullyEvolvedPkmn = $("#evolution-filter [value=nfe]:selected").length > 0;
+    var includeFullyEvolvedPkmn = $("#evolution-filter [value=fe]:selected").length > 0;
+    var includeMegas = $("#evolution-filter [value=mega]:selected").length > 0;
+    // show Pokémon that have at least one class of each array (generations, types, resistances)
+    // Arceus and Silvally are a special case and will appear regardless of selected type(s)/resistance(s)
     $("ol.picker li").each(function() {
-       if ($(this).is(gens.join(',')) &&
-           $(this).is(islands.join(',')) && 
-           (($(this).is(types.join(',')) &&
-             ($(this).is(resistances.join(',')) || (types.length == 2 && types.indexOf(".unknown1") > -1)) ||
+        var $this = $(this);
+        if ($this.is(gens.join(',')) &&
+            $this.is(islands.join(',')) &&
+           ($this.is(types.join(',')) &&
+            $this.is(resistances.join(',')) ||
                 (types.length > 0 &&
                  resistances.length > 0 &&
-                 $(this).children(":first").hasClass("silvally"))))) {
+                 ($this.children(":first").hasClass("arceus") || $this.children(":first").hasClass("silvally"))))) {
+            // check if Pokémon is tagged as NFE
+            if ($this.hasClass("nfe")) {
+                // if it is, check if filter is on
+                if (!includeNotFullyEvolvedPkmn) {
+                    return;
+                }
+            }
+            else
+            {
+                // else, check if Pokémon is mega
+                if ($this.children(":first").attr("class").includes("-mega")) {
+                    // if it is, check if filter is on
+                    if (!includeMegas) {
+                        return;
+                    }
+                }
+                // if it is not a mega, check if FE filter is on
+                else if (!includeFullyEvolvedPkmn) {
+                    return;
+                }
+            }
             $(this).removeClass("filtered");
-       }
+        }
     });
 }
 function getRandomNumber(upperBound) {
     return Math.floor((Math.random() * upperBound) + 1);
 }
-function updateTeam(thisObj, remove) {
-    if (typeof remove === "undefined") {
-        remove = false;
-    }
-    var pkmnName = thisObj.attr("class").split(' ')[1];
-    if (typeof pkmnName === "undefined") {
+function addPkmnToTeam($this) {
+    var pkmnClass = $this.attr("class").split(' ')[1];
+    var pkmnName = $this.text();
+    if (typeof pkmnClass === "undefined") {
         return;
     }
-    var weaknessesNeedUpdate = true;
-    if (remove) {
-        // make Pokémon visible again
-        $("ol.picker .menu-sprite." + pkmnName).parent().removeClass("picked");
-        // reset team slot
-        thisObj.attr("class", "art");
-        thisObj.text("???");
-        thisObj.parent().attr("class", "unknown");
-        // send empty slot to last place
-        $("ul.picked").append(thisObj.parent());
-    }
-    // check if Pokémon has been added to team already
-    else if ($("ul.picked .art." + pkmnName).length <= 0)
+    // check if picked Pokémon is a mega and if there is already one in the team
+    if ($this.attr("class").includes("-mega") && $("ul.picked .art[class*=-mega]").length > 0)
     {
-        var slot = $("ul.picked .unknown").first();
-        // check if there is free space in team, if not remove the Pokémon occupying the first team slot
-        if (slot.length <= 0)
-        {
-            // remove Pokémon from first team slot
-            updateTeam($("ul.picked li").first().children(":first"), true);
-            // select empty team slot
-            slot = $("ul.picked .unknown").first();
+        // remove Mega from team
+        removePkmnFromTeam($("ul.picked .art[class*=-mega]").parent().parent());
+    }
+    var $slot = $("ul.picked .free").first();
+    // check if there is free space in team, if not remove the Pokémon occupying the first team slot
+    if ($slot.length <= 0)
+    {
+        // remove Pokémon from first team slot
+        removePkmnFromTeam($("ul.picked li").first());
+        // select empty team slot
+        $slot = $("ul.picked .free").first();
+    }
+    $slot.removeClass("free");
+    // get types in an array
+    var j = 0;
+    var types = [];
+    var matches = $this.parent().attr("class").match(/[a-z]+[1-2](?!-)/g);
+    for (var k = 0; k < matches.length; k++) {
+        if (matches[k].startsWith("gen") || matches[k].startsWith("island")) {
+            continue;
         }
-        // change type to team slot
-        slot.attr("class", thisObj.parent().attr("class"));
-        // add Pokémon art to slot
-        slot.children().addClass(pkmnName);
-        slot.children().text($("ol.picker .menu-sprite." + pkmnName).html().split('<')[0]);
-        // hide picked Pokémon
-        thisObj.parent().addClass("picked");
+        types[j++] = matches[k];
     }
-    // no changes were made
-    else
-    {
-        weaknessesNeedUpdate = false;
+    var $figure = $slot.find("figure");
+    var $div = $slot.find(".info");
+    $figure.attr("title", pkmnName);
+    // add Pokémon art to slot
+    $figure.children().addClass(pkmnClass);
+    // add Pokémon name
+    $div.find(".name").text(pkmnName);
+    var typeAsClass = types[0].slice(0, -1);
+    var typeAsText = types[0].charAt(0).toUpperCase() + types[0].slice(1, -1);
+    addTypeToSpan($div.find(".type").eq(0), typeAsClass, typeAsText);
+    $figure.attr("class", typeAsClass + "1");
+    $div.attr("class", "info " + typeAsClass + "1");
+    if (types.length > 1) {
+        typeAsClass = types[1].slice(0, -1);
+        typeAsText = types[1].charAt(0).toUpperCase() + types[1].slice(1, -1);
+        addTypeToSpan($div.find(".type").eq(1), typeAsClass, typeAsText);
+        $figure.addClass(typeAsClass + "2");
+        $div.addClass(typeAsClass + "2");
     }
-    if (weaknessesNeedUpdate) {
-        updateTeamWeaknesses(pkmnName, remove);
+    // hide picked Pokémon
+    $this.parent().addClass("picked");
+    // update team weaknesses
+    updateTeamWeaknesses(pkmnClass);
+}
+function removePkmnFromTeam($this) {
+    var pkmnClass = $this.find(".art").attr("class").split(' ')[1];
+    if (typeof pkmnClass === "undefined") {
+        return;
     }
+    // make Pokémon visible again
+    $("ol.picker .menu-sprite." + pkmnClass).parent().removeClass("picked");
+    // reset slot
+    $this.addClass("free");
+    var $figure = $this.find("figure");
+    var $div = $this.find(".info");
+    $figure.find(".art").attr("class", "art");
+    $figure.attr("title", "");
+    $figure.attr("class", "unknown");
+    $div.attr("class", "info unknown");
+    $div.find(".name").text("???");
+    $div.find(".type").attr("class", "type unknown");
+    // send empty slot to last place
+    $("ul.picked").append($this);    
+    // update team weaknesses
+    updateTeamWeaknesses(pkmnClass, true);
+}
+function addTypeToSpan($span, typeAsClass, typeAsText) {
+    $span.removeClass("unknown");
+    $span.addClass(typeAsClass);
+    $span.attr("title", typeAsText);
+    $span.text(typeAsText);
 }
 function updateTeamWeaknesses(pkmnName, removed) {
     if (typeof removed === "undefined") {
@@ -615,20 +799,21 @@ function updateTeamWeaknesses(pkmnName, removed) {
     }
     $("#team-weaknesses .type").each(function() {
         // get current type
-        var type = $(this).attr("class").split(' ')[1];
+        var $this = $(this);
+        var type = $this.attr("class").split(' ')[1];
         // check if Pokémon is weak to said type
         if ($("ol.picker .menu-sprite." + pkmnName).parent().hasClass("weak2-" + type)) {
             // get current number of Pokémon weak to said type
-            var numberPkmn = parseInt($(this).find("td").text());
+            var numberPkmn = parseInt($this.find("td").text());
             // update the number
             numberPkmn += removed ? -1 : 1;
-            $(this).find("td").text(numberPkmn);
-            $(this).attr("title", numberPkmn + " Pokémon " + (numberPkmn == 1 ? "Is" : "Are")  + " Weak to the " + type.charAt(0).toUpperCase() + type.slice(1) + " Type!");
+            $this.find("td").text(numberPkmn);
+            $this.attr("title", numberPkmn + " Pokémon " + (numberPkmn == 1 ? "Is" : "Are")  + " Weak to the " + type.charAt(0).toUpperCase() + type.slice(1) + " Type!");
             // if number is too high, warn the user!
             if (numberPkmn > 2) {
-                $(this).addClass("warning");
+                $this.addClass("warning");
             } else {
-                $(this).removeClass("warning");
+                $this.removeClass("warning");
             }
         }
     });
@@ -652,31 +837,32 @@ var TypeMatchup = {
     "dark": 1,
     "steel": 1,
     "fairy": 1
-}
+};
 var type_matchups = {};
 $(document).ready(function(){
     // parse xml with type matchup data
     $.get("static/type_data.xml", function(d){
         $(d).find("Type").each(function() {
+            var $this = $(this);
             // create new type matchup object
             var current_matchup = Object.create(TypeMatchup);
             // apply immunity multiplier for every type in the <UnaffectedBy /> tag
-            var types = $(this).find("UnaffectedBy").text().toLowerCase().split(',');
+            var types = $this.find("UnaffectedBy").text().toLowerCase().split(',');
             for (i = 0; i < types.length; i++) {
                 current_matchup[types[i]] *= 0.0;
             }
             // apply resistance multiplier for every type in the <Resists /> tag
-            var types = $(this).find("Resists").text().toLowerCase().split(',');
+            types = $this.find("Resists").text().toLowerCase().split(',');
             for (i = 0; i < types.length; i++) {
                 current_matchup[types[i]] *= 0.5;
             }
             // apply weakness multiplier for every type in the <WeakTo /> tag
-            var types = $(this).find("WeakTo").text().toLowerCase().split(',');
+            types = $this.find("WeakTo").text().toLowerCase().split(',');
             for (i = 0; i < types.length; i++) {
                 current_matchup[types[i]] *= 2.0;
             }
             // get name of current type
-            var type = $(this).find("Name").text().toLowerCase();
+            var type = $this.find("Name").text().toLowerCase();
             // save type matchup to dictionary
             type_matchups[type] = current_matchup;     
         });
@@ -687,7 +873,7 @@ $(document).ready(function(){
             var types = [];
             var classes = $(this).attr("class").split(" ");
             for (j= 0; j < classes.length; j++) {
-                if (!(typeof type_matchups[classes[j].slice(0, -1)] === "undefined")) {
+                if (typeof type_matchups[classes[j].slice(0, -1)] != "undefined") {
                     types[i++] = classes[j].slice(0, -1);
                 }
             }
@@ -695,7 +881,7 @@ $(document).ready(function(){
             var type_matchup = type_matchups[types[0]];
             // if there's a secondary type, we'll create a new type matchup
             if (types.length > 1) {
-                var type_matchup = Object.create(TypeMatchup);
+                type_matchup = Object.create(TypeMatchup);
                 // multiply each type matchup (primary & secondary) to create dual type matchup
                 for (type in type_matchup) {
                     type_matchup[type] = type_matchups[types[0]][type] * type_matchups[types[1]][type];
@@ -720,11 +906,11 @@ $(document).ready(function(){
        $(this).parent().attr("title", $(this).text()); 
     });
     $("ol.picker .menu-sprite").click(function(e) {
-        updateTeam($(this));
+        addPkmnToTeam($(this));
         e.preventDefault();
     });
-    $("ul.picked .art").click(function(e) {
-        updateTeam($(this), true);
+    $("ul.picked li").click(function(e) {
+        removePkmnFromTeam($(this));
         e.preventDefault();
     });
     $("select").multiselect({
@@ -735,6 +921,7 @@ $(document).ready(function(){
         onSelectAll: filterPkmn
     });
     $("select").multiselect("selectAll", false);
+    $('#evolution-filter').multiselect('deselect', ['mega']);
     $("select").multiselect('updateButtonText');
     // show/hide team's weaknesses
     $("#team .button:not(#randomize)").click(function(e) {
@@ -748,16 +935,44 @@ $(document).ready(function(){
         $("#filters .button").toggleClass("hidden");
         e.preventDefault();
     });
-    $("#randomize").click(function() {
-        // get total of fully-evolved Pokémon
-        pkmnCount = $("ol.picker li:not(.nfe)").length;
-        for (i = 0; i < 6; i++) {
-            // pick a random Pokémon
-            randomPkmn = getRandomNumber(pkmnCount);
-            // clear i-th team slot
-            updateTeam($("ul.picked li .art").eq(i), true);
-            // add random Pokémon to that slot
-            updateTeam($("ol.picker li:not(.nfe)").eq(randomPkmn).find(".menu-sprite"));
+    $("#randomize").click(function(e) {
+        // clear current team
+        $("ul.picked li").each(function() {
+            removePkmnFromTeam($(this));
+        });
+        // get filtered Pokémon
+        var $filteredPkmn = $("ol.picker li:not(.filtered):not(.picked)");
+        if ($filteredPkmn.length > 0)
+        {
+            var teamSize = 6;
+            // if there are less than 6 available Pokémon, use that number
+            if ($filteredPkmn.length < teamSize)
+            {
+                teamSize = $filteredPkmn.length;
+            }
+            // if only Megas are shown, limit team to 1
+            var includeNotFullyEvolvedPkmn = $("#evolution-filter [value=nfe]:selected").length > 0;
+            var includeFullyEvolvedPkmn = $("#evolution-filter [value=fe]:selected").length > 0;
+            var includeMegas = $("#evolution-filter [value=mega]:selected").length > 0;
+            if (includeMegas && !includeFullyEvolvedPkmn && !includeNotFullyEvolvedPkmn)
+            {
+                teamSize = 1;
+            }
+            for (var i = 0; i < teamSize; i++)
+            {
+                do
+                {
+                    // get random Pokémon
+                    randomNumber = getRandomNumber($filteredPkmn.length) - 1;
+                    $randomPkmn = $filteredPkmn.eq(randomNumber).find(".menu-sprite");
+                    // check if mega and loop if a mega has already been rolled
+                    isMega = $randomPkmn.attr("class").includes("-mega");
+                } while (isMega && $("ul.picked .art[class*=-mega]").length > 0);
+                // add random Pokémon to a slot
+                addPkmnToTeam($randomPkmn);
+                // get filtered Pokémon
+                $filteredPkmn = $("ol.picker li:not(.filtered):not(.picked)");
+            }
         }
         e.preventDefault();
     });
