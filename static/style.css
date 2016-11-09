@@ -148,11 +148,12 @@ article section{
     text-decoration:none
 }
 #team #randomize{
-    right:6em;   
+    left: 1em;
+    top: 9.875em;
 }
-#team .button{
-    top:7.1875em;
-    right:3.75em;   
+#team .button {
+    top: 9.875em;
+    right: 1em;
 }
 #options .button{
     top:1.5em;
@@ -176,7 +177,7 @@ ol.picker{
     clear:left
 }
 ul.picked{
-    width:41.25em;
+    width:51.75em;
     margin-bottom:1.25em
 }
 ol.picker{
@@ -193,8 +194,44 @@ ol.picker li{
 }
 ul.picked li{
     border-radius:3.5625em;
-    height:6em;
-    padding:0
+    padding:0;
+    border: none;
+    height: 10.25em;
+    vertical-align: top
+}
+ul.picked li:not(.free){
+    cursor: no-drop;    
+}
+ul.picked li figure{
+    border-width:0.125em;
+    border-style:solid;
+    border-radius:3.5625em;
+    width: 6em;
+    margin: 0 auto;
+}
+ul.picked li .info{
+    border-radius:0.625em;
+    width: 8em;
+    margin-top: 0.5em;
+    padding: 0.25em;
+    text-align: center
+}
+ul.picked li .info.unknown,
+ul.picked li .info.unknown1{
+    line-height: 4;
+}
+ul.picked li .info.unknown .name,
+ul.picked li .info.unknown1 .name{
+    margin: 0
+}
+ul.picked li .info .name{
+    display: block;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin: 0 0 0.5em
+}
+ul.picked li .info .type{
+    line-height:1.125
 }
 ol.picker li{
     cursor:pointer;
@@ -210,11 +247,11 @@ ol.picker li.filtered,
 ol.picker li.picked{
   display:none !important
 }
-#team-weaknesses{
+.more table{
     width:33.75em;
-    margin:2.25em auto 0
+    margin:1.25em auto 0
 }
-#team-weaknesses tr{
+.more table tr{
     display:inline-block;
     box-sizing:content-box;
     width:3.125em;
@@ -222,10 +259,24 @@ ol.picker li.picked{
     cursor:default;
     border-radius:1em
 }
-#team-weaknesses tr.warning{
+.more table tr.warning{
     color:#d2304d;
     background:rgba(210, 48, 77, 0.2);
     font-weight:700
+}
+.more table caption::before {
+    content: "◉";
+    display: inline-block;
+    margin: 0 0.5em 0 0;
+    color: #ff2d17
+}
+#team-immunities caption::before {
+    content: "╳";
+    color: #4769b7
+}
+#team-resistances caption::before {
+    content: "▲";
+    color: #bdbe44
 }
 span.type,.type th{
     background-image:url(types.png);
@@ -235,6 +286,9 @@ span.type,.type th{
     width:3.125em;
     height:1.125em;
     text-indent:-999em
+}
+span.type{
+    display: inline-block
 }
 span.type.fighting,.type.fighting th{background-position:0 0}
 span.type.fire,.type.fire th{background-position:0 -18px}
@@ -1188,8 +1242,8 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
 .menu-sprite.froakie{background-position:-390px -720px}
 .menu-sprite.frogadier{background-position:-420px -720px}
 .menu-sprite.greninja{background-position:-450px -720px}
-.menu-sprite.greninja:hover,
-.menu-sprite.greninja-ash{background-position:-270px -900px}
+.menu-sprite.greninja-ash{background-position:-200px -870px}
+.menu-sprite.greninja-ash:hover{background-position:-270px -900px}
 .menu-sprite.bunnelby{background-position:-480px -720px}
 .menu-sprite.diggersby{background-position:-510px -720px}
 .menu-sprite.fletchling{background-position:-540px -720px}
