@@ -8,60 +8,7 @@
     <link href="static/bootstrap.min.css" rel="stylesheet">
     <link href="static/style.css" rel="stylesheet">
     <style>
-#team #randomize {
-    left: 1em;
-    top: 9.875em;
-}
-#team .button {
-    top: 9.875em;
-    right: 1em;
-}
-span.type{
-    display: inline-block
-}
-ul.picked{
-    width:51.75em
-}
-ul.picked li {
-    border: none;
-    height: 10.25em;
-    vertical-align: top
-}
-ul.picked li:not(.free){
-    cursor: no-drop;    
-}
 
-ul.picked li figure{
-    border-width:0.125em;
-    border-style:solid;
-    border-radius:3.5625em;
-    width: 6em;
-    margin: 0 auto;
-}
-ul.picked li .info{
-    border-radius:0.625em;
-    width: 8em;
-    margin-top: 0.5em;
-    padding: 0.25em;
-    text-align: center
-}
-ul.picked li .info.unknown,
-ul.picked li .info.unknown1{
-    line-height: 4;
-}
-ul.picked li .info.unknown .name,
-ul.picked li .info.unknown1 .name{
-    margin: 0
-}
-ul.picked li .info .name{
-    display: block;
-    font-size: 0.75em;
-    font-weight: 700;
-    margin: 0 0 0.5em
-}
-ul.picked li .info .type{
-    line-height:1.125
-}
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
@@ -138,6 +85,160 @@ ul.picked li .info .type{
         <div class="more hidden">
             <table id="team-weaknesses">
                 <caption>This Team Is Weak Against</caption>
+                <tbody>
+                    <tr class="type normal">
+                        <th>Normal</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type grass">
+                        <th>Grass</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type fire">
+                        <th>Fire</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type water">
+                        <th>Water</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type fighting">
+                        <th>Fighting</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type flying">
+                        <th>Flying</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type poison">
+                        <th>Poison</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type ground">
+                        <th>Ground</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type rock">
+                        <th>Rock</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type bug">
+                        <th>Bug</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type ghost">
+                        <th>Ghost</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type electric">
+                        <th>Electric</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type psychic">
+                        <th>Psychic</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type ice">
+                        <th>Ice</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type dragon">
+                        <th>Dragon</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type dark">
+                        <th>Dark</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type steel">
+                        <th>Steel</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type fairy">
+                        <th>Fairy</th>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="team-immunities">
+                <caption>This Team Is Immune To</caption>
+                <tbody>
+                    <tr class="type normal">
+                        <th>Normal</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type grass">
+                        <th>Grass</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type fire">
+                        <th>Fire</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type water">
+                        <th>Water</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type fighting">
+                        <th>Fighting</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type flying">
+                        <th>Flying</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type poison">
+                        <th>Poison</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type ground">
+                        <th>Ground</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type rock">
+                        <th>Rock</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type bug">
+                        <th>Bug</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type ghost">
+                        <th>Ghost</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type electric">
+                        <th>Electric</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type psychic">
+                        <th>Psychic</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type ice">
+                        <th>Ice</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type dragon">
+                        <th>Dragon</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type dark">
+                        <th>Dark</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type steel">
+                        <th>Steel</th>
+                        <td>0</td>
+                    </tr><!--
+                    --><tr class="type fairy">
+                        <th>Fairy</th>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="team-resistances">
+                <caption>This Team Resists</caption>
                 <tbody>
                     <tr class="type normal">
                         <th>Normal</th>
@@ -329,7 +430,7 @@ ul.picked li .info .type{
             <li class="gen1 island1 electric1 psychic2"><a href="#" class="menu-sprite raichu-alola">Raichu</a>
             <li class="gen7 island1 island2 island3 nfe bug1"><a href="#" class="menu-sprite grubbin">Grubbin</a>
             <li class="gen7 island1 island2 island3 nfe bug1 electric2"><a href="#" class="menu-sprite charjabug">Charjabug</a>
-            <li class="gen7 island1 island2 island3 bug1 electric2"><a href="#" class="menu-sprite vikavolt">Vikavolt</a>
+            <li class="gen7 island1 island2 island3 bug1 electric2 levitate"><a href="#" class="menu-sprite vikavolt">Vikavolt</a>
             <li class="gen4 island1 island2 nfe rock1"><a href="#" class="menu-sprite bonsly">Bonsly</a>
             <li class="gen2 island1 island2 rock1"><a href="#" class="menu-sprite sudowoodo">Sudowoodo</a>
             <li class="gen4 island1 island2 island3 island4 nfe normal1"><a href="#" class="menu-sprite happiny">Happiny</a>
@@ -363,14 +464,14 @@ ul.picked li .info .type{
             <li class="gen2 island1 normal1"><a href="#" class="menu-sprite smeargle">Smeargle</a>
             <li class="gen7 island1 island2 island3 island4 nfe fighting1"><a href="#" class="menu-sprite crabrawler">Crabrawler</a>
             <li class="gen7 island1 island2 island3 island4 fighting1 ice2"><a href="#" class="menu-sprite crabominable">Crabominable</a>
-            <li class="gen1 island1 island2 island3 nfe ghost1 poison2"><a href="#" class="menu-sprite gastly">Gastly</a>
-            <li class="gen1 island1 island2 island3 nfe ghost1 poison2"><a href="#" class="menu-sprite haunter">Haunter</a>
+            <li class="gen1 island1 island2 island3 nfe ghost1 poison2 levitate"><a href="#" class="menu-sprite gastly">Gastly</a>
+            <li class="gen1 island1 island2 island3 nfe ghost1 poison2 levitate"><a href="#" class="menu-sprite haunter">Haunter</a>
             <li class="gen1 island1 island2 island3 ghost1 poison2"><a href="#" class="menu-sprite gengar">Gengar</a>
             <li class="gen1 island1 island2 island3 ghost1 poison2 filtered"><a href="#" class="menu-sprite gengar-mega">Mega Gengar</a>
             <li class="gen4 island1 nfe ghost1 flying2"><a href="#" class="menu-sprite drifloon">Drifloon</a>
             <li class="gen4 island1 ghost1 flying2"><a href="#" class="menu-sprite drifblim">Drifblim</a>
-            <li class="gen2 island1 nfe ghost1"><a href="#" class="menu-sprite misdreavus">Misdreavus</a>
-            <li class="gen4 island1 ghost1"><a href="#" class="menu-sprite mismagius">Mismagius</a>
+            <li class="gen2 island1 nfe ghost1 levitate"><a href="#" class="menu-sprite misdreavus">Misdreavus</a>
+            <li class="gen4 island1 ghost1 levitate"><a href="#" class="menu-sprite mismagius">Mismagius</a>
             <li class="gen1 island1 island2 island3 island4 nfe poison1 flying2"><a href="#" class="menu-sprite zubat">Zubat</a>
             <li class="gen1 island1 island2 island3 island4 nfe poison1 flying2"><a href="#" class="menu-sprite golbat">Golbat</a>
             <li class="gen2 island1 island2 island3 island4 poison1 flying2"><a href="#" class="menu-sprite crobat">Crobat</a>
@@ -549,8 +650,8 @@ ul.picked li .info .type{
             <li class="gen5 island3 nfe ground1 dark2"><a href="#" class="menu-sprite krokorok">Krokorok</a>
             <li class="gen5 island3 ground1 dark2"><a href="#" class="menu-sprite krookodile">Krookodile</a>
             <li class="gen3 island3 nfe ground1"><a href="#" class="menu-sprite trapinch">Trapinch</a>
-            <li class="gen3 island3 nfe ground1 dragon2"><a href="#" class="menu-sprite vibrava">Vibrava</a>
-            <li class="gen3 island3 ground1 dragon2"><a href="#" class="menu-sprite flygon">Flygon</a>
+            <li class="gen3 island3 nfe ground1 dragon2 levitate"><a href="#" class="menu-sprite vibrava">Vibrava</a>
+            <li class="gen3 island3 ground1 dragon2 levitate"><a href="#" class="menu-sprite flygon">Flygon</a>
             <li class="gen4 island3 nfe dragon1 ground2"><a href="#" class="menu-sprite gible">Gible</a>
             <li class="gen4 island3 nfe dragon1 ground2"><a href="#" class="menu-sprite gabite">Gabite</a>
             <li class="gen4 island3 dragon1 ground2"><a href="#" class="menu-sprite garchomp">Garchomp</a>
@@ -625,6 +726,7 @@ ul.picked li .info .type{
             <li class="gen7 island0 psychic1"><a href="#" class="menu-sprite necrozma">Necrozma</a>
             <li class="gen7 island0 steel1 fairy2"><a href="#" class="menu-sprite magearna">Magearna</a>
             <li class="gen7 island0 fighting1 ghost2"><a href="#" class="menu-sprite marshadow">Marshadow</a>
+            <li class="gen7 island0 water1 dark2"><a href="#" class="menu-sprite greninja-ash">Ash Greninja</a>
         </ol>
     </section>
     <footer>
@@ -632,7 +734,7 @@ ul.picked li .info .type{
             © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2016">2016</time><br>
             Bootstrap is © of Twitter, <time datetime="2016">2016</time><br>
             <a href="http://davidstutz.github.io/bootstrap-multiselect/">Bootstrap Multiselect</a> is © of <a href="http://davidstutz.de/">David Stutz</a>, <time datetime="2012">2012</time>-<time datetime="2014">2014</time><br>
-            Pokémon icons and typings leaked by Kaphotics, SciresM, Marty, smealum, Bond697, Slashmolder, Normmatt<br>
+            Pokémon icons, names and typings leaked by Kaphotics, SciresM, Marty, smealum, Bond697, Slashmolder &amp; Normmatt<br>
             Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2016">2016</time>
         </p>
     </footer>
@@ -664,6 +766,7 @@ function filterPkmn(option, checked) {
     // get selected resistances
     var resistances = []; i = 0;
     $("#resistance-filter option:selected").each(function() {
+        resistances[i++] = ".immune2-" + $(this).val();
         resistances[i++] = ".resists-" + $(this).val();
     });
     // get evolution filters
@@ -763,7 +866,7 @@ function addPkmnToTeam($this) {
     // hide picked Pokémon
     $this.parent().addClass("picked");
     // update team weaknesses
-    updateTeamWeaknesses(pkmnClass);
+    updateTeamTypeAnalysis(pkmnClass);
 }
 function removePkmnFromTeam($this) {
     var pkmnClass = $this.find(".art").attr("class").split(' ')[1];
@@ -785,7 +888,7 @@ function removePkmnFromTeam($this) {
     // send empty slot to last place
     $("ul.picked").append($this);    
     // update team weaknesses
-    updateTeamWeaknesses(pkmnClass, true);
+    updateTeamTypeAnalysis(pkmnClass, true);
 }
 function addTypeToSpan($span, typeAsClass, typeAsText) {
     $span.removeClass("unknown");
@@ -793,7 +896,7 @@ function addTypeToSpan($span, typeAsClass, typeAsText) {
     $span.attr("title", typeAsText);
     $span.text(typeAsText);
 }
-function updateTeamWeaknesses(pkmnName, removed) {
+function updateTeamTypeAnalysis(pkmnName, removed) {
     if (typeof removed === "undefined") {
         removed = false;
     }
@@ -802,12 +905,14 @@ function updateTeamWeaknesses(pkmnName, removed) {
         var $this = $(this);
         var type = $this.attr("class").split(' ')[1];
         // check if Pokémon is weak to said type
-        if ($("ol.picker .menu-sprite." + pkmnName).parent().hasClass("weak2-" + type)) {
+        if ($("ol.picker .menu-sprite." + pkmnName).parent().hasClass("weak2-" + type))
+        {
+            var $td = $this.find("td");
             // get current number of Pokémon weak to said type
-            var numberPkmn = parseInt($this.find("td").text());
+            var numberPkmn = parseInt($td.text());
             // update the number
             numberPkmn += removed ? -1 : 1;
-            $this.find("td").text(numberPkmn);
+            $td.text(numberPkmn);
             $this.attr("title", numberPkmn + " Pokémon " + (numberPkmn == 1 ? "Is" : "Are")  + " Weak to the " + type.charAt(0).toUpperCase() + type.slice(1) + " Type!");
             // if number is too high, warn the user!
             if (numberPkmn > 2) {
@@ -815,6 +920,38 @@ function updateTeamWeaknesses(pkmnName, removed) {
             } else {
                 $this.removeClass("warning");
             }
+        }
+    });
+    $("#team-immunities .type").each(function() {
+        // get current type
+        var $this = $(this);
+        var type = $this.attr("class").split(' ')[1];
+        // check if Pokémon is immune to said type
+        if ($("ol.picker .menu-sprite." + pkmnName).parent().hasClass("immune2-" + type))
+        {
+            var $td = $this.find("td");
+            // get current number of Pokémon resistant to said type
+            var numberPkmn = parseInt($td.text());
+            // update the number
+            numberPkmn += removed ? -1 : 1;
+            $td.text(numberPkmn);
+            $this.attr("title", numberPkmn + " Pokémon " + (numberPkmn == 1 ? "Is" : "Are")  + " Immune to the " + type.charAt(0).toUpperCase() + type.slice(1) + " Type!");
+        }
+    });
+    $("#team-resistances .type").each(function() {
+        // get current type
+        var $this = $(this);
+        var type = $this.attr("class").split(' ')[1];
+        // check if Pokémon resists said type
+        if ($("ol.picker .menu-sprite." + pkmnName).parent().hasClass("resists-" + type))
+        {
+            var $td = $this.find("td");
+            // get current number of Pokémon resistant to said type
+            var numberPkmn = parseInt($td.text());
+            // update the number
+            numberPkmn += removed ? -1 : 1;
+            $td.text(numberPkmn);
+            $this.attr("title", numberPkmn + " Pokémon Resist" + (numberPkmn == 1 ? 's' : '')  + " the " + type.charAt(0).toUpperCase() + type.slice(1) + " Type!");
         }
     });
 }
@@ -868,10 +1005,11 @@ $(document).ready(function(){
         });
         // pick each Pokémon to add weak2 or resists classes
         $("ol.picker li").each(function() {
+            var $this = $(this);
             // get the type of the Pokémon (which is a class)
             var i = 0;
             var types = [];
-            var classes = $(this).attr("class").split(" ");
+            var classes = $this.attr("class").split(" ");
             for (j= 0; j < classes.length; j++) {
                 if (typeof type_matchups[classes[j].slice(0, -1)] != "undefined") {
                     types[i++] = classes[j].slice(0, -1);
@@ -887,13 +1025,21 @@ $(document).ready(function(){
                     type_matchup[type] = type_matchups[types[0]][type] * type_matchups[types[1]][type];
                 }
             }
+            // make immune to Ground if Pokémon has Levitate
+            if ($this.hasClass("levitate")) {
+                type_matchup.ground *= 0.0;
+            }
             // add weak2 or resists classes
             for (type in type_matchup) {
                 if (type_matchup[type] < 1.0) {
-                    $(this).addClass("resists-" + type);
+                    if (type_matchup[type] === 0.0) {
+                        $this.addClass("immune2-" + type);
+                    } else {
+                        $this.addClass("resists-" + type);
+                    }
                 }
                 else if (type_matchup[type] > 1.0) {
-                    $(this).addClass("weak2-" + type);
+                    $this.addClass("weak2-" + type);
                 }
             }
         });
