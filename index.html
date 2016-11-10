@@ -1018,14 +1018,17 @@ $(document).ready(function(){
                     types[i++] = classes[j].slice(0, -1);
                 }
             }
-            // get primary type matchup
-            var type_matchup = type_matchups[types[0]];
-            // if there's a secondary type, we'll create a new type matchup
+            // create a blank type matchup
+            var type_matchup = Object.create(TypeMatchup);
             if (types.length > 1) {
-                type_matchup = Object.create(TypeMatchup);
                 // multiply each type matchup (primary & secondary) to create dual type matchup
                 for (type in type_matchup) {
                     type_matchup[type] = type_matchups[types[0]][type] * type_matchups[types[1]][type];
+                }
+            } else {
+                // copy primary type matchup
+                for (type in type_matchup) {
+                    type_matchup[type] = type_matchups[types[0]][type];
                 }
             }
             // make immune to Ground if Pokémon has Levitate
