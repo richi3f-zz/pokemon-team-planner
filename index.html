@@ -619,6 +619,7 @@
             <li class="gen7 island0 normal1"><a href="#" class="menu-sprite silvally">Silvally</a>
             <li class="gen6 island0 dragon1 ground2"><a href="#" class="menu-sprite zygarde-10">Zygarde</a>
             <li class="gen6 island0 dragon1 ground2"><a href="#" class="menu-sprite zygarde">Zygarde</a>
+            <li class="gen6 island0 dragon1 ground2"><a href="#" class="menu-sprite zygarde-complete">Zygarde</a>
             <li class="gen5 island3 nfe poison1"><a href="#" class="menu-sprite trubbish">Trubbish</a>
             <li class="gen5 island3 poison1"><a href="#" class="menu-sprite garbodor">Garbodor</a>
             <li class="gen2 island3 island4 steel1 flying2"><a href="#" class="menu-sprite skarmory">Skarmory</a>
@@ -730,6 +731,7 @@
         </ol>
     </section>
     <footer>
+        <p>Please report bugs or leave feedback in <a href="http://www.smogon.com/forums/threads/team-planner-for-pok%C3%A9mon-sun-moon.3585346/">this thread</a>.</p>
         <p>
             © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2016">2016</time><br>
             Bootstrap is © of Twitter, <time datetime="2016">2016</time><br>
@@ -821,7 +823,7 @@ function addPkmnToTeam($this) {
     // check if picked Pokémon is a mega and if there is already one in the team
     if ($this.attr("class").includes("-mega") && $("ul.picked .art[class*=-mega]").length > 0)
     {
-        // remove Mega from team
+        // remove current Mega from team
         removePkmnFromTeam($("ul.picked .art[class*=-mega]").parent().parent());
     }
     var $slot = $("ul.picked .free").first();
@@ -851,6 +853,7 @@ function addPkmnToTeam($this) {
     $figure.children().addClass(pkmnClass);
     // add Pokémon name
     $div.find(".name").text(pkmnName);
+    // add Pokémon types
     var typeAsClass = types[0].slice(0, -1);
     var typeAsText = types[0].charAt(0).toUpperCase() + types[0].slice(1, -1);
     addTypeToSpan($div.find(".type").eq(0), typeAsClass, typeAsText);
@@ -865,7 +868,7 @@ function addPkmnToTeam($this) {
     }
     // hide picked Pokémon
     $this.parent().addClass("picked");
-    // update team weaknesses
+    // update team type analysis
     updateTeamTypeAnalysis(pkmnClass);
 }
 function removePkmnFromTeam($this) {
@@ -887,7 +890,7 @@ function removePkmnFromTeam($this) {
     $div.find(".type").attr("class", "type unknown");
     // send empty slot to last place
     $("ul.picked").append($this);    
-    // update team weaknesses
+    // update team type analysis
     updateTeamTypeAnalysis(pkmnClass, true);
 }
 function addTypeToSpan($span, typeAsClass, typeAsText) {
@@ -1003,7 +1006,7 @@ $(document).ready(function(){
             // save type matchup to dictionary
             type_matchups[type] = current_matchup;     
         });
-        // pick each Pokémon to add weak2 or resists classes
+        // pick each Pokémon to add weak2, immune2, or resists classes
         $("ol.picker li").each(function() {
             var $this = $(this);
             // get the type of the Pokémon (which is a class)
@@ -1075,7 +1078,7 @@ $(document).ready(function(){
         $("#team .button:not(#randomize)").toggleClass("hidden");
         e.preventDefault();
     });
-    // show/hide extra filter
+    // show/hide extra filters
     $("#filters .button").click(function(e) {
         $("#filters .more .filter").toggleClass("hidden");
         $("#filters .button").toggleClass("hidden");
