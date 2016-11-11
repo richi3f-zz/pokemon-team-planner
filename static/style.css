@@ -243,6 +243,7 @@ ol.picker li:hover{
 ol.picker li.up{
     padding:0.3125em 0.125em 0.5625em
 }
+ol.picker li.hidden,
 ol.picker li.filtered,
 ol.picker li.picked{
   display:none !important
