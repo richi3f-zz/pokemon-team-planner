@@ -85,12 +85,22 @@ h1{
 h1::before{
     content:" ";
     display:inline-block;
-    background:url(logo.png);
-    width:135px;
-    height:36px;
+    background:url(logo-sm.png);
+    width:4.21875em;
+    height:1.125em;
     background-size:contain;
     vertical-align:top;
     margin:0 0.25em 0 0
+}
+#national-dex h1::before{
+    background:url(logo.png);
+    width:3em
+}
+#kalos-dex h1::before{
+    background:url(logo-xy.png);
+}
+#hoenn-dex h1::before{
+    background:url(logo-oras.png);
 }
 
 h2{
