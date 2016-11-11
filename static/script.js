@@ -24,11 +24,16 @@ function filterPkmn(option, checked) {
         resistances[i++] = ".immune2-" + $(this).val();
         resistances[i++] = ".resists-" + $(this).val();
     });
-    //
+    // get selected areas
+    var areas = []; i = 0;
+    $("#area-filter option:selected").each(function() {
+        areas[i++] = "." + $(this).val();
+    });
+    // get regional dex
     var isAlolaDex = $("#alola-dex").length > 0;
+    var isKalosDex = $("#kalos-dex").length > 0;
+    var isHoennDex = $("#hoenn-dex").length > 0;
     // get selected versions
-    var includePkmnFromSun = $("#version-filter [value=sun]:selected").length > 0;
-    var includePkmnFromMoon = $("#version-filter [value=moon]:selected").length > 0;
     var includePkmnFromBothVersions = $("#version-filter [value=both]:selected").length > 0;
     // get evolution filters
     var includeNotFullyEvolvedPkmn = $("#evolution-filter [value=nfe]:selected").length > 0;
@@ -39,13 +44,34 @@ function filterPkmn(option, checked) {
         var $this = $(this);
         if ($this.is(gens.join(',')) &&
            ($this.is(islands.join(',')) || !isAlolaDex) &&
+           ($this.is(areas.join(',')) || !isKalosDex) &&
            ($this.is(types.join(',')) &&
             $this.is(resistances.join(',')))) {
             // filter by version
             if (isAlolaDex) {
+                var includePkmnFromSun = $("#version-filter [value=sun]:selected").length > 0;
+                var includePkmnFromMoon = $("#version-filter [value=moon]:selected").length > 0;
                 if (($this.hasClass("sun") && !includePkmnFromSun) ||
                     ($this.hasClass("moon") && !includePkmnFromMoon) ||
                     (!$this.hasClass("sun") && !$this.hasClass("moon") && !includePkmnFromBothVersions)) {
+                    return;
+                }
+            }
+            if (isKalosDex) {
+                var includePkmnFromX = $("#version-filter [value=x]:selected").length > 0;
+                var includePkmnFromY = $("#version-filter [value=y]:selected").length > 0;
+                if (($this.hasClass("x") && !includePkmnFromX) ||
+                    ($this.hasClass("y") && !includePkmnFromY) ||
+                    (!$this.hasClass("x") && !$this.hasClass("y") && !includePkmnFromBothVersions)) {
+                    return;
+                }
+            }
+            if (isHoennDex) {
+                var includePkmnFromOmegaRuby = $("#version-filter [value=ruby]:selected").length > 0;
+                var includePkmnFromAlphaSapphire = $("#version-filter [value=sapphire]:selected").length > 0;
+                if (($this.hasClass("ruby") && !includePkmnFromOmegaRuby) ||
+                    ($this.hasClass("sapphire") && !includePkmnFromAlphaSapphire) ||
+                    (!$this.hasClass("ruby") && !$this.hasClass("sapphire") && !includePkmnFromBothVersions)) {
                     return;
                 }
             }
