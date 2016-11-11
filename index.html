@@ -804,7 +804,7 @@ function filterPkmn(option, checked) {
     var includeNotFullyEvolvedPkmn = $("#evolution-filter [value=nfe]:selected").length > 0;
     var includeFullyEvolvedPkmn = $("#evolution-filter [value=fe]:selected").length > 0;
     var includeMegas = $("#evolution-filter [value=mega]:selected").length > 0;
-    // show Pokémon that have at least one class of each array (generations, types, resistances)
+    // show Pokémon that have at least one class of each array (generations, types, resistances, islands)
     $("ol.picker li").each(function() {
         var $this = $(this);
         if ($this.is(gens.join(',')) &&
@@ -1010,7 +1010,7 @@ function updateTeamHash() {
     $('li.picked a').each(function(){
         hashArray.push($(this).attr("class").split(' ')[1]);
     })
-    window.location.hash = hashArray.join('-');
+    window.location.hash = hashArray.join('|');
 }
 var TypeMatchup = {
     "normal": 1,
@@ -1104,7 +1104,7 @@ $(document).ready(function(){
             }
         });
         if(window.location.hash) {
-            window.location.hash.substring(1).split('-').forEach(function(name) {
+            window.location.hash.substring(1).split('|').forEach(function(name) {
                 addPkmnToTeam($("ol.picker .menu-sprite." + name));
             });
         }
