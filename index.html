@@ -805,7 +805,6 @@ function filterPkmn(option, checked) {
     var includeFullyEvolvedPkmn = $("#evolution-filter [value=fe]:selected").length > 0;
     var includeMegas = $("#evolution-filter [value=mega]:selected").length > 0;
     // show Pokémon that have at least one class of each array (generations, types, resistances)
-    // Arceus and Silvally are a special case and will appear regardless of selected type(s)/resistance(s)
     $("ol.picker li").each(function() {
         var $this = $(this);
         if ($this.is(gens.join(',')) &&
@@ -911,6 +910,7 @@ function addPkmnToTeam($this) {
     }
     // update team type analysis
     updateTeamTypeAnalysis(pkmnClass);
+    updateTeamHash();
 }
 function removePkmnFromTeam($this) {
     var pkmnClass = $this.find(".art").attr("class").split(' ')[1];
@@ -919,6 +919,7 @@ function removePkmnFromTeam($this) {
     }
     // update team type analysis
     updateTeamTypeAnalysis(pkmnClass, true);
+    updateTeamHash();
     // make Pokémon visible again
     $("ol.picker .menu-sprite." + pkmnClass).parent().removeClass("picked");
     if (pkmnClass == "arceus" || pkmnClass == "silvally") {
@@ -1003,6 +1004,13 @@ function updateTeamTypeAnalysis(pkmnName, removed) {
             $this.attr("title", numberPkmn + " Pokémon Resist" + (numberPkmn == 1 ? 's' : '')  + " the " + type.charAt(0).toUpperCase() + type.slice(1) + " Type!");
         }
     });
+}
+function updateTeamHash() {
+    var hashArray = [];
+    $('li.picked a').each(function(){
+        hashArray.push($(this).attr("class").split(' ')[1]);
+    })
+    window.location.hash = hashArray.join('-');
 }
 var TypeMatchup = {
     "normal": 1,
@@ -1095,6 +1103,11 @@ $(document).ready(function(){
                 }
             }
         });
+        if(window.location.hash) {
+            window.location.hash.substring(1).split('-').forEach(function(name) {
+                addPkmnToTeam($("ol.picker .menu-sprite." + name));
+            });
+        }
     });
     $("#team-weaknesses tr").each(function() {
         var type = $(this).find("th").text();
