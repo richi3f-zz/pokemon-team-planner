@@ -244,8 +244,13 @@ function updateTeamHash() {
         var pkmnClass = $this.attr("class").split(' ')[1];
         if (pkmnClass == "arceus" || pkmnClass == "silvally")
         {
-            var type = $this.parent().attr("class").match(/[a-z]+1(?!-)/g)[0];
-            pkmnClass += "-" + type.slice(0, -1);
+            var type = $this.parent().attr("class").match(/[a-z]+1(?!-)/g);
+            if (type.length < 1) {
+                type = "normal";
+            } else {
+                type = type[0].slice(0, -1);
+            }
+            pkmnClass += "-" + type;
         }
         hashArray.push(pkmnClass);
     });
@@ -345,8 +350,14 @@ $(document).ready(function(){
         if(window.location.hash) {
             window.location.hash.substring(1).split('+').forEach(function(pkmnClass) {
                 if (pkmnClass.startsWith("arceus") || pkmnClass.startsWith("silvally")) {
-                    var type = pkmnClass.split('-')[1] + "1";
-                    pkmnClass = pkmnClass.split('-')[0];
+                    var classes = pkmnClass.split('-');
+                    pkmnClass = classes[0];
+                    var type = "";
+                    if (classes.length > 1) {
+                        type = classes[1] + "1";
+                    } else {
+                        type = "normal1";
+                    }
                     $("ol.picker ." + type + " .menu-sprite." + pkmnClass).trigger("click");
                 } else {
                     addPkmnToTeam($("ol.picker .menu-sprite." + pkmnClass));
