@@ -18,7 +18,7 @@
     </script>
 </head>
 
-<body>
+<body onhashchange="updateCopyURL()">
 
 <article id="national-dex">
     <div id="loader">
@@ -315,6 +315,11 @@
                 </tbody>
             </table>
         </div>
+        <div>
+            <p>Click the "Copy" button to copy your team's URL to your clipboard and share it with your friends!</p>
+            <input type="text" id="copytextbox" readonly>
+            <button id="copybtn" data-clipboard-target="#copytextbox">Copy</button>
+        </div>
     </section>
     <section id="options">
         <h2>Your Options</h2>
@@ -387,7 +392,7 @@
                         <option value="dark">Dark</option>
                         <option value="steel">Steel</option>
                         <option value="fairy">Fairy</option>
-                    </select>                    
+                    </select>
                 </div>
             </div>
         </div>
@@ -1347,5 +1352,7 @@
 <script src="static/bootstrap.min.js"></script>
 <script src="static/bootstrap.multiselect.js"></script>
 <script src="static/script.js"></script>
+<script src="static/clipboard.min.js"></script>
+<script src="static/copyfeature.js"></script>
 </body>
 </html>
