@@ -18,7 +18,7 @@
     </script>
 </head>
 
-<body>
+<body onhashchange="updateCopyURL()">
 
 <article id="alola-dex">
     <div id="loader">
@@ -315,6 +315,10 @@
                 </tbody>
             </table>
         </div>
+        <div>
+            <input id="copytextbox" readonly>
+            <button class="btn">Copy</button>
+        </div>
     </section>
     <section id="options">
         <h2>Your Options</h2>
@@ -397,7 +401,7 @@
                         <option value="dark">Dark</option>
                         <option value="steel">Steel</option>
                         <option value="fairy">Fairy</option>
-                    </select>                    
+                    </select>
                 </div><!--
                 --><div class="filter hidden">
                     <label for="evolution-filter">Evolution</label>
@@ -770,5 +774,7 @@
 <script src="static/bootstrap.min.js"></script>
 <script src="static/bootstrap.multiselect.js"></script>
 <script src="static/script.js"></script>
+<script src="static/clipboard.min.js"></script>
+<script src="static/copyfeature.js"></script>
 </body>
 </html>
