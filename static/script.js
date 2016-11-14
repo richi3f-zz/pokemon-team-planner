@@ -166,7 +166,7 @@ function addPkmnToTeam($this) {
             $(this).parent().addClass("hidden");
         });
     }
-    // update team type analysis
+    // update team type analysis and URL hash
     updateTeamTypeAnalysis(pkmnClass);
     updateTeamHash();
 }
@@ -282,6 +282,7 @@ function updateTeamHash() {
         hashArray.push(pkmnClass);
     });
     window.location.hash = hashArray.join('+');
+    $("#copy-url input").val(document.URL);
 }
 var TypeMatchup = {
     "normal": 1,
@@ -483,4 +484,16 @@ $(document).ready(function(){
         $(this).removeClass("up");
         clearInterval(handle);
     });
+    // set current URL
+    $("#copy-url input").val(document.URL);
+});
+// copy feature
+var clipboard = new Clipboard("#copy-url a");
+clipboard.on("success", function() {
+    alert("copying");
+    var $button = $("#copy-url a");
+    $button.text("Copied!");
+    setTimeout(function() {
+        $button.text("Copy");
+    }, 3000);
 });
