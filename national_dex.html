@@ -18,7 +18,7 @@
     </script>
 </head>
 
-<body onhashchange="updateCopyURL()">
+<body>
 
 <article id="national-dex">
     <div id="loader">
@@ -315,10 +315,10 @@
                 </tbody>
             </table>
         </div>
-        <div>
-            <p>Click the "Copy" button to copy your team's URL to your clipboard and share it with your friends!</p>
-            <input type="text" id="copytextbox" readonly>
-            <button id="copybtn" data-clipboard-target="#copytextbox">Copy</button>
+        <div id="copy-url">
+            <p>Click the "Copy" button to copy your team's URL to your clipboard and share it with your friends and neighbors!</p>
+            <input type="text" readonly><!--
+            --><a data-clipboard-target="#copy-url input">Copy</a>
         </div>
     </section>
     <section id="options">
@@ -1164,6 +1164,7 @@
             <li class="gen6 nfe water1"><a href="#" class="menu-sprite froakie">Froakie</a>
             <li class="gen6 nfe water1"><a href="#" class="menu-sprite frogadier">Frogadier</a>
             <li class="gen6 water1 dark2"><a href="#" class="menu-sprite greninja">Greninja</a>
+            <li class="gen6 gen7 water1 dark2"><a href="#" class="menu-sprite greninja-ash">Ash Greninja</a>
             <li class="gen6 nfe normal1"><a href="#" class="menu-sprite bunnelby">Bunnelby</a>
             <li class="gen6 normal1 ground2"><a href="#" class="menu-sprite diggersby">Diggersby</a>
             <li class="gen6 nfe normal1 flying2"><a href="#" class="menu-sprite fletchling">Fletchling</a>
@@ -1251,9 +1252,9 @@
             <li class="gen7 bug1 electric2 levitate"><a href="#" class="menu-sprite vikavolt">Vikavolt</a>
             <li class="gen7 nfe fighting1"><a href="#" class="menu-sprite crabrawler">Crabrawler</a>
             <li class="gen7 fighting1 ice2"><a href="#" class="menu-sprite crabominable">Crabominable</a>
-            <li class="gen7 fire1 flying2"><a href="#" class="menu-sprite oricorio-baile">Oricorio</a>
-            <li class="gen7 electric1 flying2"><a href="#" class="menu-sprite oricorio-pom-pom">Oricorio</a>
+            <li class="gen7 electric1 flying2"><a href="#" class="menu-sprite oricorio">Oricorio</a>
             <li class="gen7 psychic1 flying2"><a href="#" class="menu-sprite oricorio-pa-u">Oricorio</a>
+            <li class="gen7 fire1 flying2"><a href="#" class="menu-sprite oricorio-baile">Oricorio</a>
             <li class="gen7 ghost1 flying2"><a href="#" class="menu-sprite oricorio-sensu">Oricorio</a>
             <li class="gen7 nfe bug1 fairy2"><a href="#" class="menu-sprite cutiefly">Cutiefly</a>
             <li class="gen7 bug1 fairy2"><a href="#" class="menu-sprite ribombee">Ribombee</a>
@@ -1344,7 +1345,7 @@
             Bootstrap is © of Twitter, <time datetime="2016">2016</time><br>
             <a href="http://davidstutz.github.io/bootstrap-multiselect/">Bootstrap Multiselect</a> is © of <a href="http://davidstutz.de/">David Stutz</a>, <time datetime="2012">2012</time>-<time datetime="2014">2014</time><br>
             <a href="https://clipboardjs.com">Clipboard.js</a> is © of <a href="http://zenorocha.com">Zeno Rocha</a>, <time datetime="2015">2015</time>-<time datetime="2016">2016</time><br>
-            Pokémon icons, names and typings leaked by Kaphotics, SciresM, Marty, smealum, Bond697, Slashmolder &amp; Normmatt<br>
+            Pokémon icons, names and typings datamined by Kaphotics, SciresM, Marty, smealum, Bond697, Slashmolder &amp; Normmatt<br>
             Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2016">2016</time>
         </p>
     </footer>
@@ -1352,8 +1353,7 @@
 
 <script src="static/bootstrap.min.js"></script>
 <script src="static/bootstrap.multiselect.js"></script>
-<script src="static/script.js"></script>
 <script src="static/clipboard.min.js"></script>
-<script src="static/copyfeature.js"></script>
+<script src="static/script.js"></script>
 </body>
 </html>
