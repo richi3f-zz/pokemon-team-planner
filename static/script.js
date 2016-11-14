@@ -177,7 +177,6 @@ function removePkmnFromTeam($this) {
     }
     // update team type analysis
     updateTeamTypeAnalysis(pkmnClass, true);
-    updateTeamHash();
     // make Pokémon visible again
     $("ol.picker .menu-sprite." + pkmnClass).parent().removeClass("picked");
     if (pkmnClass == "arceus" || pkmnClass == "silvally") {
@@ -185,6 +184,8 @@ function removePkmnFromTeam($this) {
             $(this).parent().removeClass("hidden");
         });
     }
+    // update URL hash
+    updateTeamHash();
     // reset slot
     $this.addClass("free");
     var $figure = $this.find("figure");
@@ -328,7 +329,7 @@ $(document).ready(function(){
             // get name of current type
             var type = $this.find("Name").text().toLowerCase();
             // save type matchup to dictionary
-            type_matchups[type] = current_matchup;     
+            type_matchups[type] = current_matchup;
         });
         // pick each Pokémon to add weak2, immune2, or resists classes
         $("ol.picker li").each(function() {
@@ -396,7 +397,7 @@ $(document).ready(function(){
         $(this).attr("title", "Number of Pokémon Weak to the " + type + " Type");
     });
     $("ol.picker .menu-sprite").each(function() {
-       $(this).parent().attr("title", $(this).text()); 
+       $(this).parent().attr("title", $(this).text());
     });
     $("ol.picker .menu-sprite").click(function(e) {
         addPkmnToTeam($(this));
