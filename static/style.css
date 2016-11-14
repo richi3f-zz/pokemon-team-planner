@@ -210,7 +210,7 @@ ul.picked li{
     vertical-align: top
 }
 ul.picked li:not(.free){
-    cursor: no-drop;    
+    cursor: no-drop;
 }
 ul.picked li figure{
     border-width:0.125em;
@@ -324,7 +324,7 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
 }
 .grass1{
     background:#a7db8d;
-    border-color:#4e8234 
+    border-color:#4e8234
 }
 .fire1{
     background:#f5ac78;
@@ -360,7 +360,7 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
 }
 .ghost1{
     background:#a292bc;
-    border-color:#493963    
+    border-color:#493963
 }
 .electric1{
     background:#fae078;
@@ -455,7 +455,7 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
     background-repeat:no-repeat;
     background-origin:content-box;
     vertical-align:middle;
-    text-indent:-999em  
+    text-indent:-999em
 }
 .menu-sprite{
     background-image:url(menusprites.png);
@@ -2506,4 +2506,21 @@ footer{
 }
 .btn{
     border:0px !important;
+}
+
+#copytextbox{
+  padding: 1px 12px 5px;
+  width: 90%;
+}
+#copybtn{
+  background-color:#4d6ad8;
+  color:#f0f0f0;
+  font-weight:700;
+  text-align:center;
+  display:inline-block;
+  padding:.2em .5em;
+  border-radius:.25em;
+  cursor:pointer;
+  position:absolute;
+  width: 10%;
 }
