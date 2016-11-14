@@ -490,7 +490,6 @@ $(document).ready(function(){
 // copy feature
 var clipboard = new Clipboard("#copy-url a");
 clipboard.on("success", function() {
-    alert("copying");
     var $button = $("#copy-url a");
     $button.text("Copied!");
     setTimeout(function() {
