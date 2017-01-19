@@ -1,221 +1,106 @@
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, main, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+@font-face{
+    font-family:'Open Sans';
+    font-style:normal;
+    font-weight:400;
+    src:local('Open Sans'),local('OpenSans'),url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')
 }
 
-body {
-    background-color: #f0f0f0;
-    font: 100%/1.5 "Open Sans", Helvetica, Arial, sans-serif;
-    color: #333;
-    overflow-y: scroll
+@font-face{
+    font-family:'Open Sans';
+    font-style:normal;
+    font-weight:700;
+    src:local('Open Sans Bold'),local('OpenSans-Bold'),url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff')
+}
+
+@font-face{
+    font-family:'Open Sans';
+    font-style:italic;
+    font-weight:400;
+    src:local('Open Sans Italic'),local('OpenSans-Italic'),url(http://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff')
+}
+
+body{
+    background-color:#f0f0f0;
+    color:#333;
+    font:16px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-y:scroll
 }
 body,a,a:hover,a:focus,caption{
     color:#333
 }
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-    display:block;
+a{
+    text-decoration:none
 }
-
-abbr[title] {
-    border-bottom: none;
-	text-decoration: none;
+a:hover,a:focus{
+    text-decoration:underline
 }
-
-a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+.hidden,span.type.unknown{
+  display:none
 }
-
-input, select {
-    vertical-align:middle;
+#loader{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#43b2e0
 }
-
-input[type=search] {
-    border: 1px solid #ccc;
-    padding: 0.375em;
-    line-height: 1.25;
-    width: 8.75em;
+#loader img{
+    width:48px; height:48px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-24px 0 0 -24px;
+    -webkit-transition:opacity .2s;
+    transition:opacity .2s;
+    -webkit-animation-duration:.8s;
+    animation-duration:.8s;
+    -webkit-animation-name:spin;
+    animation-name:spin;
+    -webkit-animation-iteration-count:infinite;
+    animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    animation-timing-function:ease-in-out
 }
-
-@media screen {
-    abbr[title], dfn[title] {
-        cursor:help;
-    }
-    #loader{
-        position:fixed;
-        left:0;
-        top:0;
-        width:100%;
-        height:100%;
-        z-index:9999;
-        background:#43b2e0
-    }
-    #loader img{
-        width:48px; height:48px;
-        position:absolute;
-        top:50%;
-        left:50%;
-        margin:-24px 0 0 -24px;
-        -webkit-transition:opacity .2s;
-        transition:opacity .2s;
-        -webkit-animation-duration:.8s;
-        animation-duration:.8s;
-        -webkit-animation-name:spin;
-        animation-name:spin;
-        -webkit-animation-iteration-count:infinite;
-        animation-iteration-count:infinite;
-        -webkit-animation-timing-function:ease-in-out;
-        animation-timing-function:ease-in-out
-    }
-    @-webkit-keyframes spin{
-        0%{
-            -webkit-transform:rotate(0deg); }
-        100%{
-            -webkit-transform:rotate(360deg); } }
-    @keyframes spin{
-        0%{
-            -webkit-transform:rotate(0deg);
-            transform:rotate(0deg); }
-        100%{
-            -webkit-transform:rotate(360deg);
-            transform:rotate(360deg); } }
-}
-
-/* Body */
-
-article {
-    padding: 1.25em;
-    margin: 1em auto;
-}
-
+@-webkit-keyframes spin{
+    0%{
+        -webkit-transform:rotate(0deg); }
+    100%{
+        -webkit-transform:rotate(360deg); } }
+@keyframes spin{
+    0%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg); }
+    100%{
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg); } }
 h1{
     color:#ff69b4;
-    font-size:1.5em;
+    font-size:2em;
     font-weight:700;
     text-align:center;
     margin:0 0 1em
 }
-
-h1 a {
-    color:#ff69b4;
-    text-decoration: none;
-}
-
-h1 a:focus, h1 a:hover {
-    color:#4d6ad8;
-}
-
-#trainer-info {
-    width: 14em;
-    margin: 0 auto 1em
-}
-#trainer-info img{
-    float:left;
-    margin:0 0.5em 0 0
-}
-#trainer-info dl {
-    margin-top: 1px
-}
-#trainer-info dt, #trainer-info dd {
-    display:inline-block
-}
-#trainer-info dt {
-    width:2.5em
-}
-#trainer-info dt:after {
-    content:":"
-}
-#trainer-info dd {
-    width:8em;
-    font-weight:400
-}
-
-nav ul {
-    clear: left;
-    list-style:none;
-    margin:0 0 2em;
-    font-weight:700;
-    text-align:center;
-}
-
-nav ul li {
+h1::before{
+    content:" ";
     display:inline-block;
-    vertical-align: middle;
-    position:relative
+    background:url(logo-sm.png);
+    width:4.21875em;
+    height:1.125em;
+    background-size:contain;
+    vertical-align:top;
+    margin:0 0.25em 0 0
 }
-
-nav > ul > li abbr {
-    vertical-align:middle;
+#national-dex h1::before{
+    background:url(logo.png);
+    width:3em
 }
-
-nav > ul > li abbr::after {
-    content:":";
+#kalos-dex h1::before{
+    background:url(logo-xy.png);
 }
-
-nav ul li a,
-#copy2reddit [data-clipboard-target] {
-    display:inline-block;
-    margin:0 0.5em 0 0;
-    background-color:#4d6ad8;
-    font-weight:700;
-    color:#f0f0f0;
-    padding:0.5em 0;
-    border-radius:0.25em;
-    line-height: 1.45;
-    width:7.5em;
-    text-align:center
-}
-nav ul li a:hover, #copy2reddit [data-clipboard-target]:hover {
-    color:#f0f0f0;
-}
-nav ul li.current::after {
-    width: 0;
-    height: 0;
-    border-left: .75em solid transparent;
-    border-right: .75em solid transparent;
-    border-top: .75em solid #4d6ad8;
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 2.4375em;
-    left: 3em;
-}
-nav ul li.wide a { width:11.25em }
-nav ul li.current.wide::after { left:4.875em }
-nav ul li.wider a { width:15em }
-nav ul li.current.wider::after { left:6.75em }
-nav ul li.widest a { width:18.75em }
-nav ul li.current.widest::after { left:8.625em }
-
-nav ul ul {
-    margin: 0 0 0 0.5em;
-    display: inline-block;
-}
-
-nav > ul > li:not(:first-child)::before {
-    content: "|";
-    display: inline-block;
-    margin: 0 0.5em 0 0;
+#hoenn-dex h1::before{
+    background:url(logo-oras.png);
 }
 
 h2{
@@ -223,147 +108,360 @@ h2{
     color:#4d6ad8;
     font-size:1.5em;
     font-weight:700;
-    margin: 0 0 1em;
-    text-align: center
+    display:inline-block;
+    margin:0 0 0.5em;
+    position:absolute;
+    top:-0.75em;
+    z-index:999
 }
 
 h3{
     display:inline-block;
     font-size:1em;
     line-height:2;
-    width:8em;text-indent:1em;
-    margin:0;
-    vertical-align: middle
+    width:6em;text-indent:1em;
+    margin:0
 }
-
 h3::after{
-    content:":"
+  content:":"
 }
-
-#filters {
-    width: 90%;
+table,tbody,caption,td,th{
+    display:block;
+    text-align:center
+}
+article{
+    background-color:#f0f0f0;
+    width:60em;
+    padding:1.25em;
+    margin:1em auto
+}
+article section{
+    border:0.0625em solid #dedede;
+    padding:1.25em 1em 1em;
+    margin:0 0 1.25em;
+    position:relative
+}
+.button{
+    background-color:#4d6ad8;
+    color:#f0f0f0;
+    font-weight:700;
+    text-align:center;
+    display:inline-block;
+    padding:.2em .5em;
+    border-radius:.25em;
+    cursor:pointer;
+    position:absolute;
+    width:1.875em
+}
+.button:hover, .button:focus{
+    color:#f0f0f0;
+    text-decoration:none
+}
+#team #randomize{
+    left: 1em;
+    top: 9.875em;
+}
+#team .button {
+    top: 9.875em;
+    right: 1em;
+}
+#options .button{
+    top:1.5em;
+    right:2em
+}
+#filters .more{
+    text-align:center
+}
+.filter{
+  display:inline-block;
+  margin:0 1em 1em
+}
+.filter label{
+  margin:0 0.5em 0 0
+}
+ul.picked,
+ol.picker{
+    list-style:none;
+    padding:0;
+    margin:0 auto;
+    clear:left
+}
+ul.picked{
+    width:51.75em;
+    margin-bottom:1.25em
+}
+ol.picker{
+    width:54.375em
+}
+ul.picked li,
+ol.picker li{
+    display:inline-block !important;
+    border-width:0.125em;
+    border-style:solid;
+    border-radius:1.5em;
+    padding:0.4375em 0.125em;
+    margin:0.3125em
+}
+ul.picked li{
+    border-radius:3.5625em;
+    padding:0;
+    border: none;
+    height: 10.25em;
+    vertical-align: top
+}
+ul.picked li:not(.free){
+    cursor: no-drop;
+}
+ul.picked li figure{
+    border-width:0.125em;
+    border-style:solid;
+    border-radius:3.5625em;
+    width: 6em;
     margin: 0 auto;
+}
+ul.picked li .info{
+    border-radius:0.625em;
+    width: 8em;
+    margin-top: 0.5em;
+    padding: 0.25em;
     text-align: center
 }
-
-table  {
-    border-collapse:collapse;
-    border-spacing:0;
-    background: url(bg-td.gif);
-    line-height: 1;
-    width: 100%
+ul.picked li .info.unknown,
+ul.picked li .info.unknown1{
+    line-height: 4;
 }
-
-table thead tr {
-    background: url(bg-th.gif);
-    color: #f0f0f0;
+ul.picked li .info.unknown .name,
+ul.picked li .info.unknown1 .name{
+    margin: 0
 }
-
-thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent; }
-
-thead th[rowspan] { padding-top: 0.625em; }
-thead th.hp { border-bottom-color: #77f296; }
-thead th.atk { border-bottom-color: #f4e585; }
-thead th.def { border-bottom-color: #ffb17a; }
-thead th.spa { border-bottom-color: #88dee3; }
-thead th.spd { border-bottom-color: #859fff; }
-thead th.spe { border-bottom-color: #d880ff; }
-
-td, th {
-    text-align: center;
-    padding: 0.375em 0.5em;
-    vertical-align: middle;
+ul.picked li .info .name{
+    display: block;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin: 0 0 0.5em
 }
-
-td {
-    border-bottom: 1px solid #8f8173;
+ul.picked li .info .type{
+    line-height:1.125
 }
-
-td.sprite, td.name, td.hp, td.atk, td.def, td.spa, td.spd, td.spe { white-space: nowrap; }
-td.hp, td.atk, td.def, td.spa, td.spd, td.spe { width: 2.625em; }
-td.poke-balls { width: 6.625em }
-td.hidden-power { width: 3.125em; }
-td.name, td.nature, td.ability, td.egg-moves { text-align: left; }
-td.egg-moves { line-height: 1.45; }
-
-td.sprite{width:3.5em;max-width:3.5em}
-
-.gender{
-    font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols"
+ol.picker li{
+    cursor:pointer;
+    vertical-align:middle
 }
-.gender.female { color:#f6807a }
-.gender.male { color:#499fff }
-
-td.name .form,td.name .nickname { font-size:0.75em }
-
-tr.shiny td.name::before,
-#pokemon-info.shiny .name::before{
-    content: "★ ";
-    color:#f11
+ol.picker li:hover{
+    background-image:none
 }
-
-tr:hover td {
-    background-color: rgba(67,178,224,0.5);
-    cursor:cell
+ol.picker li.up{
+    padding:0.3125em 0.125em 0.5625em
 }
-tr.selected td {
-    background-color: rgba(68,68,68,0.25);
+ol.picker li.hidden,
+ol.picker li.filtered,
+ol.picker li.picked{
+  display:none !important
 }
-tr.selected:hover td {
-    background-color: rgba(213,58,58,0.25);
-    cursor:not-allowed
+.more table{
+    width:33.75em;
+    margin:1.25em auto 0
 }
+.more table tr{
+    display:inline-block;
+    box-sizing:content-box;
+    width:3.125em;
+    padding:0.3125em;
+    cursor:default;
+    border-radius:1em
+}
+.more table tr.warning{
+    color:#d2304d;
+    background:rgba(210, 48, 77, 0.2);
+    font-weight:700
+}
+.more table caption::before {
+    content: "◉";
+    display: inline-block;
+    margin: 0 0.5em 0 0;
+    color: #ff2d17
+}
+#team-immunities caption::before {
+    content: "╳";
+    color: #4769b7
+}
+#team-resistances caption::before {
+    content: "▲";
+    color: #bdbe44
+}
+span.type,.type th{
+    background-image:url(types.png);
+    background-repeat:no-repeat;
+    background-position:0 -72px;
+    display:block;
+    width:3.125em;
+    height:1.125em;
+    text-indent:-999em
+}
+span.type{
+    display: inline-block
+}
+span.type.fighting,.type.fighting th{background-position:0 0}
+span.type.fire,.type.fire th{background-position:0 -18px}
+span.type.flying,.type.flying th{background-position:0 -36px}
+span.type.grass,.type.grass th{background-position:0 -54px}
+span.type.water,.type.water th{background-position:0 -90px}
+span.type.bug,.type.bug th{background-position:-50px 0}
+span.type.electric,.type.electric th{background-position:-50px -18px}
+span.type.ghost,.type.ghost th{background-position:-50px -36px}
+span.type.ground,.type.ground th{background-position:-50px -54px}
+span.type.poison,.type.poison th{background-position:-50px -72px}
+span.type.rock,.type.rock th{background-position:-50px -90px}
+span.type.dark,.type.dark th{background-position:-100px 0}
+span.type.dragon,.type.dragon th{background-position:-100px -18px}
+span.type.fairy,.type.fairy th{background-position:-100px -36px}
+span.type.ice,.type.ice th{background-position:-100px -54px}
+span.type.psychic,.type.psychic th{background-position:-100px -72px}
+span.type.steel,.type.steel  th{background-position:-100px -90px}
+.normal1{
+    background:#c6c6a7;
+    border-color:#6d6d4e
+}
+.grass1{
+    background:#a7db8d;
+    border-color:#4e8234
+}
+.fire1{
+    background:#f5ac78;
+    border-color:#9c531f
+}
+.water1{
+    background:#9db7f5;
+    border-color:#445e9c
+}
+.fighting1{
+    background:#d67873;
+    border-color:#7d1f1a
+}
+.flying1{
+    background:#c6b7f5;
+    border-color:#6d5e9c
+}
+.poison1{
+    background:#c183c1;
+    border-color:#682a68
+}
+.ground1{
+    background:#ebd69d;
+    border-color:#927d44
+}
+.rock1{
+    background:#d1c17d;
+    border-color:#786824
+}
+.bug1{
+    background:#c6d16e;
+    border-color:#6d7815
+}
+.ghost1{
+    background:#a292bc;
+    border-color:#493963
+}
+.electric1{
+    background:#fae078;
+    border-color:#a1871f
+}
+.psychic1{
+    background:#fa92b2;
+    border-color:#a13959
+}
+.ice1{
+    background:#bce6e6;
+    border-color:#638d8d
+}
+.dragon1{
+    background:#a27dfa;
+    border-color:#4924a1
+}
+.dark1{
+    background:#a29288;
+    border-color:#49392f
+}
+.steel1{
+    background:#d1d1e0;
+    border-color:#787887
+}
+.fairy1{
+    background:#f4bdc9;
+    border-color:#9b6470
+}
+.unknown,.unknown1{
+    background:#68a090;
+    border-color:#44685e
+}
+.normal2{border-color:#6d6d4e}
+.grass2{border-color:#4e8234}
+.fire2{border-color:#9c531f}
+.water2{border-color:#445e9c}
+.fighting2{border-color:#7d1f1a}
+.flying2{border-color:#6d5e9c}
+.poison2{border-color:#682a68}
+.ground2{border-color:#927d44}
+.rock2{border-color:#786824}
+.bug2{border-color:#6d7815}
+.ghost2{border-color:#493963}
+.electric2{border-color:#a1871f}
+.psychic2{border-color:#a13959}
+.ice2{border-color:#638d8d}
+.dragon2{border-color:#4924a1}
+.dark2{border-color:#49392f}
+.steel2{border-color:#787887}
+.fairy2{border-color:#9b6470}
+.normal1:hover{border-color:#a8a878}
+.grass1:hover{border-color:#78c850}
+.fire1:hover{border-color:#f08030}
+.water1:hover{border-color:#6890f0}
+.fighting1:hover{border-color:#c03028}
+.flying1:hover{border-color:#a890f0}
+.poison1:hover{border-color:#a040a0}
+.ground1:hover{border-color:#e0c068}
+.rock1:hover{border-color:#b8a038}
+.bug1:hover{border-color:#a8b820}
+.ghost1:hover{border-color:#705898}
+.electric1:hover{border-color:#f8d030}
+.psychic1:hover{border-color:#f85888}
+.ice1:hover{border-color:#98d8d8}
+.dragon1:hover{border-color:#7038f8}
+.dark1:hover{border-color:#705848}
+.steel1:hover{border-color:#b8b8d0}
+.fairy1:hover{border-color:#ee99ac}
 
-td.adamant ~ td.atk, td.brave ~ td.atk, td.lonely ~ td.atk, td.naughty ~ td.atk,
-td.bold ~ td.def, td.impish ~ td.def, td.relaxed ~ td.def,
-td.modest ~ td.spa, td.mild ~ td.spa, td.rash ~ td.spa, td.quiet ~ td.spa,
-td.calm ~ td.spd, td.careful ~ td.spd, td.sassy ~ td.spd,
-td.jolly ~ td.spe, td.timid ~ td.spe, td.hasty ~ td.spe, td.naive ~ td.spe,
-dd.adamant ~ dt.ivs + dd .atk, dd.brave ~ dt.ivs + dd .atk, dd.lonely ~ dt.ivs + dd .atk, dd.naughty ~ dt.ivs + dd .atk,
-dd.bold ~ dt.ivs + dd .def, dd.impish ~ dt.ivs + dd .def, dd.relaxed ~ dt.ivs + dd .def,
-dd.modest ~ dt.ivs + dd .spa, dd.mild ~ dt.ivs + dd .spa, dd.rash ~ dt.ivs + dd .spa, dd.quiet ~ dt.ivs + dd .spa,
-dd.calm ~ dt.ivs + dd .spd, dd.careful ~ dt.ivs + dd .spd, dd.sassy ~ dt.ivs + dd .spd,
-dd.jolly ~ dt.ivs + dd .spe, dd.timid ~ dt.ivs + dd .spe, dd.hasty ~ dt.ivs + dd .spe, dd.naive ~ dt.ivs + dd .spe{ color: #c00000; }
-
-td.modest ~ td.atk, td.timid ~ td.atk, td.calm ~ td.atk, td.bold ~ td.atk,
-td.lonely ~ td.def, td.mild ~ td.def, td.hasty ~ td.def,
-td.adamant ~ td.spa, td.jolly ~ td.spa, td.impish ~ td.spa, td.careful ~ td.spa,
-td.naive ~ td.spd, td.rash ~ td.spd, td.naughty  ~ td.spd,
-td.brave ~ td.spe, td.quiet ~ td.spe, td.sassy ~ td.spe, td.relaxed ~ td.spe,
-dd.modest ~ dt.ivs + dd .atk, dd.timid ~ dt.ivs + dd .atk, dd.calm ~ dt.ivs + dd .atk, dd.bold ~ dt.ivs + dd .atk,
-dd.lonely ~ dt.ivs + dd .def, dd.mild ~ dt.ivs + dd .def, dd.hasty ~ dt.ivs + dd .def,
-dd.adamant ~ dt.ivs + dd .spa, dd.jolly ~ dt.ivs + dd .spa, dd.impish ~ dt.ivs + dd .spa, dd.careful ~ dt.ivs + dd .spa,
-dd.naive ~ dt.ivs + dd .spd, dd.rash ~ dt.ivs + dd .spd, td.naughty  ~ td.spd,
-dd.brave ~ dt.ivs + dd .spe, dd.quiet ~ dt.ivs + dd .spe, dd.sassy ~ dt.ivs + dd .spe, dd.relaxed ~ dt.ivs + dd .spe{ color: #0000d0; }
-
-tr.hidden-ability .ability { font-style: italic; }
-
-td.rows2 .item-sprite.row1,
-td.rows3 .item-sprite.row1,
-td.rows4 .item-sprite.row1 { margin-bottom:0; }
-td.rows2 .item-sprite.row2,
-td.rows3 .item-sprite.row3,
-td.rows4 .item-sprite.row4 { margin-top:0; }
-td.rows3 .item-sprite.row2,
-td.rows4 .item-sprite.row2,
-td.rows4 .item-sprite.row3 { margin:0 0.125em; }
-
-.menu-sprite, .item-sprite{
+.normal2:hover{border-color:#a8a878}
+.grass2:hover{border-color:#78c850}
+.fire2:hover{border-color:#f08030}
+.water2:hover{border-color:#6890f0}
+.fighting2:hover{border-color:#c03028}
+.flying2:hover{border-color:#a890f0}
+.poison2:hover{border-color:#a040a0}
+.ground2:hover{border-color:#e0c068}
+.rock2:hover{border-color:#b8a038}
+.bug2:hover{border-color:#a8b820}
+.ghost2:hover{border-color:#705898}
+.electric2:hover{border-color:#f8d030}
+.psychic2:hover{border-color:#f85888}
+.ice2:hover{border-color:#98d8d8}
+.dragon2:hover{border-color:#7038f8}
+.dark2:hover{border-color:#705848}
+.steel2:hover{border-color:#b8b8d0}
+.fairy2:hover{border-color:#ee99ac}
+.menu-sprite, .art{
     display:inline-block;
     background-color:transparent;
     background-repeat:no-repeat;
     background-origin:content-box;
     vertical-align:middle;
-    text-indent:-999em  
+    text-indent:-999em
 }
 .menu-sprite{
     background-image:url(menusprites.png);
     width:1.875em;
     height:1.875em;
     margin:0 0.3125em
-}
-.sprite.up{
-    padding:0.3125em 0.125em 0.5625em
 }
 .menu-sprite.bulbasaur{background-position:-30px 0}
 .menu-sprite.ivysaur{background-position:-60px 0}
@@ -514,7 +612,7 @@ td.rows4 .item-sprite.row3 { margin:0 0.125em; }
 .menu-sprite.seaking{background-position:-240px -120px}
 .menu-sprite.staryu{background-position:-270px -120px}
 .menu-sprite.starmie{background-position:-300px -120px}
-.menu-sprite.mr_mime{background-position:-330px -120px}
+.menu-sprite.mr-mime{background-position:-330px -120px}
 .menu-sprite.scyther{background-position:-360px -120px}
 .menu-sprite.jynx{background-position:-390px -120px}
 .menu-sprite.electabuzz{background-position:-420px -120px}
@@ -905,7 +1003,7 @@ td.rows4 .item-sprite.row3 { margin:0 0.125em; }
 .menu-sprite.bronzor{background-position:-60px -480px}
 .menu-sprite.bronzong{background-position:-90px -480px}
 .menu-sprite.bonsly{background-position:-120px -480px}
-.menu-sprite.mime_jr{background-position:-150px -480px}
+.menu-sprite.mime-jr{background-position:-150px -480px}
 .menu-sprite.happiny{background-position:-180px -480px}
 .menu-sprite.chatot{background-position:-210px -480px}
 .menu-sprite.spiritomb{background-position:-240px -480px}
@@ -1142,8 +1240,10 @@ td.rows4 .item-sprite.row3 { margin:0 0.125em; }
 .menu-sprite.kyurem-black{background-position:-40px -720px}
 .menu-sprite.kyurem-white{background-position:-80px -720px}
 .menu-sprite.keldeo{background-position:-840px -690px}
+.menu-sprite.keldeo:hover,
 .menu-sprite.keldeo-resolute{background-position:-870px -690px}
 .menu-sprite.meloetta{background-position:-120px -720px}
+.menu-sprite.meloetta:hover,
 .menu-sprite.meloetta-pirouette{background-position:-150px -720px}
 .menu-sprite.genesect{background-position:-180px -720px}
 .menu-sprite.chespin{background-position:-210px -720px}
@@ -1156,7 +1256,7 @@ td.rows4 .item-sprite.row3 { margin:0 0.125em; }
 .menu-sprite.frogadier{background-position:-420px -720px}
 .menu-sprite.greninja{background-position:-450px -720px}
 .menu-sprite.greninja-ash{background-position:-200px -870px}
-tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
+.menu-sprite.greninja-ash:hover{background-position:-270px -900px}
 .menu-sprite.bunnelby{background-position:-480px -720px}
 .menu-sprite.diggersby{background-position:-510px -720px}
 .menu-sprite.fletchling{background-position:-540px -720px}
@@ -1210,6 +1310,7 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.honedge{background-position:-270px -780px}
 .menu-sprite.doublade{background-position:-490px -750px}
 .menu-sprite.aegislash{background-position:-300px -780px}
+.menu-sprite.aegislash:hover,
 .menu-sprite.aegislash-blade{background-position:-530px -750px}
 .menu-sprite.spritzee{background-position:-330px -780px}
 .menu-sprite.aromatisse{background-position:-360px -780px}
@@ -1250,6 +1351,7 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.yveltal{background-position:-540px -810px}
 .menu-sprite.zygarde{background-position:-570px -810px}
 .menu-sprite.zygarde-10{background-position:-230px -870px}
+.menu-sprite.zygarde:hover,.menu-sprite.zygarde-10:hover,
 .menu-sprite.zygarde-complete{background-position:-750px -930px}
 .menu-sprite.diancie{background-position:-600px -810px}
 .menu-sprite.diancie-mega{background-position:-870px -840px}
@@ -1275,17 +1377,17 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.vikavolt{background-position:-590px -870px}
 .menu-sprite.crabrawler{background-position:-930px -420px}
 .menu-sprite.crabominable{background-position:-860px -870px}
-.menu-sprite.oricorio{background-position:-930px -480px}
-.menu-sprite.oricorio-pom-pom{background-position:-900px -450px}
-.menu-sprite.oricorio-pau{background-position:-930px -450px}
+.menu-sprite.oricorio{background-position:-900px -450px}
+.menu-sprite.oricorio-pa-u{background-position:-930px -450px}
 .menu-sprite.oricorio-sensu{background-position:-900px -480px}
+.menu-sprite.oricorio-baile{background-position:-930px -480px}
 .menu-sprite.cutiefly{background-position:-620px -870px}
 .menu-sprite.ribombee{background-position:-900px -510px}
 .menu-sprite.rockruff{background-position:-650px -870px}
 .menu-sprite.lycanroc{background-position:-360px -900px}
 .menu-sprite.lycanroc-midnight{background-position:-930px -510px}
 .menu-sprite.wishiwashi{background-position:-420px -900px}
-tr:hover .menu-sprite.wishiwashi,
+.menu-sprite.wishiwashi:hover,
 .menu-sprite.wishiwashi-school{background-position:-930px -600px}
 .menu-sprite.mareanie{background-position:-210px -930px}
 .menu-sprite.toxapex{background-position:-240px -930px}
@@ -1312,17 +1414,11 @@ tr:hover .menu-sprite.wishiwashi,
 .menu-sprite.sandygast{background-position:-450px -900px}
 .menu-sprite.palossand{background-position:-480px -900px}
 .menu-sprite.pyukumuku{background-position:-900px -660px}
-.menu-sprite.type_null{background-position:-930px -660px}
+.menu-sprite.type-null{background-position:-930px -660px}
 .menu-sprite.silvally{background-position:-900px -690px}
 .menu-sprite.minior{background-position:-930px -690px}
 .menu-sprite.minior:hover,
-.menu-sprite.minior-red{background-position:-660px -930px}
-.menu-sprite.minior-green{background-position:-540px -930px}
-.menu-sprite.minior-blue{background-position:-570px -930px}
-.menu-sprite.minior-indigo{background-position:-600px -930px}
-.menu-sprite.minior-violet{background-position:-630px -930px}
-.menu-sprite.minior-orange{background-position:-690px -930px}
-.menu-sprite.minior-yellow{background-position:-720px -930px}
+.menu-sprite.minior-core{background-position:-660px -930px}
 .menu-sprite.komala{background-position:-30px -900px}
 .menu-sprite.turtonator{background-position:-900px -720px}
 .menu-sprite.togedemaru{background-position:-60px -900px}
@@ -1333,10 +1429,10 @@ tr:hover .menu-sprite.wishiwashi,
 .menu-sprite.jangmo-o{background-position:-300px -900px}
 .menu-sprite.hakamo-o{background-position:-330px -900px}
 .menu-sprite.kommo-o{background-position:-900px -750px}
-.menu-sprite.tapu_koko{background-position:-180px -900px}
-.menu-sprite.tapu_lele{background-position:-930px -750px}
-.menu-sprite.tapu_bulu{background-position:-900px -780px}
-.menu-sprite.tapu_fini{background-position:-930px -780px}
+.menu-sprite.tapu-koko{background-position:-180px -900px}
+.menu-sprite.tapu-lele{background-position:-930px -750px}
+.menu-sprite.tapu-bulu{background-position:-900px -780px}
+.menu-sprite.tapu-fini{background-position:-930px -780px}
 .menu-sprite.cosmog{background-position:-900px -810px}
 .menu-sprite.cosmoem{background-position:-930px -810px}
 .menu-sprite.solgaleo{background-position:-210px -900px}
@@ -1401,129 +1497,959 @@ tr:hover .menu-sprite.wishiwashi,
 .menu-sprite.kyurem-white,
 .menu-sprite.pyroar-male,
 .menu-sprite.doublade,
+.menu-sprite.aegislash:hover,
 .menu-sprite.aegislash-blade,
 .menu-sprite.dragalge,
 .menu-sprite.clawitzer,
 .menu-sprite.hoopa-unbound,
+.menu-sprite.zygarde:hover,.menu-sprite.zygarde-10:hover,
 .menu-sprite.zygarde-complete,
 .menu-sprite.crabominable,
 .menu-sprite.celesteela,
 .menu-sprite.kartana,
 .menu-sprite.guzzlord{width:40px;margin:0}
+.art{
+    background-image:url('art.png');
+    width:6em; height:0;
+    padding:6em 0 0;
+    text-indent:0;
+    background-origin:padding-box;
+    text-align:center
+}
+.art:hover, .art:focus{text-decoration:none}
 
-span.hidden-power{
-    background-image:url(types.png);
-    background-repeat:no-repeat;
-    background-position:0 -72px;
+.art.bulbasaur{background-position:-96px 0}
+.art.ivysaur{background-position:-192px 0}
+.art.venusaur-mega{background-position:-288px 0}
+.art.venusaur{background-position:-384px 0}
+.art.charmander{background-position:-480px 0}
+.art.charmeleon{background-position:-576px 0}
+.art.charizard-mega-x{background-position:-672px 0}
+.art.charizard-mega-y{background-position:-768px 0}
+.art.charizard{background-position:-864px 0}
+.art.squirtle{background-position:-960px 0}
+.art.wartortle{background-position:-1056px 0}
+.art.blastoise-mega{background-position:-1152px 0}
+.art.blastoise{background-position:-1248px 0}
+.art.caterpie{background-position:-1344px 0}
+.art.metapod{background-position:-1440px 0}
+.art.butterfree{background-position:-1536px 0}
+.art.weedle{background-position:-1632px 0}
+.art.kakuna{background-position:-1728px 0}
+.art.beedrill-mega{background-position:-1824px 0}
+.art.beedrill{background-position:-1920px 0}
+.art.pidgey{background-position:-2016px 0}
+.art.pidgeotto{background-position:-2112px 0}
+.art.pidgeot-mega{background-position:-2208px 0}
+.art.pidgeot{background-position:-2304px 0}
+.art.rattata-alola{background-position:-2400px 0}
+.art.rattata{background-position:-2496px 0}
+.art.raticate-alola{background-position:-2592px 0}
+.art.raticate{background-position:-2688px 0}
+.art.spearow{background-position:-2784px 0}
+.art.fearow{background-position:0 -96px}
+.art.ekans{background-position:-96px -96px}
+.art.arbok{background-position:-192px -96px}
+.art.pikachu{background-position:-288px -96px}
+.art.raichu-alola{background-position:-384px -96px}
+.art.raichu{background-position:-480px -96px}
+.art.sandshrew-alola{background-position:-576px -96px}
+.art.sandshrew{background-position:-672px -96px}
+.art.sandslash-alola{background-position:-768px -96px}
+.art.sandslash{background-position:-864px -96px}
+.art.nidoran{background-position:-960px -96px}
+.art.nidorina{background-position:-1056px -96px}
+.art.nidoqueen{background-position:-1152px -96px}
+.art.nidoran-male{background-position:-1248px -96px}
+.art.nidorino{background-position:-1344px -96px}
+.art.nidoking{background-position:-1440px -96px}
+.art.clefairy{background-position:-1536px -96px}
+.art.clefable{background-position:-1632px -96px}
+.art.vulpix-alola{background-position:-1728px -96px}
+.art.vulpix{background-position:-1824px -96px}
+.art.ninetales-alola{background-position:-1920px -96px}
+.art.ninetales{background-position:-2016px -96px}
+.art.jigglypuff{background-position:-2112px -96px}
+.art.wigglytuff{background-position:-2208px -96px}
+.art.zubat{background-position:-2304px -96px}
+.art.golbat{background-position:-2400px -96px}
+.art.oddish{background-position:-2496px -96px}
+.art.gloom{background-position:-2592px -96px}
+.art.vileplume{background-position:-2688px -96px}
+.art.paras{background-position:-2784px -96px}
+.art.parasect{background-position:0 -192px}
+.art.venonat{background-position:-96px -192px}
+.art.venomoth{background-position:-192px -192px}
+.art.diglett-alola{background-position:-288px -192px}
+.art.diglett{background-position:-384px -192px}
+.art.dugtrio-alola{background-position:-480px -192px}
+.art.dugtrio{background-position:-576px -192px}
+.art.meowth-alola{background-position:-672px -192px}
+.art.meowth{background-position:-768px -192px}
+.art.persian-alola{background-position:-864px -192px}
+.art.persian{background-position:-960px -192px}
+.art.psyduck{background-position:-1056px -192px}
+.art.golduck{background-position:-1152px -192px}
+.art.mankey{background-position:-1248px -192px}
+.art.primeape{background-position:-1344px -192px}
+.art.growlithe{background-position:-1440px -192px}
+.art.arcanine{background-position:-1536px -192px}
+.art.poliwag{background-position:-1632px -192px}
+.art.poliwhirl{background-position:-1728px -192px}
+.art.poliwrath{background-position:-1824px -192px}
+.art.abra{background-position:-1920px -192px}
+.art.kadabra{background-position:-2016px -192px}
+.art.alakazam-mega{background-position:-2112px -192px}
+.art.alakazam{background-position:-2208px -192px}
+.art.machop{background-position:-2304px -192px}
+.art.machoke{background-position:-2400px -192px}
+.art.machamp{background-position:-2496px -192px}
+.art.bellsprout{background-position:-2592px -192px}
+.art.weepinbell{background-position:-2688px -192px}
+.art.victreebel{background-position:-2784px -192px}
+.art.tentacool{background-position:0 -288px}
+.art.tentacruel{background-position:-96px -288px}
+.art.geodude-alola{background-position:-192px -288px}
+.art.geodude{background-position:-288px -288px}
+.art.graveler-alola{background-position:-384px -288px}
+.art.graveler{background-position:-480px -288px}
+.art.golem-alola{background-position:-576px -288px}
+.art.golem{background-position:-672px -288px}
+.art.ponyta{background-position:-768px -288px}
+.art.rapidash{background-position:-864px -288px}
+.art.slowpoke{background-position:-960px -288px}
+.art.slowbro-mega{background-position:-1056px -288px}
+.art.slowbro{background-position:-1152px -288px}
+.art.magnemite{background-position:-1248px -288px}
+.art.magneton{background-position:-1344px -288px}
+.art.farfetchd{background-position:-1440px -288px}
+.art.doduo{background-position:-1536px -288px}
+.art.dodrio{background-position:-1632px -288px}
+.art.seel{background-position:-1728px -288px}
+.art.dewgong{background-position:-1824px -288px}
+.art.grimer-alola{background-position:-1920px -288px}
+.art.grimer{background-position:-2016px -288px}
+.art.muk-alola{background-position:-2112px -288px}
+.art.muk{background-position:-2208px -288px}
+.art.shellder{background-position:-2304px -288px}
+.art.cloyster{background-position:-2400px -288px}
+.art.gastly{background-position:-2496px -288px}
+.art.haunter{background-position:-2592px -288px}
+.art.gengar-mega{background-position:-2688px -288px}
+.art.gengar{background-position:-2784px -288px}
+.art.onix{background-position:0 -384px}
+.art.drowzee{background-position:-96px -384px}
+.art.hypno{background-position:-192px -384px}
+.art.krabby{background-position:-288px -384px}
+.art.kingler{background-position:-384px -384px}
+.art.voltorb{background-position:-480px -384px}
+.art.electrode{background-position:-576px -384px}
+.art.exeggcute{background-position:-672px -384px}
+.art.exeggutor-alola{background-position:-768px -384px}
+.art.exeggutor{background-position:-864px -384px}
+.art.cubone{background-position:-960px -384px}
+.art.marowak-alola{background-position:-1056px -384px}
+.art.marowak{background-position:-1152px -384px}
+.art.hitmonlee{background-position:-1248px -384px}
+.art.hitmonchan{background-position:-1344px -384px}
+.art.lickitung{background-position:-1440px -384px}
+.art.koffing{background-position:-1536px -384px}
+.art.weezing{background-position:-1632px -384px}
+.art.rhyhorn{background-position:-1728px -384px}
+.art.rhydon{background-position:-1824px -384px}
+.art.chansey{background-position:-1920px -384px}
+.art.tangela{background-position:-2016px -384px}
+.art.kangaskhan-mega{background-position:-2112px -384px}
+.art.kangaskhan{background-position:-2208px -384px}
+.art.horsea{background-position:-2304px -384px}
+.art.seadra{background-position:-2400px -384px}
+.art.goldeen{background-position:-2496px -384px}
+.art.seaking{background-position:-2592px -384px}
+.art.staryu{background-position:-2688px -384px}
+.art.starmie{background-position:-2784px -384px}
+.art.mr-mime{background-position:0 -480px}
+.art.scyther{background-position:-96px -480px}
+.art.jynx{background-position:-192px -480px}
+.art.electabuzz{background-position:-288px -480px}
+.art.magmar{background-position:-384px -480px}
+.art.pinsir-mega{background-position:-480px -480px}
+.art.pinsir{background-position:-576px -480px}
+.art.tauros{background-position:-672px -480px}
+.art.magikarp{background-position:-768px -480px}
+.art.gyarados-mega{background-position:-864px -480px}
+.art.gyarados{background-position:-960px -480px}
+.art.lapras{background-position:-1056px -480px}
+.art.ditto{background-position:-1152px -480px}
+.art.eevee{background-position:-1248px -480px}
+.art.vaporeon{background-position:-1344px -480px}
+.art.jolteon{background-position:-1440px -480px}
+.art.flareon{background-position:-1536px -480px}
+.art.porygon{background-position:-1632px -480px}
+.art.omanyte{background-position:-1728px -480px}
+.art.omastar{background-position:-1824px -480px}
+.art.kabuto{background-position:-1920px -480px}
+.art.kabutops{background-position:-2016px -480px}
+.art.aerodactyl-mega{background-position:-2112px -480px}
+.art.aerodactyl{background-position:-2208px -480px}
+.art.snorlax{background-position:-2304px -480px}
+.art.articuno{background-position:-2400px -480px}
+.art.zapdos{background-position:-2496px -480px}
+.art.moltres{background-position:-2592px -480px}
+.art.dratini{background-position:-2688px -480px}
+.art.dragonair{background-position:-2784px -480px}
+.art.dragonite{background-position:0 -576px}
+.art.mewtwo-mega-x{background-position:-96px -576px}
+.art.mewtwo-mega-y{background-position:-192px -576px}
+.art.mewtwo{background-position:-288px -576px}
+.art.mew{background-position:-384px -576px}
+.art.chikorita{background-position:-480px -576px}
+.art.bayleef{background-position:-576px -576px}
+.art.meganium{background-position:-672px -576px}
+.art.cyndaquil{background-position:-768px -576px}
+.art.quilava{background-position:-864px -576px}
+.art.typhlosion{background-position:-960px -576px}
+.art.totodile{background-position:-1056px -576px}
+.art.croconaw{background-position:-1152px -576px}
+.art.feraligatr{background-position:-1248px -576px}
+.art.sentret{background-position:-1344px -576px}
+.art.furret{background-position:-1440px -576px}
+.art.hoothoot{background-position:-1536px -576px}
+.art.noctowl{background-position:-1632px -576px}
+.art.ledyba{background-position:-1728px -576px}
+.art.ledian{background-position:-1824px -576px}
+.art.spinarak{background-position:-1920px -576px}
+.art.ariados{background-position:-2016px -576px}
+.art.crobat{background-position:-2112px -576px}
+.art.chinchou{background-position:-2208px -576px}
+.art.lanturn{background-position:-2304px -576px}
+.art.pichu{background-position:-2400px -576px}
+.art.cleffa{background-position:-2496px -576px}
+.art.igglybuff{background-position:-2592px -576px}
+.art.togepi{background-position:-2688px -576px}
+.art.togetic{background-position:-2784px -576px}
+.art.natu{background-position:0 -672px}
+.art.xatu{background-position:-96px -672px}
+.art.mareep{background-position:-192px -672px}
+.art.flaaffy{background-position:-288px -672px}
+.art.ampharos-mega{background-position:-384px -672px}
+.art.ampharos{background-position:-480px -672px}
+.art.bellossom{background-position:-576px -672px}
+.art.marill{background-position:-672px -672px}
+.art.azumarill{background-position:-768px -672px}
+.art.sudowoodo{background-position:-864px -672px}
+.art.politoed{background-position:-960px -672px}
+.art.hoppip{background-position:-1056px -672px}
+.art.skiploom{background-position:-1152px -672px}
+.art.jumpluff{background-position:-1248px -672px}
+.art.aipom{background-position:-1344px -672px}
+.art.sunkern{background-position:-1440px -672px}
+.art.sunflora{background-position:-1536px -672px}
+.art.yanma{background-position:-1632px -672px}
+.art.wooper{background-position:-1728px -672px}
+.art.quagsire{background-position:-1824px -672px}
+.art.espeon{background-position:-1920px -672px}
+.art.umbreon{background-position:-2016px -672px}
+.art.murkrow{background-position:-2112px -672px}
+.art.slowking{background-position:-2208px -672px}
+.art.misdreavus{background-position:-2304px -672px}
+.art.wobbuffet{background-position:-2400px -672px}
+.art.girafarig{background-position:-2496px -672px}
+.art.pineco{background-position:-2592px -672px}
+.art.forretress{background-position:-2688px -672px}
+.art.dunsparce{background-position:-2784px -672px}
+.art.gligar{background-position:0 -768px}
+.art.steelix-mega{background-position:-96px -768px}
+.art.steelix{background-position:-192px -768px}
+.art.snubbull{background-position:-288px -768px}
+.art.granbull{background-position:-384px -768px}
+.art.qwilfish{background-position:-480px -768px}
+.art.scizor-mega{background-position:-576px -768px}
+.art.scizor{background-position:-672px -768px}
+.art.shuckle{background-position:-768px -768px}
+.art.heracross-mega{background-position:-864px -768px}
+.art.heracross{background-position:-960px -768px}
+.art.sneasel{background-position:-1056px -768px}
+.art.teddiursa{background-position:-1152px -768px}
+.art.ursaring{background-position:-1248px -768px}
+.art.slugma{background-position:-1344px -768px}
+.art.magcargo{background-position:-1440px -768px}
+.art.swinub{background-position:-1536px -768px}
+.art.piloswine{background-position:-1632px -768px}
+.art.corsola{background-position:-1728px -768px}
+.art.remoraid{background-position:-1824px -768px}
+.art.octillery{background-position:-1920px -768px}
+.art.delibird{background-position:-2016px -768px}
+.art.mantine{background-position:-2112px -768px}
+.art.skarmory{background-position:-2208px -768px}
+.art.houndour{background-position:-2304px -768px}
+.art.houndoom-mega{background-position:-2400px -768px}
+.art.houndoom{background-position:-2496px -768px}
+.art.kingdra{background-position:-2592px -768px}
+.art.phanpy{background-position:-2688px -768px}
+.art.donphan{background-position:-2784px -768px}
+.art.porygon2{background-position:0 -864px}
+.art.stantler{background-position:-96px -864px}
+.art.smeargle{background-position:-192px -864px}
+.art.tyrogue{background-position:-288px -864px}
+.art.hitmontop{background-position:-384px -864px}
+.art.smoochum{background-position:-480px -864px}
+.art.elekid{background-position:-576px -864px}
+.art.magby{background-position:-672px -864px}
+.art.miltank{background-position:-768px -864px}
+.art.blissey{background-position:-864px -864px}
+.art.raikou{background-position:-960px -864px}
+.art.entei{background-position:-1056px -864px}
+.art.suicune{background-position:-1152px -864px}
+.art.larvitar{background-position:-1248px -864px}
+.art.pupitar{background-position:-1344px -864px}
+.art.tyranitar-mega{background-position:-1440px -864px}
+.art.tyranitar{background-position:-1536px -864px}
+.art.lugia{background-position:-1632px -864px}
+.art.ho-oh{background-position:-1728px -864px}
+.art.celebi{background-position:-1824px -864px}
+.art.treecko{background-position:-1920px -864px}
+.art.grovyle{background-position:-2016px -864px}
+.art.sceptile-mega{background-position:-2112px -864px}
+.art.sceptile{background-position:-2208px -864px}
+.art.torchic{background-position:-2304px -864px}
+.art.combusken{background-position:-2400px -864px}
+.art.blaziken-mega{background-position:-2496px -864px}
+.art.blaziken{background-position:-2592px -864px}
+.art.mudkip{background-position:-2688px -864px}
+.art.marshtomp{background-position:-2784px -864px}
+.art.swampert-mega{background-position:0 -960px}
+.art.swampert{background-position:-96px -960px}
+.art.poochyena{background-position:-192px -960px}
+.art.mightyena{background-position:-288px -960px}
+.art.zigzagoon{background-position:-384px -960px}
+.art.linoone{background-position:-480px -960px}
+.art.wurmple{background-position:-576px -960px}
+.art.silcoon{background-position:-672px -960px}
+.art.beautifly{background-position:-768px -960px}
+.art.cascoon{background-position:-864px -960px}
+.art.dustox{background-position:-960px -960px}
+.art.lotad{background-position:-1056px -960px}
+.art.lombre{background-position:-1152px -960px}
+.art.ludicolo{background-position:-1248px -960px}
+.art.seedot{background-position:-1344px -960px}
+.art.nuzleaf{background-position:-1440px -960px}
+.art.shiftry{background-position:-1536px -960px}
+.art.taillow{background-position:-1632px -960px}
+.art.swellow{background-position:-1728px -960px}
+.art.wingull{background-position:-1824px -960px}
+.art.pelipper{background-position:-1920px -960px}
+.art.ralts{background-position:-2016px -960px}
+.art.kirlia{background-position:-2112px -960px}
+.art.gardevoir-mega{background-position:-2208px -960px}
+.art.gardevoir{background-position:-2304px -960px}
+.art.surskit{background-position:-2400px -960px}
+.art.masquerain{background-position:-2496px -960px}
+.art.shroomish{background-position:-2592px -960px}
+.art.breloom{background-position:-2688px -960px}
+.art.slakoth{background-position:-2784px -960px}
+.art.vigoroth{background-position:0 -1056px}
+.art.slaking{background-position:-96px -1056px}
+.art.nincada{background-position:-192px -1056px}
+.art.ninjask{background-position:-288px -1056px}
+.art.shedinja{background-position:-384px -1056px}
+.art.whismur{background-position:-480px -1056px}
+.art.loudred{background-position:-576px -1056px}
+.art.exploud{background-position:-672px -1056px}
+.art.makuhita{background-position:-768px -1056px}
+.art.hariyama{background-position:-864px -1056px}
+.art.azurill{background-position:-960px -1056px}
+.art.nosepass{background-position:-1056px -1056px}
+.art.skitty{background-position:-1152px -1056px}
+.art.delcatty{background-position:-1248px -1056px}
+.art.sableye-mega{background-position:-1344px -1056px}
+.art.sableye{background-position:-1440px -1056px}
+.art.mawile-mega{background-position:-1536px -1056px}
+.art.mawile{background-position:-1632px -1056px}
+.art.aron{background-position:-1728px -1056px}
+.art.lairon{background-position:-1824px -1056px}
+.art.aggron-mega{background-position:-1920px -1056px}
+.art.aggron{background-position:-2016px -1056px}
+.art.meditite{background-position:-2112px -1056px}
+.art.medicham-mega{background-position:-2208px -1056px}
+.art.medicham{background-position:-2304px -1056px}
+.art.electrike{background-position:-2400px -1056px}
+.art.manectric-mega{background-position:-2496px -1056px}
+.art.manectric{background-position:-2592px -1056px}
+.art.plusle{background-position:-2688px -1056px}
+.art.minun{background-position:-2784px -1056px}
+.art.volbeat{background-position:0 -1152px}
+.art.illumise{background-position:-96px -1152px}
+.art.roselia{background-position:-192px -1152px}
+.art.gulpin{background-position:-288px -1152px}
+.art.swalot{background-position:-384px -1152px}
+.art.carvanha{background-position:-480px -1152px}
+.art.sharpedo-mega{background-position:-576px -1152px}
+.art.sharpedo{background-position:-672px -1152px}
+.art.wailmer{background-position:-768px -1152px}
+.art.wailord{background-position:-864px -1152px}
+.art.numel{background-position:-960px -1152px}
+.art.camerupt-mega{background-position:-1056px -1152px}
+.art.camerupt{background-position:-1152px -1152px}
+.art.torkoal{background-position:-1248px -1152px}
+.art.spoink{background-position:-1344px -1152px}
+.art.grumpig{background-position:-1440px -1152px}
+.art.spinda{background-position:-1536px -1152px}
+.art.trapinch{background-position:-1632px -1152px}
+.art.vibrava{background-position:-1728px -1152px}
+.art.flygon{background-position:-1824px -1152px}
+.art.cacnea{background-position:-1920px -1152px}
+.art.cacturne{background-position:-2016px -1152px}
+.art.swablu{background-position:-2112px -1152px}
+.art.altaria-mega{background-position:-2208px -1152px}
+.art.altaria{background-position:-2304px -1152px}
+.art.zangoose{background-position:-2400px -1152px}
+.art.seviper{background-position:-2496px -1152px}
+.art.lunatone{background-position:-2592px -1152px}
+.art.solrock{background-position:-2688px -1152px}
+.art.barboach{background-position:-2784px -1152px}
+.art.whiscash{background-position:0 -1248px}
+.art.corphish{background-position:-96px -1248px}
+.art.crawdaunt{background-position:-192px -1248px}
+.art.baltoy{background-position:-288px -1248px}
+.art.claydol{background-position:-384px -1248px}
+.art.lileep{background-position:-480px -1248px}
+.art.cradily{background-position:-576px -1248px}
+.art.anorith{background-position:-672px -1248px}
+.art.armaldo{background-position:-768px -1248px}
+.art.feebas{background-position:-864px -1248px}
+.art.milotic{background-position:-960px -1248px}
+.art.castform{background-position:-1056px -1248px}
+.art.kecleon{background-position:-1152px -1248px}
+.art.shuppet{background-position:-1248px -1248px}
+.art.banette-mega{background-position:-1344px -1248px}
+.art.banette{background-position:-1440px -1248px}
+.art.duskull{background-position:-1536px -1248px}
+.art.dusclops{background-position:-1632px -1248px}
+.art.tropius{background-position:-1728px -1248px}
+.art.chimecho{background-position:-1824px -1248px}
+.art.absol-mega{background-position:-1920px -1248px}
+.art.absol{background-position:-2016px -1248px}
+.art.wynaut{background-position:-2112px -1248px}
+.art.snorunt{background-position:-2208px -1248px}
+.art.glalie-mega{background-position:-2304px -1248px}
+.art.glalie{background-position:-2400px -1248px}
+.art.spheal{background-position:-2496px -1248px}
+.art.sealeo{background-position:-2592px -1248px}
+.art.walrein{background-position:-2688px -1248px}
+.art.clamperl{background-position:-2784px -1248px}
+.art.huntail{background-position:0 -1344px}
+.art.gorebyss{background-position:-96px -1344px}
+.art.relicanth{background-position:-192px -1344px}
+.art.luvdisc{background-position:-288px -1344px}
+.art.bagon{background-position:-384px -1344px}
+.art.shelgon{background-position:-480px -1344px}
+.art.salamence-mega{background-position:-576px -1344px}
+.art.salamence{background-position:-672px -1344px}
+.art.beldum{background-position:-768px -1344px}
+.art.metang{background-position:-864px -1344px}
+.art.metagross-mega{background-position:-960px -1344px}
+.art.metagross{background-position:-1056px -1344px}
+.art.regirock{background-position:-1152px -1344px}
+.art.regice{background-position:-1248px -1344px}
+.art.registeel{background-position:-1344px -1344px}
+.art.latias-mega{background-position:-1440px -1344px}
+.art.latias{background-position:-1536px -1344px}
+.art.latios-mega{background-position:-1632px -1344px}
+.art.latios{background-position:-1728px -1344px}
+.art.kyogre-primal{background-position:-1824px -1344px}
+.art.kyogre{background-position:-1920px -1344px}
+.art.groudon-primal{background-position:-2016px -1344px}
+.art.groudon{background-position:-2112px -1344px}
+.art.rayquaza-mega{background-position:-2208px -1344px}
+.art.rayquaza{background-position:-2304px -1344px}
+.art.jirachi{background-position:-2400px -1344px}
+.art.deoxys-attack{background-position:-2496px -1344px}
+.art.deoxys-defense{background-position:-2592px -1344px}
+.art.deoxys-speed{background-position:-2688px -1344px}
+.art.deoxys{background-position:-2784px -1344px}
+.art.turtwig{background-position:0 -1440px}
+.art.grotle{background-position:-96px -1440px}
+.art.torterra{background-position:-192px -1440px}
+.art.chimchar{background-position:-288px -1440px}
+.art.monferno{background-position:-384px -1440px}
+.art.infernape{background-position:-480px -1440px}
+.art.piplup{background-position:-576px -1440px}
+.art.prinplup{background-position:-672px -1440px}
+.art.empoleon{background-position:-768px -1440px}
+.art.starly{background-position:-864px -1440px}
+.art.staravia{background-position:-960px -1440px}
+.art.staraptor{background-position:-1056px -1440px}
+.art.bidoof{background-position:-1152px -1440px}
+.art.bibarel{background-position:-1248px -1440px}
+.art.kricketot{background-position:-1344px -1440px}
+.art.kricketune{background-position:-1440px -1440px}
+.art.shinx{background-position:-1536px -1440px}
+.art.luxio{background-position:-1632px -1440px}
+.art.luxray{background-position:-1728px -1440px}
+.art.budew{background-position:-1824px -1440px}
+.art.roserade{background-position:-1920px -1440px}
+.art.cranidos{background-position:-2016px -1440px}
+.art.rampardos{background-position:-2112px -1440px}
+.art.shieldon{background-position:-2208px -1440px}
+.art.bastiodon{background-position:-2304px -1440px}
+.art.burmy-sandy{background-position:-2400px -1440px}
+.art.burmy-trash{background-position:-2496px -1440px}
+.art.burmy{background-position:-2592px -1440px}
+.art.wormadam-sandy{background-position:-2688px -1440px}
+.art.wormadam-trash{background-position:-2784px -1440px}
+.art.wormadam{background-position:0 -1536px}
+.art.mothim{background-position:-96px -1536px}
+.art.combee{background-position:-192px -1536px}
+.art.vespiquen{background-position:-288px -1536px}
+.art.pachirisu{background-position:-384px -1536px}
+.art.buizel{background-position:-480px -1536px}
+.art.floatzel{background-position:-576px -1536px}
+.art.cherubi{background-position:-672px -1536px}
+.art.cherrim-overcast{background-position:-768px -1536px}
+.art.cherrim{background-position:-864px -1536px}
+.art.shellos-east{background-position:-960px -1536px}
+.art.shellos{background-position:-1056px -1536px}
+.art.gastrodon-east{background-position:-1152px -1536px}
+.art.gastrodon{background-position:-1248px -1536px}
+.art.ambipom{background-position:-1344px -1536px}
+.art.drifloon{background-position:-1440px -1536px}
+.art.drifblim{background-position:-1536px -1536px}
+.art.buneary{background-position:-1632px -1536px}
+.art.lopunny-mega{background-position:-1728px -1536px}
+.art.lopunny{background-position:-1824px -1536px}
+.art.mismagius{background-position:-1920px -1536px}
+.art.honchkrow{background-position:-2016px -1536px}
+.art.glameow{background-position:-2112px -1536px}
+.art.purugly{background-position:-2208px -1536px}
+.art.chingling{background-position:-2304px -1536px}
+.art.stunky{background-position:-2400px -1536px}
+.art.skuntank{background-position:-2496px -1536px}
+.art.bronzor{background-position:-2592px -1536px}
+.art.bronzong{background-position:-2688px -1536px}
+.art.bonsly{background-position:-2784px -1536px}
+.art.mime-jr{background-position:0 -1632px}
+.art.happiny{background-position:-96px -1632px}
+.art.chatot{background-position:-192px -1632px}
+.art.spiritomb{background-position:-288px -1632px}
+.art.gible{background-position:-384px -1632px}
+.art.gabite{background-position:-480px -1632px}
+.art.garchomp-mega{background-position:-576px -1632px}
+.art.garchomp{background-position:-672px -1632px}
+.art.munchlax{background-position:-768px -1632px}
+.art.riolu{background-position:-864px -1632px}
+.art.lucario-mega{background-position:-960px -1632px}
+.art.lucario{background-position:-1056px -1632px}
+.art.hippopotas{background-position:-1152px -1632px}
+.art.hippowdon{background-position:-1248px -1632px}
+.art.skorupi{background-position:-1344px -1632px}
+.art.drapion{background-position:-1440px -1632px}
+.art.croagunk{background-position:-1536px -1632px}
+.art.toxicroak{background-position:-1632px -1632px}
+.art.carnivine{background-position:-1728px -1632px}
+.art.finneon{background-position:-1824px -1632px}
+.art.lumineon{background-position:-1920px -1632px}
+.art.mantyke{background-position:-2016px -1632px}
+.art.snover{background-position:-2112px -1632px}
+.art.abomasnow-mega{background-position:-2208px -1632px}
+.art.abomasnow{background-position:-2304px -1632px}
+.art.weavile{background-position:-2400px -1632px}
+.art.magnezone{background-position:-2496px -1632px}
+.art.lickilicky{background-position:-2592px -1632px}
+.art.rhyperior{background-position:-2688px -1632px}
+.art.tangrowth{background-position:-2784px -1632px}
+.art.electivire{background-position:0 -1728px}
+.art.magmortar{background-position:-96px -1728px}
+.art.togekiss{background-position:-192px -1728px}
+.art.yanmega{background-position:-288px -1728px}
+.art.leafeon{background-position:-384px -1728px}
+.art.glaceon{background-position:-480px -1728px}
+.art.gliscor{background-position:-576px -1728px}
+.art.mamoswine{background-position:-672px -1728px}
+.art.porygon-z{background-position:-768px -1728px}
+.art.gallade-mega{background-position:-864px -1728px}
+.art.gallade{background-position:-960px -1728px}
+.art.probopass{background-position:-1056px -1728px}
+.art.dusknoir{background-position:-1152px -1728px}
+.art.froslass{background-position:-1248px -1728px}
+.art.rotom-fan{background-position:-1344px -1728px}
+.art.rotom-frost{background-position:-1440px -1728px}
+.art.rotom-heat{background-position:-1536px -1728px}
+.art.rotom-mow{background-position:-1632px -1728px}
+.art.rotom-wash{background-position:-1728px -1728px}
+.art.rotom{background-position:-1824px -1728px}
+.art.uxie{background-position:-1920px -1728px}
+.art.mesprit{background-position:-2016px -1728px}
+.art.azelf{background-position:-2112px -1728px}
+.art.dialga{background-position:-2208px -1728px}
+.art.palkia{background-position:-2304px -1728px}
+.art.heatran{background-position:-2400px -1728px}
+.art.regigigas{background-position:-2496px -1728px}
+.art.giratina-origin{background-position:-2592px -1728px}
+.art.giratina{background-position:-2688px -1728px}
+.art.cresselia{background-position:-2784px -1728px}
+.art.phione{background-position:0 -1824px}
+.art.manaphy{background-position:-96px -1824px}
+.art.darkrai{background-position:-192px -1824px}
+.art.shaymin-sky{background-position:-288px -1824px}
+.art.shaymin{background-position:-384px -1824px}
+.art.arceus{background-position:-480px -1824px}
+.art.victini{background-position:-576px -1824px}
+.art.snivy{background-position:-672px -1824px}
+.art.servine{background-position:-768px -1824px}
+.art.serperior{background-position:-864px -1824px}
+.art.tepig{background-position:-960px -1824px}
+.art.pignite{background-position:-1056px -1824px}
+.art.emboar{background-position:-1152px -1824px}
+.art.oshawott{background-position:-1248px -1824px}
+.art.dewott{background-position:-1344px -1824px}
+.art.samurott{background-position:-1440px -1824px}
+.art.patrat{background-position:-1536px -1824px}
+.art.watchog{background-position:-1632px -1824px}
+.art.lillipup{background-position:-1728px -1824px}
+.art.herdier{background-position:-1824px -1824px}
+.art.stoutland{background-position:-1920px -1824px}
+.art.purrloin{background-position:-2016px -1824px}
+.art.liepard{background-position:-2112px -1824px}
+.art.pansage{background-position:-2208px -1824px}
+.art.simisage{background-position:-2304px -1824px}
+.art.pansear{background-position:-2400px -1824px}
+.art.simisear{background-position:-2496px -1824px}
+.art.panpour{background-position:-2592px -1824px}
+.art.simipour{background-position:-2688px -1824px}
+.art.munna{background-position:-2784px -1824px}
+.art.musharna{background-position:0 -1920px}
+.art.pidove{background-position:-96px -1920px}
+.art.tranquill{background-position:-192px -1920px}
+.art.unfezant-male{background-position:-288px -1920px}
+.art.unfezant{background-position:-384px -1920px}
+.art.blitzle{background-position:-480px -1920px}
+.art.zebstrika{background-position:-576px -1920px}
+.art.roggenrola{background-position:-672px -1920px}
+.art.boldore{background-position:-768px -1920px}
+.art.gigalith{background-position:-864px -1920px}
+.art.woobat{background-position:-960px -1920px}
+.art.swoobat{background-position:-1056px -1920px}
+.art.drilbur{background-position:-1152px -1920px}
+.art.excadrill{background-position:-1248px -1920px}
+.art.audino-mega{background-position:-1344px -1920px}
+.art.audino{background-position:-1440px -1920px}
+.art.timburr{background-position:-1536px -1920px}
+.art.gurdurr{background-position:-1632px -1920px}
+.art.conkeldurr{background-position:-1728px -1920px}
+.art.tympole{background-position:-1824px -1920px}
+.art.palpitoad{background-position:-1920px -1920px}
+.art.seismitoad{background-position:-2016px -1920px}
+.art.throh{background-position:-2112px -1920px}
+.art.sawk{background-position:-2208px -1920px}
+.art.sewaddle{background-position:-2304px -1920px}
+.art.swadloon{background-position:-2400px -1920px}
+.art.leavanny{background-position:-2496px -1920px}
+.art.venipede{background-position:-2592px -1920px}
+.art.whirlipede{background-position:-2688px -1920px}
+.art.scolipede{background-position:-2784px -1920px}
+.art.cottonee{background-position:0 -2016px}
+.art.whimsicott{background-position:-96px -2016px}
+.art.petilil{background-position:-192px -2016px}
+.art.lilligant{background-position:-288px -2016px}
+.art.basculin-blue-striped{background-position:-384px -2016px}
+.art.basculin{background-position:-480px -2016px}
+.art.sandile{background-position:-576px -2016px}
+.art.krokorok{background-position:-672px -2016px}
+.art.krookodile{background-position:-768px -2016px}
+.art.darumaka{background-position:-864px -2016px}
+.art.darmanitan{background-position:-960px -2016px}
+.art.maractus{background-position:-1056px -2016px}
+.art.dwebble{background-position:-1152px -2016px}
+.art.crustle{background-position:-1248px -2016px}
+.art.scraggy{background-position:-1344px -2016px}
+.art.scrafty{background-position:-1440px -2016px}
+.art.sigilyph{background-position:-1536px -2016px}
+.art.yamask{background-position:-1632px -2016px}
+.art.cofagrigus{background-position:-1728px -2016px}
+.art.tirtouga{background-position:-1824px -2016px}
+.art.carracosta{background-position:-1920px -2016px}
+.art.archen{background-position:-2016px -2016px}
+.art.archeops{background-position:-2112px -2016px}
+.art.trubbish{background-position:-2208px -2016px}
+.art.garbodor{background-position:-2304px -2016px}
+.art.zorua{background-position:-2400px -2016px}
+.art.zoroark{background-position:-2496px -2016px}
+.art.minccino{background-position:-2592px -2016px}
+.art.cinccino{background-position:-2688px -2016px}
+.art.gothita{background-position:-2784px -2016px}
+.art.gothorita{background-position:0 -2112px}
+.art.gothitelle{background-position:-96px -2112px}
+.art.solosis{background-position:-192px -2112px}
+.art.duosion{background-position:-288px -2112px}
+.art.reuniclus{background-position:-384px -2112px}
+.art.ducklett{background-position:-480px -2112px}
+.art.swanna{background-position:-576px -2112px}
+.art.vanillite{background-position:-672px -2112px}
+.art.vanillish{background-position:-768px -2112px}
+.art.vanilluxe{background-position:-864px -2112px}
+.art.deerling-autumn{background-position:-960px -2112px}
+.art.deerling-summer{background-position:-1056px -2112px}
+.art.deerling-winter{background-position:-1152px -2112px}
+.art.deerling{background-position:-1248px -2112px}
+.art.sawsbuck-autumn{background-position:-1344px -2112px}
+.art.sawsbuck-summer{background-position:-1440px -2112px}
+.art.sawsbuck-winter{background-position:-1536px -2112px}
+.art.sawsbuck{background-position:-1632px -2112px}
+.art.emolga{background-position:-1728px -2112px}
+.art.karrablast{background-position:-1824px -2112px}
+.art.escavalier{background-position:-1920px -2112px}
+.art.foongus{background-position:-2016px -2112px}
+.art.amoonguss{background-position:-2112px -2112px}
+.art.frillish-male{background-position:-2208px -2112px}
+.art.frillish{background-position:-2304px -2112px}
+.art.jellicent-male{background-position:-2400px -2112px}
+.art.jellicent{background-position:-2496px -2112px}
+.art.alomomola{background-position:-2592px -2112px}
+.art.joltik{background-position:-2688px -2112px}
+.art.galvantula{background-position:-2784px -2112px}
+.art.ferroseed{background-position:0 -2208px}
+.art.ferrothorn{background-position:-96px -2208px}
+.art.klink{background-position:-192px -2208px}
+.art.klang{background-position:-288px -2208px}
+.art.klinklang{background-position:-384px -2208px}
+.art.tynamo{background-position:-480px -2208px}
+.art.eelektrik{background-position:-576px -2208px}
+.art.eelektross{background-position:-672px -2208px}
+.art.elgyem{background-position:-768px -2208px}
+.art.beheeyem{background-position:-864px -2208px}
+.art.litwick{background-position:-960px -2208px}
+.art.lampent{background-position:-1056px -2208px}
+.art.chandelure{background-position:-1152px -2208px}
+.art.axew{background-position:-1248px -2208px}
+.art.fraxure{background-position:-1344px -2208px}
+.art.haxorus{background-position:-1440px -2208px}
+.art.cubchoo{background-position:-1536px -2208px}
+.art.beartic{background-position:-1632px -2208px}
+.art.cryogonal{background-position:-1728px -2208px}
+.art.shelmet{background-position:-1824px -2208px}
+.art.accelgor{background-position:-1920px -2208px}
+.art.stunfisk{background-position:-2016px -2208px}
+.art.mienfoo{background-position:-2112px -2208px}
+.art.mienshao{background-position:-2208px -2208px}
+.art.druddigon{background-position:-2304px -2208px}
+.art.golett{background-position:-2400px -2208px}
+.art.golurk{background-position:-2496px -2208px}
+.art.pawniard{background-position:-2592px -2208px}
+.art.bisharp{background-position:-2688px -2208px}
+.art.bouffalant{background-position:-2784px -2208px}
+.art.rufflet{background-position:0 -2304px}
+.art.braviary{background-position:-96px -2304px}
+.art.vullaby{background-position:-192px -2304px}
+.art.mandibuzz{background-position:-288px -2304px}
+.art.heatmor{background-position:-384px -2304px}
+.art.durant{background-position:-480px -2304px}
+.art.deino{background-position:-576px -2304px}
+.art.zweilous{background-position:-672px -2304px}
+.art.hydreigon{background-position:-768px -2304px}
+.art.larvesta{background-position:-864px -2304px}
+.art.volcarona{background-position:-960px -2304px}
+.art.cobalion{background-position:-1056px -2304px}
+.art.terrakion{background-position:-1152px -2304px}
+.art.virizion{background-position:-1248px -2304px}
+.art.tornadus-therian{background-position:-1344px -2304px}
+.art.tornadus{background-position:-1440px -2304px}
+.art.thundurus-therian{background-position:-1536px -2304px}
+.art.thundurus{background-position:-1632px -2304px}
+.art.reshiram{background-position:-1728px -2304px}
+.art.zekrom{background-position:-1824px -2304px}
+.art.landorus-therian{background-position:-1920px -2304px}
+.art.landorus{background-position:-2016px -2304px}
+.art.kyurem-black{background-position:-2112px -2304px}
+.art.kyurem-white{background-position:-2208px -2304px}
+.art.kyurem{background-position:-2304px -2304px}
+.art.keldeo:hover,
+.art.keldeo-resolute{background-position:-2400px -2304px}
+.art.keldeo{background-position:-2496px -2304px}
+.art.meloetta:hover,
+.art.meloetta-pirouette{background-position:-2592px -2304px}
+.art.meloetta{background-position:-2688px -2304px}
+.art.genesect{background-position:-2784px -2304px}
+.art.chespin{background-position:0 -2400px}
+.art.quilladin{background-position:-96px -2400px}
+.art.chesnaught{background-position:-192px -2400px}
+.art.fennekin{background-position:-288px -2400px}
+.art.braixen{background-position:-384px -2400px}
+.art.delphox{background-position:-480px -2400px}
+.art.froakie{background-position:-576px -2400px}
+.art.frogadier{background-position:-672px -2400px}
+.art.greninja-ash{background-position:-768px -2400px}
+.art.greninja{background-position:-864px -2400px}
+.art.bunnelby{background-position:-960px -2400px}
+.art.diggersby{background-position:-1056px -2400px}
+.art.fletchling{background-position:-1152px -2400px}
+.art.fletchinder{background-position:-1248px -2400px}
+.art.talonflame{background-position:-1344px -2400px}
+.art.scatterbug{background-position:-1440px -2400px}
+.art.spewpa{background-position:-1536px -2400px}
+.art.vivillon{background-position:-1632px -2400px}
+.art.litleo{background-position:-1728px -2400px}
+.art.pyroar-male{background-position:-1824px -2400px}
+.art.pyroar{background-position:-1920px -2400px}
+.art.flabebe{background-position:-2016px -2400px}
+.art.floette{background-position:-2112px -2400px}
+.art.florges{background-position:-2208px -2400px}
+.art.skiddo{background-position:-2304px -2400px}
+.art.gogoat{background-position:-2400px -2400px}
+.art.pancham{background-position:-2496px -2400px}
+.art.pangoro{background-position:-2592px -2400px}
+.art.furfrou{background-position:-2688px -2400px}
+.art.espurr{background-position:-2784px -2400px}
+.art.meowstic-male{background-position:0 -2496px}
+.art.meowstic{background-position:-96px -2496px}
+.art.honedge{background-position:-192px -2496px}
+.art.doublade{background-position:-288px -2496px}
+.art.aegislash:hover,
+.art.aegislash-blade{background-position:-384px -2496px}
+.art.aegislash{background-position:-480px -2496px}
+.art.spritzee{background-position:-576px -2496px}
+.art.aromatisse{background-position:-672px -2496px}
+.art.swirlix{background-position:-768px -2496px}
+.art.slurpuff{background-position:-864px -2496px}
+.art.inkay{background-position:-960px -2496px}
+.art.malamar{background-position:-1056px -2496px}
+.art.binacle{background-position:-1152px -2496px}
+.art.barbaracle{background-position:-1248px -2496px}
+.art.skrelp{background-position:-1344px -2496px}
+.art.dragalge{background-position:-1440px -2496px}
+.art.clauncher{background-position:-1536px -2496px}
+.art.clawitzer{background-position:-1632px -2496px}
+.art.helioptile{background-position:-1728px -2496px}
+.art.heliolisk{background-position:-1824px -2496px}
+.art.tyrunt{background-position:-1920px -2496px}
+.art.tyrantrum{background-position:-2016px -2496px}
+.art.amaura{background-position:-2112px -2496px}
+.art.aurorus{background-position:-2208px -2496px}
+.art.sylveon{background-position:-2304px -2496px}
+.art.hawlucha{background-position:-2400px -2496px}
+.art.dedenne{background-position:-2496px -2496px}
+.art.carbink{background-position:-2592px -2496px}
+.art.goomy{background-position:-2688px -2496px}
+.art.sliggoo{background-position:-2784px -2496px}
+.art.goodra{background-position:0 -2592px}
+.art.klefki{background-position:-96px -2592px}
+.art.phantump{background-position:-192px -2592px}
+.art.trevenant{background-position:-288px -2592px}
+.art.pumpkaboo{background-position:-384px -2592px}
+.art.gourgeist{background-position:-480px -2592px}
+.art.bergmite{background-position:-576px -2592px}
+.art.avalugg{background-position:-672px -2592px}
+.art.noibat{background-position:-768px -2592px}
+.art.noivern{background-position:-864px -2592px}
+.art.xerneas{background-position:-960px -2592px}
+.art.yveltal{background-position:-1056px -2592px}
+.art.zygarde-10{background-position:-1152px -2592px}
+.art.zygarde-10:hover,.art.zygarde:hover,
+.art.zygarde-complete{background-position:-1248px -2592px}
+.art.zygarde{background-position:-1344px -2592px}
+.art.diancie-mega{background-position:-1440px -2592px}
+.art.diancie{background-position:-1536px -2592px}
+.art.hoopa-unbound{background-position:-1632px -2592px}
+.art.hoopa{background-position:-1728px -2592px}
+.art.volcanion{background-position:-1824px -2592px}
+.art.rowlet{background-position:-1920px -2592px}
+.art.dartrix{background-position:-2016px -2592px}
+.art.decidueye{background-position:-2112px -2592px}
+.art.litten{background-position:-2208px -2592px}
+.art.torracat{background-position:-2304px -2592px}
+.art.incineroar{background-position:-2400px -2592px}
+.art.popplio{background-position:-2496px -2592px}
+.art.brionne{background-position:-2592px -2592px}
+.art.primarina{background-position:-2688px -2592px}
+.art.pikipek{background-position:-2784px -2592px}
+.art.trumbeak{background-position:0 -2688px}
+.art.toucannon{background-position:-96px -2688px}
+.art.yungoos{background-position:-192px -2688px}
+.art.gumshoos{background-position:-288px -2688px}
+.art.grubbin{background-position:-384px -2688px}
+.art.charjabug{background-position:-480px -2688px}
+.art.vikavolt{background-position:-576px -2688px}
+.art.crabrawler{background-position:-672px -2688px}
+.art.crabominable{background-position:-768px -2688px}
+.art.oricorio-baile{background-position:-864px -2688px}
+.art.oricorio-pa-u{background-position:-960px -2688px}
+.art.oricorio-sensu{background-position:-1056px -2688px}
+.art.oricorio{background-position:-1152px -2688px}
+.art.cutiefly{background-position:-1248px -2688px}
+.art.ribombee{background-position:-1344px -2688px}
+.art.rockruff{background-position:-1440px -2688px}
+.art.lycanroc-midnight{background-position:-1536px -2688px}
+.art.lycanroc{background-position:-1632px -2688px}
+.art.wishiwashi-school{background-position:-1728px -2688px}
+.art.wishiwashi:hover,
+.art.wishiwashi{background-position:-1824px -2688px}
+.art.mareanie{background-position:-1920px -2688px}
+.art.toxapex{background-position:-2016px -2688px}
+.art.mudbray{background-position:-2112px -2688px}
+.art.mudsdale{background-position:-2208px -2688px}
+.art.dewpider{background-position:-2304px -2688px}
+.art.araquanid{background-position:-2400px -2688px}
+.art.fomantis{background-position:-2496px -2688px}
+.art.lurantis{background-position:-2592px -2688px}
+.art.morelull{background-position:-2688px -2688px}
+.art.shiinotic{background-position:-2784px -2688px}
+.art.salandit{background-position:0 -2784px}
+.art.salazzle{background-position:-96px -2784px}
+.art.stufful{background-position:-192px -2784px}
+.art.bewear{background-position:-288px -2784px}
+.art.bounsweet{background-position:-384px -2784px}
+.art.steenee{background-position:-480px -2784px}
+.art.tsareena{background-position:-576px -2784px}
+.art.comfey{background-position:-672px -2784px}
+.art.oranguru{background-position:-768px -2784px}
+.art.passimian{background-position:-864px -2784px}
+.art.wimpod{background-position:-960px -2784px}
+.art.golisopod{background-position:-1056px -2784px}
+.art.sandygast{background-position:-1152px -2784px}
+.art.palossand{background-position:-1248px -2784px}
+.art.pyukumuku{background-position:-1344px -2784px}
+.art.type-null{background-position:-1440px -2784px}
+.art.silvally{background-position:-1536px -2784px}
+.art.minior-core{background-position:-1632px -2784px}
+.art.minior:hover,
+.art.minior{background-position:-1728px -2784px}
+.art.komala{background-position:-1824px -2784px}
+.art.turtonator{background-position:-1920px -2784px}
+.art.togedemaru{background-position:-2016px -2784px}
+.art.mimikyu{background-position:-2112px -2784px}
+.art.bruxish{background-position:-2208px -2784px}
+.art.drampa{background-position:-2304px -2784px}
+.art.dhelmise{background-position:-2400px -2784px}
+.art.jangmo-o{background-position:-2496px -2784px}
+.art.hakamo-o{background-position:-2592px -2784px}
+.art.kommo-o{background-position:-2688px -2784px}
+.art.tapu-koko{background-position:-2784px -2784px}
+.art.tapu-lele{background-position:0 -2880px}
+.art.tapu-bulu{background-position:-96px -2880px}
+.art.tapu-fini{background-position:-192px -2880px}
+.art.cosmog{background-position:-288px -2880px}
+.art.cosmoem{background-position:-384px -2880px}
+.art.solgaleo{background-position:-480px -2880px}
+.art.lunala{background-position:-576px -2880px}
+.art.nihilego{background-position:-672px -2880px}
+.art.buzzwole{background-position:-768px -2880px}
+.art.pheromosa{background-position:-864px -2880px}
+.art.xurkitree{background-position:-960px -2880px}
+.art.celesteela{background-position:-1056px -2880px}
+.art.kartana{background-position:-1152px -2880px}
+.art.guzzlord{background-position:-1248px -2880px}
+.art.necrozma{background-position:-1344px -2880px}
+.art.magearna{background-position:-1440px -2880px}
+.art.marshadow{background-position:-1536px -2880px}
+footer{
+    font-size:.75em;
+    text-align:right
+}
+.links a{
     display:inline-block;
-    width:3.125em;
-    height:1.125em;
-    text-indent:-999em
-}
-.hidden-power.fire{background-position:0 -18px}
-.hidden-power.flying{background-position:0 -36px}
-.hidden-power.grass{background-position:0 -54px}
-.hidden-power.water{background-position:0 -90px}
-.hidden-power.bug{background-position:-50px 0}
-.hidden-power.electric{background-position:-50px -18px}
-.hidden-power.ghost{background-position:-50px -36px}
-.hidden-power.ground{background-position:-50px -54px}
-.hidden-power.poison{background-position:-50px -72px}
-.hidden-power.rock{background-position:-50px -90px}
-.hidden-power.dark{background-position:-100px 0}
-.hidden-power.dragon{background-position:-100px -18px}
-.hidden-power.fairy{background-position:-100px -36px}
-.hidden-power.ice{background-position:-100px -54px}
-.hidden-power.psychic{background-position:-100px -72px}
-.hidden-power.steel{background-position:-100px -90px}
-
-.item-sprite{
-	width:1.625em;height:1.625em;
-	margin: 0.375em 0.125em;
-	background-image:url(itemsprites.png)
-}
-.item-sprite.master-ball{background-position:-26px 0}
-.item-sprite.ultra-ball{background-position:-52px 0}
-.item-sprite.great-ball{background-position:-78px 0}
-.item-sprite.poke-ball{background-position:-104px 0}
-.item-sprite.safari-ball{background-position:-130px 0}
-.item-sprite.net-ball{background-position:-156px 0}
-.item-sprite.dive-ball{background-position:-182px 0}
-.item-sprite.nest-ball{background-position:-208px 0}
-.item-sprite.repeat-ball{background-position:-234px 0}
-.item-sprite.timer-ball{background-position:-260px 0}
-.item-sprite.luxury-ball{background-position:-286px 0}
-.item-sprite.premier-ball{background-position:-312px 0}
-.item-sprite.dusk-ball{background-position:-338px 0}
-.item-sprite.heal-ball{background-position:-364px 0}
-.item-sprite.quick-ball{background-position:-390px 0}
-.item-sprite.cherish-ball{background-position:-416px 0}
-.item-sprite.fast-ball{background-position:-416px -260px}
-.item-sprite.level-ball{background-position:-442px -260px}
-.item-sprite.lure-ball{background-position:-468px -260px}
-.item-sprite.heavy-ball{background-position:-494px -260px}
-.item-sprite.love-ball{background-position:0 -286px}
-.item-sprite.friend-ball{background-position:-26px -286px}
-.item-sprite.moon-ball{background-position:-52px -286px}
-.item-sprite.sport-ball{background-position:-78px -286px}
-.item-sprite.dream-ball{background-position:-416px -312px}
-.item-sprite.beast-ball{background-position:-312px -442px}
-
-/* Footer */
-[role="contentinfo"] {
-    padding: 1.5em 0 0;
-    font-size: 0.75em;
-    text-align: right
-}
-
-@media screen and (max-width: 51.25em) {
-    .menu-sprite,.ivs, .hp, .atk, .def, .spa, .spd, .spe, .hidden-power {
-        display: none
-    }
-    
-    table, #filters, .btn, .dropdown-menu, #copy2reddit {
-        font-size: 0.875em;
-    }
-    
-    td.sprite,td.sprite.up {
-        padding:0;
-        width:auto;
-        max-width:none;
-    }    
-}
-
-@media screen and (max-width: 67.5em) {
-    .hidden-power {
-        display: none
-    }
-}
-
-@media print {
-    a {
-        color: #000;
-        text-decoration: none;
-    }
-    
-    a[href^="mailto:"]:after {
-        content: " (" attr(data-email) ")";
-    }
-    
-    [role="search"],
-    [role="contentinfo"] {
-        display: none;
-    }
-}
-
-.filtered {
-    display: none;
-}
-.filter{
-  display:inline-block;
-  margin:0 1em 1em
-}
-.filter label{
-  margin:0 0.5em 0 0;
-  vertical-align: middle;
+    padding:0 0.375em;
+    border-radius:0.25em;
+    background:#4d6ad8;
+    color:#f0f0f0
 }
 .multiselect-container{
     position:absolute;
@@ -1556,7 +2482,7 @@ span.hidden-power{
     margin:0;
     height:100%;
     cursor:pointer;
-    font-weight:400;
+    font-weight:400;javascript:beautify();
     padding:3px 20px 3px 40px
 }
 .multiselect-container>li>a>label.radio,
@@ -1582,130 +2508,27 @@ span.hidden-power{
     margin-left:-20px;
     margin-right:0
 }
-
-body.shiny tbody tr {
-    cursor: pointer
+.btn{
+    border:0px !important;
 }
-
-.hidden{
-    display:none
+#copy-url{
+    font-size:.75em;
+    margin:2em 0 0
 }
-
-#modal {
-    position:fixed;
-    top:0;left:0;
-    z-index:3000;
-    height:100%;
-    width:100%;
-    background-color:#333;
-    background-color:rgba(0,0,0,0.75);
+#copy-url input{
+    width:68.333em;
+    padding:.125em;
+    border:.0833em solid #dedede;
+    margin:0 .5em 0 0;
 }
-
-#pokemon-info {
-    background: url(bg.png);
-    width: 28em;
-    padding: 1em;
-    border: 0.0625em solid #333;
-    position: absolute;
-    top:50%;left:50%;
-    margin-left:-14em;
-    margin-top:-10.1875em
-}
-#pokemon-info h1 {    
-    color: #333;
-    font-size: 1em;
-    line-height: 1.875;
-    margin: 0.25em 0;
-    text-align: left
-}
-#pokemon-info h1 .menu-sprite {
-    vertical-align: middle;    
-}
-#pokemon-info h1 .level{
-    font-weight:400;
-    font-size:0.75em
-}
-#pokemon-info dl {
-    width: 18em;
-}
-#pokemon-info dt, #pokemon-info dd {
-    display:inline-block;
-    margin:0 0 0.375em
-}
-#pokemon-info dt {
-    font-weight: 700;
-    width: 5em;
-}
-#pokemon-info dd {
-    width: 13em
-}
-#pokemon-info figure {
-    background: url(pokeball-grey.png) no-repeat center center;
-    text-align: center;
-    line-height: 10em;
-    width: 11.25em;
-    height: 11.25em;
-    top: 1em;
-    right: 1em;
-    position: absolute;
-}
-#pokemon-info figure .model {
-    vertical-align: middle;
-    max-width:11.25em
-}
-#pokemon-info figure .item-sprite {
-    position: absolute;
-    bottom: 0;
-    right: 0.5em;
-}
-#pokemon-info ul {
-    list-style: none;
-    clear: right;
-}
-#pokemon-info li {
-    display: inline-block;
-    width: 12.9375em;
-}
-#pokemon-info li::before {content: "~ ";}
-
-#pokemon-info .language{
-    color:#fff;
-    background-color:#505050;
-    border-radius:0.143em;
-    padding:0.214em;
-    font-size:0.875em;
-    line-height:1;
-    position: absolute;
-    top: 1em;
-    right: 1em;
-}
-#pokemon-info .notes {
-    font-size:0.75em;
-    margin:1.667em 0 0
-}
-
-#copy2reddit{
-    margin: 1em;
-}
-#copy2reddit p {
-    display:inline-block;
-    line-height:2;
-    vertical-align:middle
-}
-#copy2reddit .filter {
-    display:block;
-    margin-top:.5em
-}
-#markdown {
-    font-family:Consolas,monaco,monospace;
-    font-size:0.75em;
-    height:15em;
-    overflow:scroll;
-    background:#fff;
-    padding:0.5em;
-    border:0.0625em solid #ccc;
-}
-#markdown .line {
-    white-space: nowrap;
-    word-wrap: break-word;
+#copy-url a{
+  background-color:#4d6ad8;
+  color:#f0f0f0;
+  font-weight:700;
+  text-align:center;
+  display:inline-block;
+  padding:.2em .5em;
+  border-radius:.25em;
+  cursor:pointer;
+  width: 5em;
 }
