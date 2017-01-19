@@ -1,28 +1,14 @@
 @font-face{
-    font-family:'Open Sans';
+    font-family: 'pokemon';
     font-style:normal;
     font-weight:400;
-    src:local('Open Sans'),local('OpenSans'),url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')
-}
-
-@font-face{
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'),local('OpenSans-Bold'),url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff')
-}
-
-@font-face{
-    font-family:'Open Sans';
-    font-style:italic;
-    font-weight:400;
-    src:local('Open Sans Italic'),local('OpenSans-Italic'),url(http://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff')
+    src:url(static/pokemon.ttf);
 }
 
 body{
     background-color:#f0f0f0;
     color:#333;
-    font:16px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font:16px/1.5 "pokemon";
     overflow-y:scroll
 }
 body,a,a:hover,a:focus,caption{
