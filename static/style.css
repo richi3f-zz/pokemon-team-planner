@@ -2532,3 +2532,6 @@ footer{
   cursor:pointer;
   width: 5em;
 }
+.search {
+	margin-bottom: 10px;
+}

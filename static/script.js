@@ -100,6 +100,13 @@ function filterPkmn(option, checked) {
             if (!$this.hasClass("normal1") && ($this.children(":first").hasClass("arceus") || $this.children(":first").hasClass("silvally")) && types.length >= 36) {
                 return;
             }
+            var searchText = $('#search-filter').val();
+            if (searchText != "") {
+                if ($this.attr("title").toLowerCase().indexOf(searchText.toLowerCase()) == -1) {
+                    return;
+                } 
+            }
+            
             $(this).removeClass("filtered");
         }
     });
@@ -496,3 +503,7 @@ clipboard.on("success", function() {
         $button.text("Copy");
     }, 3000);
 });
+
+$('#search-filter').keyup(function () {
+	filterPkmn();
+})
