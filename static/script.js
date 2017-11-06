@@ -30,7 +30,7 @@ function filterPkmn(option, checked) {
         areas[i++] = "." + $(this).val();
     });
     // get regional dex
-    var isAlolaDex = $("#alola-dex").length > 0;
+    var isAlolaDex = $("#alola-dex").length > 0 || $("#new-alola-dex").length > 0;
     var isKalosDex = $("#kalos-dex").length > 0;
     var isHoennDex = $("#hoenn-dex").length > 0;
     // get selected versions
