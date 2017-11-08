@@ -65,16 +65,16 @@ a:hover,a:focus{
 }
 @-webkit-keyframes spin{
     0%{
-        -webkit-transform:rotate(0deg); }
+        -webkit-transform:rotate(0deg)}
     100%{
-        -webkit-transform:rotate(360deg); } }
+        -webkit-transform:rotate(360deg)} }
 @keyframes spin{
     0%{
         -webkit-transform:rotate(0deg);
-        transform:rotate(0deg); }
+        transform:rotate(0deg)}
     100%{
         -webkit-transform:rotate(360deg);
-        transform:rotate(360deg); } }
+        transform:rotate(360deg)} }
 h1{
     color:#ff69b4;
     font-size:2em;
@@ -1390,6 +1390,7 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
 .menu-sprite.rockruff{background-position:-650px -870px}
 .menu-sprite.lycanroc{background-position:-360px -900px}
 .menu-sprite.lycanroc-midnight{background-position:-930px -510px}
+.menu-sprite.lycanroc-dusk{background-position:0 -300px}
 .menu-sprite.wishiwashi{background-position:-420px -900px}
 .menu-sprite.wishiwashi:hover,
 .menu-sprite.wishiwashi-school{background-position:-930px -600px}
@@ -1449,9 +1450,17 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
 .menu-sprite.kartana{background-position:-120px -870px}
 .menu-sprite.guzzlord{background-position:-160px -870px}
 .menu-sprite.necrozma{background-position:-180px -930px}
+.menu-sprite.necrozma-dusk-mane{background-position:-790px -930px}
+.menu-sprite.necrozma-dawn-wings{background-position:-830px -930px}
+.menu-sprite.necrozma-ultra{background-position:0 -960px}
 .menu-sprite.magearna{background-position:-240px -900px}
 .menu-sprite.magearna-pokeball{background-position:-520px -930px}
 .menu-sprite.marshadow{background-position:-480px -930px}
+.menu-sprite.poipole{background-position:-870px -930px}
+.menu-sprite.naganadel{background-position:-40px -960px}
+.menu-sprite.stakataka{background-position:-900px -930px}
+.menu-sprite.blacephalon{background-position:-930px -930px}
+.menu-sprite.zeraora{background-position:-80px -960px}
 .menu-sprite.charizard,
 .menu-sprite.charizard-mega-x,
 .menu-sprite.charizard-mega-y,
@@ -1511,7 +1520,11 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
 .menu-sprite.crabominable,
 .menu-sprite.celesteela,
 .menu-sprite.kartana,
-.menu-sprite.guzzlord{width:40px;margin:0}
+.menu-sprite.guzzlord,
+.menu-sprite.necrozma-dusk-mane,
+.menu-sprite.necrozma-dawn-wings,
+.menu-sprite.necrozma-ultra,
+.menu-sprite.naganadel{width:40px;margin:0}
 .art{
     background-image:url('art.png');
     width:6em; height:0;
@@ -2442,13 +2455,16 @@ span.type.steel,.type.steel  th{background-position:-100px -90px}
 .art.kartana{background-position:-1248px -2880px}
 .art.guzzlord{background-position:-1344px -2880px}
 .art.necrozma{background-position:-1440px -2880px}
-.art.necrozma-dawn-wings{background-position:-1536px -2880px}
-.art.necrozma-dusk-mane{background-position:-1632px -2880px}
-.art.magearna{background-position:-1728px -2880px}
-.art.marshadow{background-position:-1824px -2880px}
-.art.ub-burst{background-position:-1920px -2880px}
-.art.ub-assembly{background-position:-2016px -2880px}
-.art.ub-adhesive{background-position:-2112px -2880px}
+.art.necrozma-dusk-mane{background-position:-1536px -2880px}
+.art.necrozma-dawn-wings{background-position:-1632px -2880px}
+.art.necrozma-ultra{background-position:-1728px -2880px}
+.art.magearna{background-position:-1824px -2880px}
+.art.marshadow{background-position:-1920px -2880px}
+.art.poipole{background-position:-2016px -2880px}
+.art.naganadel{background-position:-2112px -2880px}
+.art.stakataka{background-position:-2208px -2880px}
+.art.blacephalon{background-position:-2304px -2880px}
+.art.zeraora{background-position:-2400px -2880px}
 footer{
     font-size:.75em;
     text-align:right
