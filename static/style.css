@@ -123,8 +123,8 @@ h3{
     display:inline-block;
     font-size:1em;
     line-height:2;
-    width:6em;text-indent:1em;
-    margin:0
+    width:3.875em;
+    margin:0 1em
 }
 h3::after{
   content:":"
@@ -135,7 +135,7 @@ table,tbody,caption,td,th{
 }
 article{
     background-color:#f0f0f0;
-    width:60em;
+    width:64em;
     padding:1.25em;
     margin:1em auto
 }
@@ -174,14 +174,23 @@ article section{
     right:2em
 }
 #filters .more{
-    text-align:center
+    padding:0 0 0 5.875em
 }
 .filter{
-  display:inline-block;
-  margin:0 1em 1em
+    display:inline-block;
+    margin:0 0.5em 1em
 }
 .filter label{
-  margin:0 0.5em 0 0
+    margin:0 0.5em 0 0;
+    width:6em;
+    text-align:center
+}
+input[type=search] {
+    border: 0;
+    padding: 0.428em;
+    line-height: 1.428;
+    width: 10em;
+    font-size: 0.875em
 }
 ul.picked,
 ol.picker{
@@ -195,7 +204,7 @@ ul.picked{
     margin-bottom:1.25em
 }
 ol.picker{
-    width:54.375em
+    width:58em
 }
 ul.picked li,
 ol.picker li{
@@ -2507,7 +2516,7 @@ footer{
     margin:0;
     height:100%;
     cursor:pointer;
-    font-weight:400;javascript:beautify();
+    font-weight:400;
     padding:3px 20px 3px 40px
 }
 .multiselect-container>li>a>label.radio,
@@ -2541,7 +2550,7 @@ footer{
     margin:2em 0 0
 }
 #copy-url input{
-    width:68.333em;
+    width:72.833em;
     padding:.125em;
     border:.0833em solid #dedede;
     margin:0 .5em 0 0;

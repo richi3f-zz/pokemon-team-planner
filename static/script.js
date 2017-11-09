@@ -1,4 +1,4 @@
-function filterPkmn(option, checked) {
+function filterPokemon(option, checked) {
     // hide all Pokémon
     $("ol.picker li").addClass("filtered");
     // get selected generations
@@ -42,6 +42,9 @@ function filterPkmn(option, checked) {
     // show Pokémon that have at least one class of each array (generations, types, resistances, islands)
     $("ol.picker li").each(function() {
         var $this = $(this);
+        var name = $this.attr("title").toLowerCase();
+        var query = $("#search-bar").val().toLowerCase();
+        if (name.indexOf(query) == -1) return;
         if ($this.is(gens.join(',')) &&
            ($this.is(islands.join(',')) || !isAlolaDex) &&
            ($this.is(areas.join(',')) || !isKalosDex) &&
@@ -112,6 +115,12 @@ function addPkmnToTeam($this) {
     var pkmnName = $this.text();
     if (typeof pkmnClass === "undefined") {
         return;
+    }
+    // check if picked Pokémon is Necrozma and if there is already one in the team
+    if ($this.attr("class").includes("necrozma") && $("ul.picked .art[class*=necrozma]").length > 0)
+    {
+        // remove current Necrozma from team
+        removePkmnFromTeam($("ul.picked .art[class*=necrozma]").parent().parent());
     }
     // check if picked Pokémon is a mega and if there is already one in the team
     if ($this.attr("class").includes("-mega") && $("ul.picked .art[class*=-mega]").length > 0)
@@ -412,11 +421,12 @@ $(document).ready(function(){
         buttonWidth: '140px',
         numberDisplayed: 1,
         includeSelectAllOption: true,
-        onChange: filterPkmn,
-        onSelectAll: filterPkmn
+        onChange: filterPokemon,
+        onSelectAll: filterPokemon
     });
+    $("#search-bar").on("input", filterPokemon);
     $("select").multiselect("selectAll", false);
-    if ($("#alola-dex").length > 0) {
+    if ($("#alola-dex").length > 0 || $("#new-alola-dex").length > 0) {
         $('#evolution-filter').multiselect('deselect', ['mega']);
     }
     $("select").multiselect('updateButtonText');
