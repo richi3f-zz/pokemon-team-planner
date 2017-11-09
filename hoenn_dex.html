@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <title>Pokémon Omega Ruby &amp; Alpha Sapphire Team Planner</title>
-    <meta name="description" content="A team planner tool for Pokémon Omega Ruby &amp; Alpha Sapphire.">
+    <meta name="description" content="A team planner tool for Pokémon Omega Ruby &amp; Alpha Sapphire">
     <meta charset="utf-8">
     <link href="static/bootstrap.min.css" rel="stylesheet">
     <link href="static/style.css" rel="stylesheet">
@@ -326,8 +326,8 @@
         <div id="filters">
             <h3>Filters</h3><!--
             --><div class="filter">
-                <label for="gen-filter">Generation</label>
-                <select id="gen-filter" multiple>
+                <label for="gen-filter">Generation</label><!--
+                --><select id="gen-filter" multiple>
                     <option value="gen1">Generation I</option>
                     <option value="gen2">Generation II</option>
                     <option value="gen3">Generation III</option>
@@ -335,8 +335,8 @@
                 </select>
             </div><!--
             --><div class="filter">
-                <label for="type-filter">Type</label>
-                <select id="type-filter" multiple>
+                <label for="type-filter">Type</label><!--
+                --><select id="type-filter" multiple>
                     <option value="normal">Normal</option>
                     <option value="grass">Grass</option>
                     <option value="fire">Fire</option>
@@ -358,8 +358,8 @@
                 </select>
             </div><!--
             --><div class="filter">
-                <label for="evolution-filter">Evolution</label>
-                <select id="evolution-filter" multiple>
+                <label for="evolution-filter">Evolution</label><!--
+                --><select id="evolution-filter" multiple>
                     <option value="nfe">Not Fully Evolved</option>
                     <option value="fe">Fully Evolved</option>
                     <option value="mega">Mega Evolved</option>
@@ -369,16 +369,16 @@
             --><a href="#" class="button hidden" title="Hide extra filters">−</a><!--
             --><div class="more">
                 <div class="filter hidden">
-                    <label for="version-filter">Version</label>
-                    <select id="version-filter" multiple>
+                    <label for="version-filter">Version</label><!--
+                    --><select id="version-filter" multiple>
                         <option value="ruby">Omega Ruby</option>
                         <option value="sapphire">Alpha Sapphire</option>
                         <option value="both">Both</option>
                     </select>
                 </div><!--
                 --><div class="filter hidden">
-                    <label for="resistance-filter">Resists</label>
-                    <select id="resistance-filter" multiple>
+                    <label for="resistance-filter">Resists</label><!--
+                    --><select id="resistance-filter" multiple>
                         <option value="normal">Normal</option>
                         <option value="grass">Grass</option>
                         <option value="fire">Fire</option>
@@ -398,6 +398,9 @@
                         <option value="steel">Steel</option>
                         <option value="fairy">Fairy</option>
                     </select>
+                </div><!--
+                --><div class="filter hidden">
+                    <label for="search-bar">Search</label><input id="search-bar" type="search" placeholder="by Pokémon name">
                 </div>
             </div>
         </div>
@@ -646,15 +649,14 @@
         </ol>
     </section>
     <footer>
-        <p class="links">Looking for another dex? Check out the planners for the <a href="/pokemon-team-planner/">Alola</a>, <a href="national_dex.html">National</a>, and <a href="kalos_dex.html">Kalos</a> dexes.</p>
+        <p class="links">Looking for another dex? Check out the planners for the <a href="national_dex.html">National</a>, <a href="kalos_dex.html">Kalos</a>, <a href="old_alola_dex.html">Old Alola</a>, and <a href="/pokemon-team-planner/">New Alola</a> dexes.</p>
         <p>Please report bugs or leave feedback in <a href="http://www.smogon.com/forums/threads/team-planner-for-pok%C3%A9mon-sun-moon.3585346/">this thread</a>.</p>
         <p>
-            © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2016">2016</time><br>
+            © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2016">2016</time>-<time datetime="2017">2017</time><br>
             Bootstrap is © of Twitter, <time datetime="2016">2016</time><br>
             <a href="http://davidstutz.github.io/bootstrap-multiselect/">Bootstrap Multiselect</a> is © of <a href="http://davidstutz.de/">David Stutz</a>, <time datetime="2012">2012</time>-<time datetime="2014">2014</time><br>
-            <a href="https://clipboardjs.com">Clipboard.js</a> is © of <a href="http://zenorocha.com">Zeno Rocha</a>, <time datetime="2015">2015</time>-<time datetime="2016">2016</time><br>
-            Pokémon icons, names and typings datamined by Kaphotics, SciresM, Marty, smealum, Bond697, Slashmolder &amp; Normmatt<br>
-            Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2016">2016</time>
+            <a href="https://clipboardjs.com">Clipboard.js</a> is © of <a href="http://zenorocha.com">Zeno Rocha</a>, <time datetime="2015">2015</time>-<time datetime="2017">2017</time><br>
+            Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2017">2017</time>
         </p>
     </footer>
 </article>

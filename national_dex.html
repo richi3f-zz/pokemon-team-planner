@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <title>Pokémon Team Planner</title>
-    <meta name="description" content="A team planner tool for the Pokémon games.">
+    <meta name="description" content="A team planner tool for Pokémon games">
     <meta charset="utf-8">
     <link href="static/bootstrap.min.css" rel="stylesheet">
     <link href="static/style.css" rel="stylesheet">
@@ -326,8 +326,8 @@
         <div id="filters">
             <h3>Filters</h3><!--
             --><div class="filter">
-                <label for="gen-filter">Generation</label>
-                <select id="gen-filter" multiple>
+                <label for="gen-filter">Generation</label><!--
+                --><select id="gen-filter" multiple>
                     <option value="gen1">Generation I</option>
                     <option value="gen2">Generation II</option>
                     <option value="gen3">Generation III</option>
@@ -338,8 +338,8 @@
                 </select>
             </div><!--
             --><div class="filter">
-                <label for="type-filter">Type</label>
-                <select id="type-filter" multiple>
+                <label for="type-filter">Type</label><!--
+                --><select id="type-filter" multiple>
                     <option value="normal">Normal</option>
                     <option value="grass">Grass</option>
                     <option value="fire">Fire</option>
@@ -361,8 +361,8 @@
                 </select>
             </div><!--
             --><div class="filter">
-                <label for="evolution-filter">Evolution</label>
-                <select id="evolution-filter" multiple>
+                <label for="evolution-filter">Evolution</label><!--
+                --><select id="evolution-filter" multiple>
                     <option value="nfe">Not Fully Evolved</option>
                     <option value="fe">Fully Evolved</option>
                     <option value="mega">Mega Evolved</option>
@@ -372,8 +372,8 @@
             --><a href="#" class="button hidden" title="Hide extra filters">−</a><!--
             --><div class="more">
                 <div class="filter hidden">
-                    <label for="resistance-filter">Resists</label>
-                    <select id="resistance-filter" multiple>
+                    <label for="resistance-filter">Resists</label><!--
+                    --><select id="resistance-filter" multiple>
                         <option value="normal">Normal</option>
                         <option value="grass">Grass</option>
                         <option value="fire">Fire</option>
@@ -393,6 +393,9 @@
                         <option value="steel">Steel</option>
                         <option value="fairy">Fairy</option>
                     </select>
+                </div><!--
+                --><div class="filter hidden">
+                    <label for="search-bar">Search</label><input id="search-bar" type="search">
                 </div>
             </div>
         </div>
@@ -423,19 +426,19 @@
             <li class="gen1 gen6 normal1 flying2"><a href="#" class="menu-sprite pidgeot-mega">Mega Pidgeot</a>
             <li class="gen1 nfe normal1"><a href="#" class="menu-sprite rattata">Rattata</a>
             <li class="gen1 normal1"><a href="#" class="menu-sprite raticate">Raticate</a>
-            <li class="gen1 gen7 nfe dark1 normal2"><a href="#" class="menu-sprite rattata-alola">Rattata</a>
-            <li class="gen1 gen7 dark1 normal2"><a href="#" class="menu-sprite raticate-alola">Raticate</a>
+            <li class="gen1 gen7 nfe dark1 normal2"><a href="#" class="menu-sprite rattata-alola">Alolan Rattata</a>
+            <li class="gen1 gen7 dark1 normal2"><a href="#" class="menu-sprite raticate-alola">Alolan Raticate</a>
             <li class="gen1 nfe normal1 flying2"><a href="#" class="menu-sprite spearow">Spearow</a>
             <li class="gen1 normal1 flying2"><a href="#" class="menu-sprite fearow">Fearow</a>
             <li class="gen1 nfe poison1"><a href="#" class="menu-sprite ekans">Ekans</a>
             <li class="gen1 poison1"><a href="#" class="menu-sprite arbok">Arbok</a>
             <li class="gen1 nfe electric1"><a href="#" class="menu-sprite pikachu">Pikachu</a>
             <li class="gen1 electric1"><a href="#" class="menu-sprite raichu">Raichu</a>
-            <li class="gen1 gen7 electric1 psychic2"><a href="#" class="menu-sprite raichu-alola">Raichu</a>
+            <li class="gen1 gen7 electric1 psychic2"><a href="#" class="menu-sprite raichu-alola">Alolan Raichu</a>
             <li class="gen1 nfe ground1"><a href="#" class="menu-sprite sandshrew">Sandshrew</a>
             <li class="gen1 ground1"><a href="#" class="menu-sprite sandslash">Sandslash</a>
-            <li class="gen1 gen7 nfe ice1 steel2"><a href="#" class="menu-sprite sandshrew-alola">Sandshrew</a>
-            <li class="gen1 gen7 ice1 steel2"><a href="#" class="menu-sprite sandslash-alola">Sandslash</a>
+            <li class="gen1 gen7 nfe ice1 steel2"><a href="#" class="menu-sprite sandshrew-alola">Alolan Sandshrew</a>
+            <li class="gen1 gen7 ice1 steel2"><a href="#" class="menu-sprite sandslash-alola">Alolan Sandslash</a>
             <li class="gen1 nfe poison1"><a href="#" class="menu-sprite nidoran">Nidoran♀</a>
             <li class="gen1 nfe poison1"><a href="#" class="menu-sprite nidorina">Nidorina</a>
             <li class="gen1 poison1 ground2"><a href="#" class="menu-sprite nidoqueen">Nidoqueen</a>
@@ -446,8 +449,8 @@
             <li class="gen1 fairy1"><a href="#" class="menu-sprite clefable">Clefable</a>
             <li class="gen1 nfe fire1"><a href="#" class="menu-sprite vulpix">Vulpix</a>
             <li class="gen1 fire1"><a href="#" class="menu-sprite ninetales">Ninetales</a>
-            <li class="gen1 gen7 nfe ice1"><a href="#" class="menu-sprite vulpix-alola">Vulpix</a>
-            <li class="gen1 gen7 ice1 fairy2"><a href="#" class="menu-sprite ninetales-alola">Ninetales</a>
+            <li class="gen1 gen7 nfe ice1"><a href="#" class="menu-sprite vulpix-alola">Alolan Vulpix</a>
+            <li class="gen1 gen7 ice1 fairy2"><a href="#" class="menu-sprite ninetales-alola">Alolan Ninetales</a>
             <li class="gen1 nfe normal1 fairy2"><a href="#" class="menu-sprite jigglypuff">Jigglypuff</a>
             <li class="gen1 normal1 fairy2"><a href="#" class="menu-sprite wigglytuff">Wigglytuff</a>
             <li class="gen1 nfe poison1 flying2"><a href="#" class="menu-sprite zubat">Zubat</a>
@@ -461,12 +464,12 @@
             <li class="gen1 bug1 poison2"><a href="#" class="menu-sprite venomoth">Venomoth</a>
             <li class="gen1 nfe ground1"><a href="#" class="menu-sprite diglett">Diglett</a>
             <li class="gen1 ground1"><a href="#" class="menu-sprite dugtrio">Dugtrio</a>
-            <li class="gen1 gen7 nfe ground1 steel2"><a href="#" class="menu-sprite diglett-alola">Diglett</a>
-            <li class="gen1 gen7 ground1 steel2"><a href="#" class="menu-sprite dugtrio-alola">Dugtrio</a>
+            <li class="gen1 gen7 nfe ground1 steel2"><a href="#" class="menu-sprite diglett-alola">Alolan Diglett</a>
+            <li class="gen1 gen7 ground1 steel2"><a href="#" class="menu-sprite dugtrio-alola">Alolan Dugtrio</a>
             <li class="gen1 nfe normal1"><a href="#" class="menu-sprite meowth">Meowth</a>
             <li class="gen1 normal1"><a href="#" class="menu-sprite persian">Persian</a>
-            <li class="gen1 gen7 nfe dark1"><a href="#" class="menu-sprite meowth-alola">Meowth</a>
-            <li class="gen1 gen7 dark1"><a href="#" class="menu-sprite persian-alola">Persian</a>
+            <li class="gen1 gen7 nfe dark1"><a href="#" class="menu-sprite meowth-alola">Alolan Meowth</a>
+            <li class="gen1 gen7 dark1"><a href="#" class="menu-sprite persian-alola">Alolan Persian</a>
             <li class="gen1 nfe water1"><a href="#" class="menu-sprite psyduck">Psyduck</a>
             <li class="gen1 water1"><a href="#" class="menu-sprite golduck">Golduck</a>
             <li class="gen1 nfe fighting1"><a href="#" class="menu-sprite mankey">Mankey</a>
@@ -491,9 +494,9 @@
             <li class="gen1 nfe rock1 ground2"><a href="#" class="menu-sprite geodude">Geodude</a>
             <li class="gen1 nfe rock1 ground2"><a href="#" class="menu-sprite graveler">Graveler</a>
             <li class="gen1 rock1 ground2"><a href="#" class="menu-sprite golem">Golem</a>
-            <li class="gen1 gen7 nfe rock1 electric2"><a href="#" class="menu-sprite geodude-alola">Geodude</a>
-            <li class="gen1 gen7 nfe rock1 electric2"><a href="#" class="menu-sprite graveler-alola">Graveler</a>
-            <li class="gen1 gen7 rock1 electric2"><a href="#" class="menu-sprite golem-alola">Golem</a>
+            <li class="gen1 gen7 nfe rock1 electric2"><a href="#" class="menu-sprite geodude-alola">Alolan Geodude</a>
+            <li class="gen1 gen7 nfe rock1 electric2"><a href="#" class="menu-sprite graveler-alola">Alolan Graveler</a>
+            <li class="gen1 gen7 rock1 electric2"><a href="#" class="menu-sprite golem-alola">Alolan Golem</a>
             <li class="gen1 nfe fire1"><a href="#" class="menu-sprite ponyta">Ponyta</a>
             <li class="gen1 fire1"><a href="#" class="menu-sprite rapidash">Rapidash</a>
             <li class="gen1 nfe water1 psychic2"><a href="#" class="menu-sprite slowpoke">Slowpoke</a>
@@ -508,8 +511,8 @@
             <li class="gen1 water1 ice2"><a href="#" class="menu-sprite dewgong">Dewgong</a>
             <li class="gen1 nfe poison1"><a href="#" class="menu-sprite grimer">Grimer</a>
             <li class="gen1 poison1"><a href="#" class="menu-sprite muk">Muk</a>
-            <li class="gen1 gen7 nfe poison1 dark2"><a href="#" class="menu-sprite grimer-alola">Grimer</a>
-            <li class="gen1 gen7 poison1 dark2"><a href="#" class="menu-sprite muk-alola">Muk</a>
+            <li class="gen1 gen7 nfe poison1 dark2"><a href="#" class="menu-sprite grimer-alola">Alolan Grimer</a>
+            <li class="gen1 gen7 poison1 dark2"><a href="#" class="menu-sprite muk-alola">Alolan Muk</a>
             <li class="gen1 nfe water1"><a href="#" class="menu-sprite shellder">Shellder</a>
             <li class="gen1 water1 ice2"><a href="#" class="menu-sprite cloyster">Cloyster</a>
             <li class="gen1 nfe ghost1 poison2 levitate"><a href="#" class="menu-sprite gastly">Gastly</a>
@@ -525,10 +528,10 @@
             <li class="gen1 electric1"><a href="#" class="menu-sprite electrode">Electrode</a>
             <li class="gen1 nfe grass1 psychic2"><a href="#" class="menu-sprite exeggcute">Exeggcute</a>
             <li class="gen1 grass1 psychic2"><a href="#" class="menu-sprite exeggutor">Exeggutor</a>
-            <li class="gen1 gen7 grass1 dragon2"><a href="#" class="menu-sprite exeggutor-alola">Exeggutor</a>
+            <li class="gen1 gen7 grass1 dragon2"><a href="#" class="menu-sprite exeggutor-alola">Alolan Exeggutor</a>
             <li class="gen1 nfe ground1"><a href="#" class="menu-sprite cubone">Cubone</a>
             <li class="gen1 ground1"><a href="#" class="menu-sprite marowak">Marowak</a>
-            <li class="gen1 gen7 fire1 ghost2"><a href="#" class="menu-sprite marowak-alola">Marowak</a>
+            <li class="gen1 gen7 fire1 ghost2"><a href="#" class="menu-sprite marowak-alola">Alolan Marowak</a>
             <li class="gen1 fighting1"><a href="#" class="menu-sprite hitmonlee">Hitmonlee</a>
             <li class="gen1 fighting1"><a href="#" class="menu-sprite hitmonchan">Hitmonchan</a>
             <li class="gen1 nfe normal1"><a href="#" class="menu-sprite lickitung">Lickitung</a>
@@ -1341,19 +1344,19 @@
             <li class="gen7 fighting1 ghost2"><a href="#" class="menu-sprite marshadow">Marshadow</a>
             <li class="gen7 nfe poison1"><a href="#" class="menu-sprite poipole">Poipole</a>
             <li class="gen7 poison1 dragon2"><a href="#" class="menu-sprite naganadel">Naganadel</a>
-            <li class="gen7 fire1 ghost2"><a href="#" class="menu-sprite blacephalon">Blacephalon</a>
             <li class="gen7 rock1 steel2"><a href="#" class="menu-sprite stakataka">Stakataka</a>
+            <li class="gen7 fire1 ghost2"><a href="#" class="menu-sprite blacephalon">Blacephalon</a>
             <li class="gen7 electric1"><a href="#" class="menu-sprite zeraora">Zeraora</a>
         </ol>
     </section>
     <footer>
-        <p class="links">Looking for another dex? Check out the planners for the <a href="/pokemon-team-planner/">Alola</a>, <a href="kalos_dex.html">Kalos</a>, and <a href="hoenn_dex.html">Hoenn</a> dexes.</p>
+        <p class="links">Looking for another dex? Check out the planners for the <a href="kalos_dex.html">Kalos</a>, <a href="hoenn_dex.html">Hoenn</a>, <a href="old_alola_dex.html">Old Alola</a>, and <a href="/pokemon-team-planner/">New Alola</a> dexes.</p>
         <p>Please report bugs or leave feedback in <a href="http://www.smogon.com/forums/threads/team-planner-for-pok%C3%A9mon-sun-moon.3585346/">this thread</a>.</p>
         <p>
-            © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2017">2017</time><br>
+            © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2016">2016</time>-<time datetime="2017">2017</time><br>
             Bootstrap is © of Twitter, <time datetime="2016">2016</time><br>
             <a href="http://davidstutz.github.io/bootstrap-multiselect/">Bootstrap Multiselect</a> is © of <a href="http://davidstutz.de/">David Stutz</a>, <time datetime="2012">2012</time>-<time datetime="2014">2014</time><br>
-            <a href="https://clipboardjs.com">Clipboard.js</a> is © of <a href="http://zenorocha.com">Zeno Rocha</a>, <time datetime="2015">2015</time>-<time datetime="2016">2016</time><br>
+            <a href="https://clipboardjs.com">Clipboard.js</a> is © of <a href="http://zenorocha.com">Zeno Rocha</a>, <time datetime="2015">2015</time>-<time datetime="2017">2017</time><br>
             Pokémon icons, names and typings datamined by Kaphotics, SciresM, Marty, smealum, Bond697, Slashmolder &amp; Normmatt<br>
             Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2017">2017</time>
         </p>
