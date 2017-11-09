@@ -443,6 +443,11 @@ $(document).ready(function(){
         e.preventDefault();
     });
     $("#randomize").click(function(e) {
+        // clear search bar
+        if ($("#search-bar").val().length > 0) {
+            $("#search-bar").val("");
+            filterPokemon();
+        }
         // clear current team
         $("ul.picked li").each(function() {
             removePkmnFromTeam($(this));
