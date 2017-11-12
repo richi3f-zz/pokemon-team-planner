@@ -126,8 +126,13 @@ h3{
     width:3.875em;
     margin:0 1em
 }
-h3::after{
+h3::after, h4::after{
   content:":"
+}
+h4 {
+    font-size:0.875em;
+    font-weight:700;
+    text-align:center
 }
 table,tbody,caption,td,th{
     display:block;

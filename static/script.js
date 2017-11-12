@@ -106,6 +106,17 @@ function filterPokemon(option, checked) {
             $(this).removeClass("filtered");
         }
     });
+    // hide header if there are no Pokémon to show
+    $("h4 + ol.picker").each(function() {
+        var $this = $(this);
+        var children = $this.children("li").length;
+        var filteredChildren = $this.children("li.filtered").length;
+        if (children == filteredChildren) {
+            $this.prev().addClass("hidden");
+        } else {
+            $this.prev().removeClass("hidden");
+        }
+    });
 }
 function getRandomNumber(upperBound) {
     return Math.floor((Math.random() * upperBound) + 1);
