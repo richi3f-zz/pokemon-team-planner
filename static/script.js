@@ -18,6 +18,13 @@ function filterPokemon(option, checked) {
         types[i++] = "." + type + "1";
         types[i++] = "." + type + "2";
     });
+    // get excluded types
+    var exclude = []; i = 0;
+    $("#exclude-type-filter option:selected").each(function() {
+        var type = $(this).val();
+        exclude[i++] = "." + type + "1";
+        exclude[i++] = "." + type + "2";
+    });
     // get selected resistances
     var resistances = []; i = 0;
     $("#resistance-filter option:selected").each(function() {
@@ -49,7 +56,8 @@ function filterPokemon(option, checked) {
            ($this.is(islands.join(',')) || !isAlolaDex) &&
            ($this.is(areas.join(',')) || !isKalosDex) &&
            ($this.is(types.join(',')) &&
-            $this.is(resistances.join(',')))) {
+             (!$this.is(exclude.join(',')) &&
+            $this.is(resistances.join(','))))) {
             // filter by version
             if (isAlolaDex) {
                 var includePkmnFromSun = $("#version-filter [value=sun]:selected").length > 0;
@@ -436,7 +444,7 @@ $(document).ready(function(){
         onSelectAll: filterPokemon
     });
     $("#search-bar").on("input", filterPokemon);
-    $("select").multiselect("selectAll", false);
+    $("select").not("#exclude-type-filter").multiselect("selectAll", false);
     if ($("#alola-dex").length > 0 || $("#new-alola-dex").length > 0) {
         $('#evolution-filter').multiselect('deselect', ['mega']);
     }
