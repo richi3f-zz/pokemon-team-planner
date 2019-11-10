@@ -2571,3 +2571,6 @@ footer{
   cursor:pointer;
   width: 5em;
 }
+#exclude-type-filter {
+    background-color: red;
+}
