@@ -8,4 +8,4 @@ A non-competitive team planner tool for Pokémon games
 - **[Pokémon X & Y →](https://richi3f.github.io/pokemon-team-planner/kalos_dex.html)**
 - **[Pokémon (National Dex) →](https://richi3f.github.io/pokemon-team-planner/national_dex.html)**
 
-Pokémon is &copy; of Nintendo, 1995-2017.
+Pokémon is &copy; of Nintendo, 1995-2019.
